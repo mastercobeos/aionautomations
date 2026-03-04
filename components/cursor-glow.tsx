@@ -9,6 +9,9 @@ export function CursorGlow() {
     const glow = glowRef.current
     if (!glow) return
 
+    // No cursor on mobile — skip entirely
+    if (window.innerWidth < 768) return
+
     let rafId: number
     const onMove = (e: MouseEvent) => {
       rafId = requestAnimationFrame(() => {

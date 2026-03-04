@@ -9,6 +9,9 @@ export function Starfield() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    // Skip on mobile — full-viewport canvas is too heavy for mobile CPUs
+    if (window.innerWidth < 768) return;
+
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 

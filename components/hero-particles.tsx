@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react"
 
-const PARTICLE_COUNT = 56
 const REPEL_RADIUS = 150
 const REPEL_STRENGTH = 8
 const RETURN_SPEED = 0.015
@@ -62,8 +61,9 @@ export function HeroParticles() {
 
     function initParticles() {
       const particles: Particle[] = []
+      const count = window.innerWidth < 768 ? 20 : 56
 
-      for (let i = 0; i < PARTICLE_COUNT; i++) {
+      for (let i = 0; i < count; i++) {
         const color = COLORS[Math.floor(Math.random() * COLORS.length)]
         const size = Math.random() * 4 + 1.5
         const baseAlpha = Math.random() * 0.5 + 0.3
