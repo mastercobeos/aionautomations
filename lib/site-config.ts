@@ -10,7 +10,7 @@
 
 export const siteConfig = {
   whatsapp: {
-    number: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "",
+    number: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "523411687566",
     /** Official wa.me deep link: opens WhatsApp app on mobile, WhatsApp Web on desktop. */
     get link() {
       if (!this.number) return "https://wa.me/";
