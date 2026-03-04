@@ -128,16 +128,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX');
-          `,
-        }} />
+        {/* Google Analytics — agrega tu ID real en lugar de G-XXXXXXXXXX */}
       </head>
       <body className="font-sans antialiased">
         <JsonLd locale={locale} />
