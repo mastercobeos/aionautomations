@@ -21,8 +21,8 @@ export const organizationSchema = {
     "Agencia de diseño de páginas web, automatización y marketing con inteligencia artificial",
   logo: `${siteUrl}/LOGO.svg`,
   image: `${siteUrl}/LOGO.svg`,
-  telephone: "",
-  email: "",
+  telephone: process.env.NEXT_PUBLIC_PHONE || "+52 341 168 7566",
+  email: "aionautomations@gmail.com",
   priceRange: "$$",
   serviceType: [
     "Diseño de páginas web",

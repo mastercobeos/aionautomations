@@ -62,6 +62,7 @@ export async function generateMetadata({
     authors: [{ name: 'AION Automations', url: siteUrl }],
     creator: 'AION Automations',
     icons: { icon: '/favicon.png', apple: '/favicon.png' },
+    manifest: '/manifest.json',
     alternates: {
       canonical: canonicalUrl,
       languages: {

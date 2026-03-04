@@ -1,4 +1,6 @@
+import type { Metadata } from "next"
 import dynamic from "next/dynamic"
+import { getTranslations } from "next-intl/server"
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
 import { Footer } from "@/components/footer"
@@ -6,6 +8,29 @@ import { FloatingSocialButtons } from "@/components/floating-social-buttons"
 import { ScrollRevealInit } from "@/components/scroll-reveal-init"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { CursorGlow } from "@/components/cursor-glow"
+import { siteUrl } from "@/lib/seo"
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: "HomePage" })
+
+  return {
+    title: t("metaTitle"),
+    description: t("metaDesc"),
+    alternates: {
+      canonical: `${siteUrl}/${locale}`,
+      languages: {
+        en: `${siteUrl}/en`,
+        es: `${siteUrl}/es`,
+        "x-default": siteUrl,
+      },
+    },
+  }
+}
 
 const ServicePillars = dynamic(() => import("@/components/service-pillars").then(m => ({ default: m.ServicePillars })))
 const AboutUsPreview = dynamic(() => import("@/components/about-us-preview").then(m => ({ default: m.AboutUsPreview })))
