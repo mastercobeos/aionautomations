@@ -8,6 +8,7 @@ import { FaqAccordion } from '@/components/faq-accordion';
 import { PageSchema } from '@/components/page-schema';
 import { FloatingSocialButtons } from '@/components/floating-social-buttons';
 import { MessageCircle, Check } from 'lucide-react';
+import { siteConfig } from "@/lib/site-config"
 import { Link } from '@/i18n/routing';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -100,7 +101,7 @@ export default async function ToursIndustryPage({ params }: { params: Promise<{ 
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{t('ctaTitle')}</h2>
           <p className="mt-3 text-muted-foreground">{t('ctaDesc')}</p>
           <a
-            href="https://wa.me/13028188842?text=Hola%2C%20me%20interesa%20una%20p%C3%A1gina%20web%20para%20mi%20negocio%20de%20tours"
+            href={`${siteConfig.whatsapp.link}?text=${encodeURIComponent('Hola, me interesa una página web para mi negocio de tours')}`}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-glow mt-6 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 px-6 py-3 text-sm font-semibold text-white transition-all hover:scale-[1.02]"

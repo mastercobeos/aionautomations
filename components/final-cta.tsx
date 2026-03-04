@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { MessageCircle } from 'lucide-react';
+import { siteConfig } from '@/lib/site-config';
 
 export function FinalCTA() {
   const t = useTranslations('FinalCTA');
@@ -24,7 +25,7 @@ export function FinalCTA() {
           </p>
 
           <a
-            href="https://wa.me/13028188842?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios"
+            href={`${siteConfig.whatsapp.link}?text=${encodeURIComponent('Hola, quiero información sobre sus servicios')}`}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-glow mt-8 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 px-8 py-4 text-base font-semibold text-white transition-all hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(34,212,254,0.3)]"

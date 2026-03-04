@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Send, Loader2, CheckCircle } from "lucide-react"
 import { useTranslations } from "next-intl"
+import { siteConfig } from "@/lib/site-config"
 
 export function ContactForm() {
   const t = useTranslations("ContactForm")
@@ -20,7 +21,7 @@ export function ContactForm() {
 
     // Build WhatsApp message
     const text = `Hola! Soy ${name} (${email}). ${message}`
-    const whatsappUrl = `https://wa.me/13028188842?text=${encodeURIComponent(text)}`
+    const whatsappUrl = `${siteConfig.whatsapp.link}?text=${encodeURIComponent(text)}`
 
     setTimeout(() => {
       setStatus("sent")
