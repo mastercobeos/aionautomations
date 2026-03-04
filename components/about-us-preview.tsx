@@ -1,8 +1,7 @@
 "use client"
 
 import { useTranslations } from 'next-intl'
-import { ArrowRight, CheckCircle2 } from 'lucide-react'
-import { openModalEvent } from './global-modals'
+import { CheckCircle2 } from 'lucide-react'
 
 export function AboutUsPreview() {
   const t = useTranslations('AboutPreview')
@@ -63,16 +62,6 @@ export function AboutUsPreview() {
           ))}
         </ul>
 
-        {/* CTA to open About modal */}
-        <div className="reveal mt-10 text-center">
-          <button
-            onClick={() => openModalEvent('about')}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 transition-all hover:text-cyan-300 cursor-pointer"
-          >
-            {t('learnMore')}
-            <ArrowRight className="h-4 w-4" />
-          </button>
-        </div>
       </div>
     </section>
   )
