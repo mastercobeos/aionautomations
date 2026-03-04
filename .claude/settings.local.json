@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install three @types/three --save)",
+      "Bash(npm run build)",
+      "Bash(tr ';' '\\\\n')",
+      "Bash(npx next build)",
+      "Bash(npm run dev)",
+      "Bash(ls -la /Users/mac/Desktop/\"AION AUTOMATIONS\"/app/[locale]/)",
+      "Bash(curl -s http://localhost:3000/es)",
+      "Bash(curl -s http://localhost:3001/es)",
+      "Bash(while read f)",
+      "Bash(do if grep -l \"AION\" \"$f\")",
+      "Bash(then echo \"Found: $f\")",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(tmutil listlocalsnapshots /)",
+      "Bash(ls -la \"/Users/mac/Desktop/AION AUTOMATIONS/components/globe-world\"*)",
+      "Bash(ls -la \"/Users/mac/Desktop/AION AUTOMATIONS/components/Globe\"*)",
+      "Bash(kill 9666)",
+      "Bash(lsof -ti:3000)",
+      "Bash(xargs kill -9)"
+    ]
+  }
+}
