@@ -763,7 +763,9 @@
         "send": "Enviar mensaje",
         "sending": "Enviando...",
         "sent": "Mensaje enviado",
-        "error": "Error al enviar"
+        "sentConfirmation": "¡Solicitud enviada! Te responderemos lo antes posible.",
+        "error": "Error al enviar",
+        "errorConfirmation": "No se pudo enviar tu mensaje. Intenta de nuevo o escríbenos por WhatsApp."
     },
     "NotFound": {
         "title": "Página no encontrada",

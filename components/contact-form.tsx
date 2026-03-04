@@ -29,10 +29,10 @@ export function ContactForm() {
 
       setStatus("sent")
       form.reset()
-      setTimeout(() => setStatus("idle"), 4000)
+      setTimeout(() => setStatus("idle"), 5000)
     } catch {
       setStatus("error")
-      setTimeout(() => setStatus("idle"), 4000)
+      setTimeout(() => setStatus("idle"), 5000)
     }
   }
 
@@ -95,6 +95,20 @@ export function ContactForm() {
           </>
         )}
       </button>
+
+      {status === "sent" && (
+        <div className="flex items-center gap-2 rounded-lg border border-green-500/30 bg-green-500/10 px-4 py-3 text-sm text-green-400">
+          <CheckCircle className="h-4 w-4 shrink-0" />
+          {t("sentConfirmation")}
+        </div>
+      )}
+
+      {status === "error" && (
+        <div className="flex items-center gap-2 rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-400">
+          <AlertCircle className="h-4 w-4 shrink-0" />
+          {t("errorConfirmation")}
+        </div>
+      )}
     </form>
   )
 }
