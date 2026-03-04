@@ -1,15 +1,14 @@
 "use client"
 
 import { useState } from "react"
-import { Send, Loader2, CheckCircle } from "lucide-react"
+import { Send, Loader2, CheckCircle, AlertCircle } from "lucide-react"
 import { useTranslations } from "next-intl"
-import { siteConfig } from "@/lib/site-config"
 
 export function ContactForm() {
   const t = useTranslations("ContactForm")
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle")
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle")
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setStatus("sending")
 
@@ -19,15 +18,22 @@ export function ContactForm() {
     const email = data.get("email") as string
     const message = data.get("message") as string
 
-    // Build WhatsApp message
-    const text = `Hola! Soy ${name} (${email}). ${message}`
-    const whatsappUrl = `${siteConfig.whatsapp.link}?text=${encodeURIComponent(text)}`
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      })
 
-    setTimeout(() => {
+      if (!res.ok) throw new Error("Failed to send")
+
       setStatus("sent")
-      window.open(whatsappUrl, "_blank")
-      setTimeout(() => setStatus("idle"), 3000)
-    }, 600)
+      form.reset()
+      setTimeout(() => setStatus("idle"), 4000)
+    } catch {
+      setStatus("error")
+      setTimeout(() => setStatus("idle"), 4000)
+    }
   }
 
   return (
@@ -80,6 +86,12 @@ export function ContactForm() {
           <>
             {t("sent")}
             <CheckCircle className="h-4 w-4" />
+          </>
+        )}
+        {status === "error" && (
+          <>
+            {t("error")}
+            <AlertCircle className="h-4 w-4" />
           </>
         )}
       </button>

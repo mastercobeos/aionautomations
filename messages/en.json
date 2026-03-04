@@ -762,7 +762,8 @@
         "message": "How can we help you?",
         "send": "Send message",
         "sending": "Sending...",
-        "sent": "Message sent"
+        "sent": "Message sent",
+        "error": "Error sending"
     },
     "NotFound": {
         "title": "Page not found",
