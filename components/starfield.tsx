@@ -9,11 +9,10 @@ export function Starfield() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Skip on mobile — full-viewport canvas is too heavy for mobile CPUs
-    if (window.innerWidth < 768) return;
-
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+
+    const isMobile = window.innerWidth < 768;
 
     // Match canvas to screen
     const resize = () => {
@@ -23,8 +22,8 @@ export function Starfield() {
     resize();
     window.addEventListener("resize", resize);
 
-    // Generate stars once
-    const starCount = 280;
+    // Fewer stars on mobile for performance
+    const starCount = isMobile ? 80 : 280;
     const stars = Array.from({ length: starCount }, () => {
       const r = Math.random();
       // Most stars small, few larger
