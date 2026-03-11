@@ -18,37 +18,46 @@ export async function generateMetadata({
   const title = isEs
     ? 'Diseño de Páginas Web y Automatización con IA | AION'
     : 'Web Design & AI Automation | AION Automations';
-  // Description: 147 chars ES, 139 chars EN — under 155 limit
+  // Description: under 155 chars — keyword-rich for SERP
   const description = isEs
-    ? 'Páginas web rápidas que convierten visitantes en clientes. Automatización y marketing con IA. Tu sitio listo en semanas. Solicita cotización hoy.'
-    : 'Fast websites that turn visitors into customers. AI automation and marketing. Your site ready in weeks. Request a quote today.';
+    ? 'Agencia de diseño web y automatización con IA para pymes. Páginas web profesionales, chatbots WhatsApp y marketing digital. Consulta gratis hoy.'
+    : 'Web design agency & AI automation for small businesses. Custom websites, WhatsApp chatbots, and digital marketing. Free consultation today.';
   const canonicalUrl = `${siteUrl}/${locale}`;
-  // [NOTA: Crear DOS imágenes OG de 1200x630px si contienen texto — og-image-es.jpg y og-image-en.jpg]
   const ogImage = isEs ? `${siteUrl}/og-image-es.jpg` : `${siteUrl}/og-image-en.jpg`;
 
   const keywordsEs = [
-    'páginas web',
-    'automatizaciones',
-    'marketing IA',
     'diseño de páginas web',
-    'automatización empresarial',
+    'agencia de automatización con IA',
+    'automatización de procesos',
     'marketing con inteligencia artificial',
-    'sitios web profesionales',
-    'flujos de trabajo',
-    'CRM',
-    'WhatsApp automatización',
+    'páginas web profesionales',
+    'chatbot para WhatsApp',
+    'agencia de diseño web',
+    'automatización de negocios',
+    'diseño web para pymes',
+    'tienda online',
+    'CRM automatización',
+    'agencia de transformación digital',
+    'flujos de trabajo automatizados',
+    'chatbot para empresas',
+    'diseño web profesional SEO',
   ];
   const keywordsEn = [
-    'web pages',
-    'automations',
-    'AI marketing',
-    'website design',
-    'business automation',
-    'artificial intelligence marketing',
+    'web design agency',
+    'AI automation agency',
+    'business process automation',
+    'custom website design',
     'professional websites',
-    'workflows',
-    'CRM',
-    'WhatsApp automation',
+    'WhatsApp chatbot for business',
+    'AI chatbot development',
+    'small business web design',
+    'workflow automation',
+    'CRM automation',
+    'hire web developer',
+    'ecommerce website design',
+    'lead generation automation',
+    'AI integration services',
+    'web design and SEO',
   ];
 
   return {
@@ -61,30 +70,25 @@ export async function generateMetadata({
     keywords: isEs ? keywordsEs : keywordsEn,
     authors: [{ name: 'AION Automations', url: siteUrl }],
     creator: 'AION Automations',
-    icons: { icon: '/favicon.png', apple: '/favicon.png' },
+    icons: { icon: '/favicon.png', apple: '/apple-icon.png' },
     manifest: '/manifest.json',
     alternates: {
       canonical: canonicalUrl,
       languages: {
         en: `${siteUrl}/en`,
         es: `${siteUrl}/es`,
-        'x-default': siteUrl,
+        'x-default': `${siteUrl}/en`,
       },
     },
     openGraph: {
       type: 'website',
       locale: isEs ? 'es_ES' : 'en_US',
       alternateLocale: isEs ? 'en_US' : 'es_ES',
-      url: canonicalUrl,
-      title,
-      description,
       siteName: 'AION Automations',
       images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: 'summary_large_image',
-      title,
-      description,
       images: [ogImage],
     },
     robots: {
@@ -129,7 +133,17 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
-        {/* Google Analytics — agrega tu ID real en lugar de G-XXXXXXXXXX */}
+        <meta name="msvalidate.01" content="178D0590652682BBEF864F25A14CE9CE" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GW9VD5REP" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6GW9VD5REP');`,
+          }}
+        />
       </head>
       <body className="font-sans antialiased">
         <JsonLd locale={locale} />
