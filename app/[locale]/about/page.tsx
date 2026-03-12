@@ -6,6 +6,7 @@ import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { PageSchema } from '@/components/page-schema';
 import { FloatingSocialButtons } from '@/components/floating-social-buttons';
+import { InternalNav } from '@/components/internal-nav';
 import { webPageSchema, breadcrumbSchema, siteUrl } from '@/lib/seo';
 import { ArrowRight, BarChart3, Zap, Cpu, HeadphonesIcon } from 'lucide-react';
 
@@ -199,6 +200,7 @@ export default async function AboutPage({
           </div>
         </section>
 
+        <InternalNav locale={locale} exclude={['/blog']} />
         <Footer />
       </div>
 

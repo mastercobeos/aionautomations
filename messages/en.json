@@ -1,7 +1,7 @@
 {
     "HomePage": {
-        "metaTitle": "Web Design & AI Automation | AION Automations",
-        "metaDesc": "Professional websites ready in 2 weeks. AI automation and marketing that turns visitors into customers. Book your free consultation today."
+        "metaTitle": "Web Design Agency & AI Automation for Small Business | AION",
+        "metaDesc": "Custom website design & AI automation agency. WhatsApp chatbots, workflow automation, CRM integration, and digital marketing. Free consultation today."
     },
     "Navbar": {
         "services": "Services",
@@ -17,6 +17,7 @@
         "bookCall": "Get a Quote",
         "openMenu": "Open menu",
         "closeMenu": "Close menu",
+        "logoAriaLabel": "AION Automations - Home",
         "dental": "Dental Clinics",
         "realEstate": "Real Estate",
         "restaurants": "Restaurants",
@@ -79,8 +80,8 @@
         "quality": "Quality guaranteed"
     },
     "PricingPage": {
-        "metaTitle": "Services & Pricing — Web, Automation & AI Marketing | AION",
-        "metaDesc": "Three clear services: websites, AI automations, and digital marketing. See packages and pricing for each one.",
+        "metaTitle": "Pricing — Web Design & AI Automation | AION",
+        "metaDesc": "Affordable web design, business process automation, and AI marketing packages. Transparent pricing for small businesses. Get a quote today.",
         "breadcrumbHome": "Home",
         "breadcrumbPricing": "Services",
         "badge": "Services & Pricing",
@@ -229,7 +230,7 @@
         "ctaButton": "Message Us on WhatsApp"
     },
     "RestaurantsPage": {
-        "metaTitle": "Websites for Restaurants — Digital Menu & Reservations | AION",
+        "metaTitle": "Websites for Restaurants — Menu & Reservations | AION",
         "metaDesc": "Restaurant websites with digital menu, online reservation system, and automated marketing. Fill your tables every day.",
         "breadcrumbHome": "Home",
         "breadcrumbIndustries": "Industries",
@@ -331,7 +332,7 @@
         "ctaButton": "Message Us on WhatsApp"
     },
     "SalonPage": {
-        "metaTitle": "Websites for Beauty Salons — Appointments & Automation | AION",
+        "metaTitle": "Websites for Salons — Appointments & Automation | AION",
         "metaDesc": "Professional websites for beauty salons with online appointment booking, service catalog, and automatic WhatsApp reminders.",
         "breadcrumbHome": "Home",
         "breadcrumbIndustries": "Industries",
@@ -399,7 +400,7 @@
         "ctaButton": "Message Us on WhatsApp"
     },
     "VetPage": {
-        "metaTitle": "Websites for Veterinary Clinics — Appointments & Reminders | AION",
+        "metaTitle": "Websites for Vet Clinics — Appointments | AION",
         "metaDesc": "Professional websites for vet clinics with online appointment scheduling, automatic vaccine reminders, and digital patient records.",
         "breadcrumbHome": "Home",
         "breadcrumbIndustries": "Industries",
@@ -433,7 +434,7 @@
         "ctaButton": "Message Us on WhatsApp"
     },
     "LegalPage": {
-        "metaTitle": "Websites for Law & Accounting Firms — Professional Presence | AION",
+        "metaTitle": "Websites for Law & Accounting Firms | AION",
         "metaDesc": "Professional websites for law and accounting firms. Consultation booking, lead qualification, and local SEO.",
         "breadcrumbHome": "Home",
         "breadcrumbIndustries": "Industries",
@@ -532,7 +533,7 @@
         "ctaButton": "Book a Free Call"
     },
     "AboutPage": {
-        "metaTitle": "About Us — AION Automations | Web Design & AI Automation Agency",
+        "metaTitle": "About Us — Web Design & AI Agency | AION",
         "metaDesc": "We are AION Automations: an agency specializing in websites that sell and AI automation for service businesses.",
         "breadcrumbHome": "Home",
         "breadcrumbAbout": "About",
@@ -558,8 +559,8 @@
         "ctaButton": "Contact Now"
     },
     "ContactPage": {
-        "metaTitle": "Contact — Quote Your Website & AI Automation | AION",
-        "metaDesc": "Contact us to quote your website, AI automation, or lead follow-up. Response in less than 24 hours.",
+        "metaTitle": "Get a Free Quote — Web Design & AI Automation | AION",
+        "metaDesc": "Request a free consultation for custom web design, AI automation, or WhatsApp chatbots. Response in less than 24 hours.",
         "breadcrumbHome": "Home",
         "breadcrumbContact": "Contact",
         "badge": "Contact",
@@ -599,6 +600,30 @@
         "post4Title": "Local SEO: How to show up on Google when people search for your service",
         "post4Desc": "Practical local SEO guide for service businesses. Optimize your Google Maps and local search presence.",
         "post4Date": "Feb 5, 2026",
+        "post1_s1Title": "What AI Automation Really Means for Service Businesses",
+        "post1_s1Text": "AI automation is not about replacing people — it is about eliminating the repetitive tasks that drain your time. For service businesses like dental clinics, real estate agencies, and restaurants, this means automating appointment reminders, lead follow-up, invoice generation, and customer support. Instead of hiring extra staff to handle these tasks, an AI system works around the clock, never forgets a follow-up, and responds to inquiries in seconds. The result is fewer missed opportunities and more revenue with the same team.",
+        "post1_s2Title": "The Three AI Tools Driving Business Growth in 2026",
+        "post1_s2Text": "Three technologies are transforming small businesses right now. First, AI chatbots on WhatsApp and web that qualify leads and book appointments automatically. Second, workflow automation platforms like n8n and Make.com that connect your CRM, email, calendar, and invoicing into seamless processes. Third, AI-powered marketing tools that create personalized campaigns, optimize ad spend, and predict which leads are most likely to convert. Together, these tools can save 15 to 20 hours per week of manual work.",
+        "post1_s3Title": "How to Start Automating Your Business Today",
+        "post1_s3Text": "You do not need to automate everything at once. Start with the highest-impact area: usually lead response time. Studies show that responding to a new lead within 5 minutes increases conversion by 400 percent. Set up a WhatsApp chatbot or automated email sequence that instantly acknowledges new inquiries and asks qualifying questions. From there, connect your CRM to automatically organize leads and trigger follow-up sequences. Most businesses see ROI within the first month of implementation.",
+        "post2_s1Title": "What Determines the Cost of a Professional Website",
+        "post2_s1Text": "Website pricing depends on four main factors: the number of pages, the complexity of features, the level of custom design, and ongoing maintenance needs. A simple 5-page informational site costs significantly less than an e-commerce platform with payment processing, inventory management, and user accounts. Other cost drivers include custom animations, multilingual support, CRM integrations, booking systems, and SEO optimization. Understanding these factors helps you make an informed investment rather than overpaying for features you do not need.",
+        "post2_s2Title": "Typical Website Pricing in 2026: What to Expect",
+        "post2_s2Text": "In 2026, professional websites for small businesses typically range from 497 to 4997 USD depending on scope. A starter website with 3 to 5 pages, responsive design, basic SEO, and a contact form starts around 497 USD. A growth package with 8 to 15 pages, advanced SEO, blog integration, WhatsApp chat, and CRM connection runs 1497 to 2497 USD. Enterprise solutions with custom functionality, e-commerce, automation workflows, and multilingual support start at 2997 USD. Always ask what is included in maintenance, hosting, and future updates.",
+        "post2_s3Title": "How to Choose the Right Investment for Your Business",
+        "post2_s3Text": "The right budget depends on what your website needs to accomplish. If your goal is simply to establish online credibility, a starter site works. If you need your website to actively generate leads and bookings, invest in the growth tier with SEO, automation, and conversion optimization. Calculate the lifetime value of a single new customer — if one client is worth 500 USD or more, a website that brings even 2 new clients per month pays for itself quickly. Think of your website as a salesperson who works 24 hours a day, 7 days a week.",
+        "post3_s1Title": "Why WhatsApp Is Your Most Powerful Sales Channel",
+        "post3_s1Text": "WhatsApp has over 2 billion users worldwide, and in Latin America, it is the primary communication channel for 96 percent of internet users. Your customers are already on WhatsApp — they check it dozens of times per day. When a potential client sends you a message, they expect a fast reply. The problem is that most businesses take hours or even days to respond, and by then the lead has gone to a competitor. An AI-powered WhatsApp agent changes this completely by responding instantly, 24 hours a day.",
+        "post3_s2Title": "What an AI WhatsApp Agent Can Do for You",
+        "post3_s2Text": "A modern AI WhatsApp agent does far more than send automatic replies. It can hold natural conversations, answer frequently asked questions about your services and pricing, qualify leads by asking the right questions, book appointments directly into your calendar, send payment links, and follow up with leads who did not convert on the first interaction. The AI learns from your business context — your services, prices, availability, and tone of voice — so responses feel personal and professional, not robotic.",
+        "post3_s3Title": "Real Results from WhatsApp Automation",
+        "post3_s3Text": "Businesses that implement WhatsApp AI automation typically see response times drop from hours to seconds, lead qualification rates improve by 60 percent, and appointment no-show rates decrease by 35 percent thanks to automatic reminders. One dental clinic reduced their receptionist workload by 70 percent while actually booking more appointments. A real estate agency captured 3 times more leads from their website by adding a WhatsApp button connected to an AI agent. The key is that automation handles the routine so your team can focus on closing deals.",
+        "post4_s1Title": "What Is Local SEO and Why It Matters for Your Business",
+        "post4_s1Text": "Local SEO is the practice of optimizing your online presence so that your business appears when people nearby search for your services. When someone searches for dentist near me or best restaurant in my area, Google shows a map with three local businesses — this is called the Local Pack, and appearing here can generate 50 percent or more of your website traffic. Unlike paid ads, local SEO brings free, consistent traffic from people who are actively looking for what you offer.",
+        "post4_s2Title": "The 5 Pillars of Local SEO Success",
+        "post4_s2Text": "Five elements determine your local search ranking. First, a complete and optimized Google Business Profile with accurate hours, services, photos, and categories. Second, consistent NAP — your business Name, Address, and Phone number must be identical across all directories and your website. Third, customer reviews — businesses with more positive reviews rank higher and convert more visitors. Fourth, local content on your website that mentions the areas you serve. Fifth, quality backlinks from local directories, chambers of commerce, and industry associations.",
+        "post4_s3Title": "Quick Wins: Rank Higher in Your City This Month",
+        "post4_s3Text": "Start with these actions today. Claim and fully complete your Google Business Profile — add all services, upload 10 or more high-quality photos, write a keyword-rich description, and set your service area. Ask your 5 best clients to leave Google reviews this week. Make sure your website has your city name in the page title, meta description, and at least one H1 heading. Create a dedicated page for each service you offer in each city you serve. Add schema markup to your website so Google understands your business type, location, and services. These steps alone can move you from page 3 to the Local Pack within weeks.",
         "ctaTitle": "Want tips delivered directly?",
         "ctaDesc": "Follow us on social media for more content about automation and AI.",
         "ctaButton": "Follow on Instagram"
@@ -614,7 +639,12 @@
         "placeholderParagraph3": "If you have questions or want to learn more about this topic, contact us directly and we'll advise you with no commitment.",
         "ctaTitle": "Need help with your project?",
         "ctaDesc": "Book a free call and we'll advise you.",
-        "ctaButton": "Contact"
+        "ctaButton": "Contact",
+        "relatedLinks": "Related services:",
+        "linkWeb": "Web Design →",
+        "linkAuto": "AI Automation →",
+        "linkPricing": "View Pricing →",
+        "postNotFound": "Post not found"
     },
     "ServicePillars": {
         "subtitle": "Our Services",
@@ -711,7 +741,10 @@
         "role7": "Sales Manager, Bella Vita Aesthetics",
         "quote8": "We launched the site in record time and had 35 new inquiries in the first week. Post-launch support has been excellent.",
         "name8": "Diego Navarro",
-        "role8": "Founder, Navarro Legal Firm"
+        "role8": "Founder, Navarro Legal Firm",
+        "prevTestimonial": "Previous testimonial",
+        "nextTestimonial": "Next testimonial",
+        "goToTestimonial": "Go to testimonial"
     },
     "ContentBlock": {
         "title": "Web pages, automations, and AI marketing tailored to you.",
@@ -782,8 +815,8 @@
         "retry": "Try again"
     },
     "WebServicePage": {
-        "metaTitle": "Professional Websites — Web Design Packages | AION",
-        "metaDesc": "Professional websites that turn visitors into clients. From $497 USD. Responsive design, SEO, and fast delivery.",
+        "metaTitle": "Custom Website Design Packages for Small Business | AION",
+        "metaDesc": "Professional, mobile-responsive websites that generate leads. From $497 USD. SEO included, fast delivery. Hire a web designer today.",
         "breadcrumbHome": "Home",
         "breadcrumbServices": "Services",
         "breadcrumbCurrent": "Websites",
@@ -835,8 +868,8 @@
         "ctaButton": "Book a Free Call"
     },
     "AutomationsServicePage": {
-        "metaTitle": "AI Automations — Automation Packages | AION",
-        "metaDesc": "Automate your business with AI: WhatsApp, CRM, lead follow-up, and workflows. From $997 USD.",
+        "metaTitle": "AI Automation — WhatsApp Chatbots & Workflows | AION",
+        "metaDesc": "Business process automation with AI. WhatsApp chatbots, CRM automation, lead follow-up, and workflow automation. From $997 USD.",
         "breadcrumbHome": "Home",
         "breadcrumbServices": "Services",
         "breadcrumbCurrent": "AI Automations",
@@ -995,5 +1028,56 @@
         "faq9A": "Yes. We use SSL-certified hosting, secure servers, and follow best practices for data protection. Your information and your clients' data is always protected.",
         "faq10Q": "Can I see examples of previous projects?",
         "faq10A": "Yes. You can view our portfolio with real projects including websites, automations, and marketing campaigns we've built for clients across different industries."
+    },
+    "ScrollToTop": {
+        "ariaLabel": "Scroll to top"
+    },
+    "InternalNav": {
+        "explore": "Explore:",
+        "ariaLabel": "Related pages"
+    },
+    "PrivacyPage": {
+        "metaTitle": "Privacy Policy | AION Automations",
+        "metaDesc": "Learn how AION Automations protects your personal information and your clients' data. Privacy policy and data protection.",
+        "breadcrumbHome": "Home",
+        "breadcrumbPrivacy": "Privacy",
+        "title": "Privacy Policy",
+        "lastUpdated": "Last updated: March 2026",
+        "intro": "At AION Automations, we take the protection of your personal information seriously. This policy explains what data we collect, how we use it, and how we protect it.",
+        "section1Title": "1. Information We Collect",
+        "section1Text": "We collect only the information you voluntarily provide through our contact form: name, email address, company (optional), and your message. We do not collect browsing data for advertising purposes.",
+        "section2Title": "2. How We Use Your Information",
+        "section2Text": "We use your information exclusively to respond to your inquiry, send you the requested quote, and communicate with you about your project. We never sell, rent, or share your information with third parties for marketing purposes.",
+        "section3Title": "3. Data Protection",
+        "section3Text": "Your information is transmitted via encrypted connection (SSL/TLS). Our servers are protected with industry-standard security practices. Only authorized personnel have access to contact data.",
+        "section4Title": "4. Cookies",
+        "section4Text": "Our site uses essential cookies for site functionality and analytics cookies (Vercel Analytics) to improve the experience. We do not use advertising tracking cookies.",
+        "section5Title": "5. Your Rights",
+        "section5Text": "You may request access, correction, or deletion of your personal information at any time by emailing aionautomations@gmail.com.",
+        "section6Title": "6. Contact",
+        "section6Text": "If you have questions about this policy, contact us at aionautomations@gmail.com."
+    },
+    "TermsPage": {
+        "metaTitle": "Terms of Service | AION Automations",
+        "metaDesc": "Terms and conditions for AION Automations services. Web design, AI automation, and digital marketing.",
+        "breadcrumbHome": "Home",
+        "breadcrumbTerms": "Terms",
+        "title": "Terms of Service",
+        "lastUpdated": "Last updated: March 2026",
+        "intro": "By using AION Automations services, you agree to the following terms and conditions.",
+        "section1Title": "1. Services",
+        "section1Text": "AION Automations provides website design, AI automation, and digital marketing services. The scope of each project is defined in the proposal or quote agreed upon by both parties.",
+        "section2Title": "2. Work Process",
+        "section2Text": "Each project begins with a free consultation. After accepting the quote, a delivery timeline is established. Revisions and changes are included as specified in the contracted package.",
+        "section3Title": "3. Payments",
+        "section3Text": "Payments are made according to the terms agreed upon in the quote. We accept bank transfers and electronic payments. Specific details are provided at the start of each project.",
+        "section4Title": "4. Intellectual Property",
+        "section4Text": "Upon full payment, the client receives complete rights to the design and content created specifically for their project. AION Automations reserves the right to showcase the work in its portfolio.",
+        "section5Title": "5. Support & Maintenance",
+        "section5Text": "All packages include a period of post-delivery technical support. Growth and Enterprise plans include ongoing priority support as specified in the proposal.",
+        "section6Title": "6. Limitation of Liability",
+        "section6Text": "AION Automations is committed to delivering professional-quality work as agreed. We are not responsible for specific business results, as these depend on multiple factors outside our control.",
+        "section7Title": "7. Contact",
+        "section7Text": "For questions about these terms, contact us at aionautomations@gmail.com."
     }
 }

@@ -2,10 +2,10 @@
 
 import { useState, useEffect, useRef } from "react"
 import { Menu, X, ChevronDown } from "lucide-react"
+import Image from "next/image"
 import { Link } from "@/i18n/routing"
 import { LanguageSwitcher } from "./language-switcher"
 import { useTranslations } from 'next-intl'
-import { openModalEvent } from './global-modals'
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -36,36 +36,40 @@ export function Navbar() {
   }, [])
 
   const SERVICE_LINKS = [
-    { label: t('webDesignNav'), modalId: "service-web" },
-    { label: t('automationNav'), modalId: "service-auto" },
-    { label: t('marketingNav'), modalId: "service-mkt" },
+    { label: t('webDesignNav'), href: "/services/web" as const },
+    { label: t('automationNav'), href: "/services/automations" as const },
+    { label: t('marketingNav'), href: "/services/marketing" as const },
   ]
 
   const INDUSTRY_LINKS = [
-    { label: t('restaurants'), modalId: "restaurants" },
-    { label: t('dental'), modalId: "dental" },
-    { label: t('realEstate'), modalId: "real-estate" },
-    { label: t('salons'), modalId: "salons" },
-    { label: t('gyms'), modalId: "gyms" },
-    { label: t('hotels'), modalId: "hotels" },
-    { label: t('tours'), modalId: "tours" },
-    { label: t('vets'), modalId: "vets" },
-    { label: t('schools'), modalId: "schools" },
-    { label: t('legal'), modalId: "legal" },
+    { label: t('restaurants'), href: "/industries/restaurants" as const },
+    { label: t('dental'), href: "/industries/dental" as const },
+    { label: t('realEstate'), href: "/industries/real-estate" as const },
+    { label: t('salons'), href: "/industries/salons" as const },
+    { label: t('gyms'), href: "/industries/gyms" as const },
+    { label: t('hotels'), href: "/industries/hotels" as const },
+    { label: t('tours'), href: "/industries/tours" as const },
+    { label: t('vets'), href: "/industries/vets" as const },
+    { label: t('schools'), href: "/industries/schools" as const },
+    { label: t('legal'), href: "/industries/legal" as const },
   ]
 
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false)
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass-nav-scrolled' : 'glass-nav'}`}>
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-0 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex shrink-0 items-center" aria-label="AION Automations - Inicio">
-          <img
+        <Link href="/" className="flex shrink-0 items-center" aria-label={t('logoAriaLabel')}>
+          <Image
             src="/LOGO.svg"
             alt=""
             role="presentation"
+            width={120}
+            height={80}
             className="h-16 w-auto sm:h-20"
+            priority
           />
         </Link>
 
@@ -84,13 +88,14 @@ export function Navbar() {
             {servicesOpen && (
               <div className="absolute top-full left-0 mt-2 w-52 rounded-lg border border-border/50 bg-background/95 backdrop-blur-md p-1.5 shadow-xl animate-in fade-in slide-in-from-top-2 duration-150">
                 {SERVICE_LINKS.map((link) => (
-                  <button
-                    key={link.label}
-                    onClick={() => { setServicesOpen(false); openModalEvent(link.modalId) }}
-                    className="block w-full text-left rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground cursor-pointer"
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setServicesOpen(false)}
+                    className="block w-full rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                   >
                     {link.label}
-                  </button>
+                  </Link>
                 ))}
               </div>
             )}
@@ -108,32 +113,34 @@ export function Navbar() {
             </button>
             {industriesOpen && (
               <div className="absolute top-full left-0 mt-2 w-48 rounded-lg border border-border/50 bg-background/95 backdrop-blur-md p-1.5 shadow-xl animate-in fade-in slide-in-from-top-2 duration-150">
-                <button
-                  onClick={() => { setIndustriesOpen(false); openModalEvent('industries') }}
-                  className="block w-full text-left rounded-md px-3 py-2 text-sm font-medium text-cyan-400 transition-colors hover:bg-muted cursor-pointer"
+                <Link
+                  href="/industries"
+                  onClick={() => setIndustriesOpen(false)}
+                  className="block w-full rounded-md px-3 py-2 text-sm font-medium text-cyan-400 transition-colors hover:bg-muted"
                 >
                   {t('industries')}
-                </button>
+                </Link>
                 <div className="my-1 h-px bg-border/50" />
                 {INDUSTRY_LINKS.map((link) => (
-                  <button
-                    key={link.label}
-                    onClick={() => { setIndustriesOpen(false); openModalEvent(link.modalId) }}
-                    className="block w-full text-left rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground cursor-pointer"
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIndustriesOpen(false)}
+                    className="block w-full rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                   >
                     {link.label}
-                  </button>
+                  </Link>
                 ))}
               </div>
             )}
           </div>
 
-          <button onClick={() => openModalEvent('work')} className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap cursor-pointer">
+          <Link href="/work" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap">
             {t('work')}
-          </button>
-          <button onClick={() => openModalEvent('pricing')} className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap cursor-pointer">
+          </Link>
+          <Link href="/pricing" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap">
             {t('pricing')}
-          </button>
+          </Link>
           <Link href="/blog" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap">
             {t('blog')}
           </Link>
@@ -176,44 +183,60 @@ export function Navbar() {
               <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
             </button>
             {mobileServicesOpen && SERVICE_LINKS.map((link) => (
-              <button
-                key={link.label}
-                onClick={() => { setMobileOpen(false); openModalEvent(link.modalId) }}
-                className="rounded-lg px-6 py-2 text-left text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground cursor-pointer"
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="rounded-lg px-6 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
 
             {/* Industries submenu */}
             <button
-              onClick={() => { setMobileOpen(false); openModalEvent('industries') }}
-              className="rounded-lg px-3 py-2.5 text-left text-sm font-medium text-cyan-400 transition-colors hover:bg-muted cursor-pointer"
+              onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
+              className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               {t('industries')}
+              <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${mobileIndustriesOpen ? 'rotate-180' : ''}`} />
             </button>
-            {INDUSTRY_LINKS.map((link) => (
-              <button
-                key={link.label}
-                onClick={() => { setMobileOpen(false); openModalEvent(link.modalId) }}
-                className="rounded-lg px-6 py-2 text-left text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground cursor-pointer"
-              >
-                {link.label}
-              </button>
-            ))}
+            {mobileIndustriesOpen && (
+              <>
+                <Link
+                  href="/industries"
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-lg px-6 py-2 text-sm font-medium text-cyan-400 transition-colors hover:bg-muted"
+                >
+                  {t('industries')}
+                </Link>
+                {INDUSTRY_LINKS.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="rounded-lg px-6 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </>
+            )}
 
-            <button
-              onClick={() => { setMobileOpen(false); openModalEvent('work') }}
-              className="rounded-lg px-3 py-2.5 text-left text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground cursor-pointer"
+            <Link
+              href="/work"
+              onClick={() => setMobileOpen(false)}
+              className="rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               {t('work')}
-            </button>
-            <button
-              onClick={() => { setMobileOpen(false); openModalEvent('pricing') }}
-              className="rounded-lg px-3 py-2.5 text-left text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground cursor-pointer"
+            </Link>
+            <Link
+              href="/pricing"
+              onClick={() => setMobileOpen(false)}
+              className="rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               {t('pricing')}
-            </button>
+            </Link>
             <Link
               href="/blog"
               onClick={() => setMobileOpen(false)}

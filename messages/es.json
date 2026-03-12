@@ -1,7 +1,7 @@
 {
     "HomePage": {
-        "metaTitle": "Diseño de Páginas Web y Automatización con IA | AION",
-        "metaDesc": "Páginas web profesionales listas en 2 semanas. Automatización y marketing con IA que convierte visitantes en clientes. Agenda tu consulta gratis hoy."
+        "metaTitle": "Agencia de Diseño Web y Automatización IA | AION",
+        "metaDesc": "Diseño de páginas web y automatización con IA para pymes. Chatbots WhatsApp, CRM, flujos de trabajo y marketing digital. Consulta gratis hoy."
     },
     "Navbar": {
         "services": "Servicios",
@@ -17,6 +17,7 @@
         "bookCall": "Cotizar",
         "openMenu": "Abrir menú",
         "closeMenu": "Cerrar menú",
+        "logoAriaLabel": "AION Automations - Inicio",
         "dental": "Clínicas Dentales",
         "realEstate": "Inmobiliarias",
         "restaurants": "Restaurantes",
@@ -79,8 +80,8 @@
         "quality": "Calidad garantizada"
     },
     "PricingPage": {
-        "metaTitle": "Servicios y Precios — Web, Automatización y Marketing IA | AION",
-        "metaDesc": "Tres servicios claros: páginas web, automatizaciones IA y marketing digital. Ve los paquetes y precios para cada uno.",
+        "metaTitle": "Precios — Diseño Web y Automatización con IA | AION",
+        "metaDesc": "Paquetes de diseño web profesional, automatización de procesos con IA y marketing digital para pymes. Precios transparentes. Cotiza hoy.",
         "breadcrumbHome": "Inicio",
         "breadcrumbPricing": "Servicios",
         "badge": "Servicios y Precios",
@@ -118,8 +119,8 @@
         "ctaButton": "Agendar Llamada Gratis"
     },
     "IndustriesPage": {
-        "metaTitle": "Industrias — Soluciones Web y Automatización por Sector | AION",
-        "metaDesc": "Soluciones especializadas de diseño web y automatización con IA para clínicas dentales, inmobiliarias, restaurantes, tours, gimnasios, salones, escuelas, veterinarias, abogados y hoteles.",
+        "metaTitle": "Industrias — Soluciones Web y Automatización | AION",
+        "metaDesc": "Diseño web y automatización con IA por industria: dentistas, inmobiliarias, restaurantes, tours, gimnasios, salones, escuelas, veterinarias y más.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
         "badge": "Soluciones por Industria",
@@ -161,7 +162,7 @@
         "ctaButton": "Hablar con un Especialista"
     },
     "DentalPage": {
-        "metaTitle": "Páginas Web para Clínicas Dentales — Diseño y Automatización | AION",
+        "metaTitle": "Web para Dentistas — Diseño y Automatización | AION",
         "metaDesc": "Sitios web profesionales para dentistas que generan pacientes nuevos. Agendamiento en línea, seguimiento por WhatsApp y SEO local.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -195,7 +196,7 @@
         "ctaButton": "Escríbenos por WhatsApp"
     },
     "RealEstatePage": {
-        "metaTitle": "Páginas Web para Inmobiliarias — Diseño y Automatización | AION",
+        "metaTitle": "Web para Inmobiliarias — Diseño y Automatización | AION",
         "metaDesc": "Sitios web para inmobiliarias que captan compradores y dan seguimiento automático. Catálogo de propiedades, CRM y WhatsApp integrado.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -229,7 +230,7 @@
         "ctaButton": "Escríbenos por WhatsApp"
     },
     "RestaurantsPage": {
-        "metaTitle": "Páginas Web para Restaurantes — Menú Digital y Reservaciones | AION",
+        "metaTitle": "Web para Restaurantes — Menú y Reservaciones | AION",
         "metaDesc": "Sitios web para restaurantes con menú digital, sistema de reservaciones en línea y marketing automático. Llena tus mesas todos los días.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -263,7 +264,7 @@
         "ctaButton": "Escríbenos por WhatsApp"
     },
     "ToursPage": {
-        "metaTitle": "Páginas Web para Tours y Turismo — Reservas y Automatización | AION",
+        "metaTitle": "Web para Tours — Reservas y Automatización | AION",
         "metaDesc": "Sitios web para empresas de tours con sistema de reservas en línea, itinerarios digitales y seguimiento automático de viajeros.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -297,7 +298,7 @@
         "ctaButton": "Escríbenos por WhatsApp"
     },
     "GymPage": {
-        "metaTitle": "Páginas Web para Gimnasios — Membresías y Automatización | AION",
+        "metaTitle": "Web para Gimnasios — Membresías y Automatización | AION",
         "metaDesc": "Sitios web para gimnasios con registro de membresías en línea, agenda de clases y seguimiento automático de prospectos.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -331,7 +332,7 @@
         "ctaButton": "Escríbenos por WhatsApp"
     },
     "SalonPage": {
-        "metaTitle": "Páginas Web para Salones de Belleza — Citas y Automatización | AION",
+        "metaTitle": "Web para Salones de Belleza — Citas Online | AION",
         "metaDesc": "Sitios web para salones de belleza con reserva de citas en línea, catálogo de servicios y recordatorios automáticos por WhatsApp.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -365,7 +366,7 @@
         "ctaButton": "Escríbenos por WhatsApp"
     },
     "SchoolPage": {
-        "metaTitle": "Páginas Web para Escuelas — Inscripciones y Automatización | AION",
+        "metaTitle": "Web para Escuelas — Inscripciones Online | AION",
         "metaDesc": "Sitios web para escuelas y academias con inscripciones en línea, catálogo de cursos y portal para padres.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -399,7 +400,7 @@
         "ctaButton": "Escríbenos por WhatsApp"
     },
     "VetPage": {
-        "metaTitle": "Páginas Web para Veterinarias — Citas y Recordatorios | AION",
+        "metaTitle": "Web para Veterinarias — Citas y Recordatorios | AION",
         "metaDesc": "Sitios web para veterinarias con agendamiento de consultas, recordatorios de vacunas por WhatsApp y ficha digital de pacientes.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -433,7 +434,7 @@
         "ctaButton": "Escríbenos por WhatsApp"
     },
     "LegalPage": {
-        "metaTitle": "Páginas Web para Abogados y Contadores — Presencia Profesional | AION",
+        "metaTitle": "Web para Abogados y Contadores | AION",
         "metaDesc": "Sitios web profesionales para despachos de abogados y contadores. Agenda de consultas, calificación de leads y SEO local.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -467,7 +468,7 @@
         "ctaButton": "Escríbenos por WhatsApp"
     },
     "HotelPage": {
-        "metaTitle": "Páginas Web para Hoteles — Reservas Directas y Automatización | AION",
+        "metaTitle": "Web para Hoteles — Reservas y Automatización | AION",
         "metaDesc": "Sitios web para hoteles con motor de reservas directo, galería de habitaciones y confirmaciones automáticas. Sin comisiones de intermediarios.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -532,7 +533,7 @@
         "ctaButton": "Agendar Llamada Gratis"
     },
     "AboutPage": {
-        "metaTitle": "Nosotros — AION Automations | Agencia de Diseño Web y Automatización IA",
+        "metaTitle": "Sobre Nosotros — Agencia Diseño Web e IA | AION",
         "metaDesc": "Somos AION Automations: una agencia especializada en páginas web que venden y automatización con IA para negocios de servicios.",
         "breadcrumbHome": "Inicio",
         "breadcrumbAbout": "Nosotros",
@@ -558,8 +559,8 @@
         "ctaButton": "Contactar Ahora"
     },
     "ContactPage": {
-        "metaTitle": "Contacto — Cotiza tu Página Web y Automatización | AION",
-        "metaDesc": "Contáctanos para cotizar tu página web, automatización con IA o seguimiento de leads. Respuesta en menos de 24 horas.",
+        "metaTitle": "Cotiza Gratis — Diseño Web y Automatización con IA | AION",
+        "metaDesc": "Solicita una consulta gratis para diseño web profesional, automatización con IA o chatbots WhatsApp. Respuesta en menos de 24 horas.",
         "breadcrumbHome": "Inicio",
         "breadcrumbContact": "Contacto",
         "badge": "Contacto",
@@ -599,6 +600,30 @@
         "post4Title": "SEO local: Cómo aparecer en Google cuando buscan tu servicio",
         "post4Desc": "Guía práctica de SEO local para negocios de servicios. Optimiza tu presencia en Google Maps y búsqueda local.",
         "post4Date": "5 Feb 2026",
+        "post1_s1Title": "Qué significa realmente la automatización con IA para negocios de servicios",
+        "post1_s1Text": "La automatización con IA no se trata de reemplazar personas, sino de eliminar las tareas repetitivas que consumen tu tiempo. Para negocios de servicios como clínicas dentales, inmobiliarias y restaurantes, esto significa automatizar recordatorios de citas, seguimiento de prospectos, generación de facturas y atención al cliente. En lugar de contratar personal extra, un sistema de IA trabaja las 24 horas, nunca olvida un seguimiento y responde consultas en segundos. El resultado: menos oportunidades perdidas y más ingresos con el mismo equipo.",
+        "post1_s2Title": "Las 3 herramientas de IA que impulsan negocios en 2026",
+        "post1_s2Text": "Tres tecnologías están transformando a las pymes ahora mismo. Primero, chatbots con IA en WhatsApp y web que califican prospectos y agendan citas automáticamente. Segundo, plataformas de automatización como n8n y Make.com que conectan tu CRM, email, calendario y facturación en procesos fluidos. Tercero, herramientas de marketing con IA que crean campañas personalizadas, optimizan inversión en publicidad y predicen qué prospectos tienen más probabilidad de convertir. Juntas, estas herramientas pueden ahorrarte de 15 a 20 horas semanales de trabajo manual.",
+        "post1_s3Title": "Cómo empezar a automatizar tu negocio hoy",
+        "post1_s3Text": "No necesitas automatizar todo de golpe. Empieza por el área de mayor impacto: generalmente el tiempo de respuesta a prospectos. Los estudios muestran que responder a un nuevo prospecto en menos de 5 minutos aumenta la conversión un 400 por ciento. Configura un chatbot en WhatsApp o una secuencia de emails automática que confirme la recepción y haga preguntas de calificación. Después, conecta tu CRM para organizar prospectos automáticamente y disparar secuencias de seguimiento. La mayoría de los negocios ven retorno en el primer mes.",
+        "post2_s1Title": "Qué determina el costo de una página web profesional",
+        "post2_s1Text": "El precio de una página web depende de cuatro factores principales: el número de páginas, la complejidad de funcionalidades, el nivel de diseño personalizado y las necesidades de mantenimiento. Un sitio informativo de 5 páginas cuesta significativamente menos que una plataforma de e-commerce con pasarela de pago, inventario y cuentas de usuario. Otros factores incluyen animaciones personalizadas, soporte multilingüe, integraciones con CRM, sistemas de reservas y optimización SEO. Entender estos factores te ayuda a invertir inteligentemente sin pagar de más.",
+        "post2_s2Title": "Precios típicos de páginas web en 2026",
+        "post2_s2Text": "En 2026, las páginas web profesionales para pymes van desde 497 hasta 4,997 USD según el alcance. Un sitio básico de 3 a 5 páginas con diseño responsive, SEO básico y formulario de contacto arranca en 497 USD. Un paquete de crecimiento con 8 a 15 páginas, SEO avanzado, blog, chat de WhatsApp y conexión CRM cuesta entre 1,497 y 2,497 USD. Soluciones empresariales con funcionalidad personalizada, e-commerce, automatizaciones y soporte multilingüe inician en 2,997 USD. Siempre pregunta qué incluye el mantenimiento, hosting y actualizaciones.",
+        "post2_s3Title": "Cómo elegir la inversión correcta para tu negocio",
+        "post2_s3Text": "El presupuesto correcto depende de lo que tu página web necesita lograr. Si tu objetivo es solo establecer credibilidad en línea, un sitio básico funciona. Si necesitas que tu sitio genere prospectos y reservas activamente, invierte en el paquete de crecimiento con SEO, automatización y optimización de conversión. Calcula el valor de por vida de un solo cliente — si un cliente vale 500 USD o más, una página web que traiga tan solo 2 clientes nuevos al mes se paga sola rápidamente. Piensa en tu página web como un vendedor que trabaja las 24 horas, los 7 días de la semana.",
+        "post3_s1Title": "Por qué WhatsApp es tu canal de ventas más poderoso",
+        "post3_s1Text": "WhatsApp tiene más de 2 mil millones de usuarios en el mundo, y en Latinoamérica es el canal principal de comunicación del 96 por ciento de los usuarios de internet. Tus clientes ya están en WhatsApp — lo revisan decenas de veces al día. Cuando un cliente potencial te envía un mensaje, espera una respuesta rápida. El problema es que la mayoría de los negocios tardan horas o incluso días en responder, y para entonces el prospecto ya contactó a la competencia. Un agente de IA en WhatsApp cambia esto por completo al responder instantáneamente, las 24 horas.",
+        "post3_s2Title": "Qué puede hacer un agente de IA en WhatsApp por tu negocio",
+        "post3_s2Text": "Un agente de IA moderno en WhatsApp hace mucho más que enviar respuestas automáticas. Puede mantener conversaciones naturales, responder preguntas frecuentes sobre tus servicios y precios, calificar prospectos haciendo las preguntas correctas, agendar citas directamente en tu calendario, enviar links de pago y dar seguimiento a prospectos que no convirtieron en la primera interacción. La IA aprende de tu contexto de negocio — tus servicios, precios, disponibilidad y tono — para que las respuestas se sientan personales y profesionales, no robóticas.",
+        "post3_s3Title": "Resultados reales de la automatización en WhatsApp",
+        "post3_s3Text": "Los negocios que implementan automatización con IA en WhatsApp ven típicamente que los tiempos de respuesta bajan de horas a segundos, las tasas de calificación de prospectos mejoran un 60 por ciento, y las inasistencias a citas se reducen un 35 por ciento gracias a recordatorios automáticos. Una clínica dental redujo la carga de trabajo de su recepcionista en un 70 por ciento mientras agendaba más citas. Una inmobiliaria capturó 3 veces más prospectos desde su página web al agregar un botón de WhatsApp conectado a un agente de IA.",
+        "post4_s1Title": "Qué es el SEO local y por qué importa para tu negocio",
+        "post4_s1Text": "El SEO local es la práctica de optimizar tu presencia en línea para que tu negocio aparezca cuando personas cercanas buscan tus servicios. Cuando alguien busca dentista cerca de mí o mejor restaurante en mi zona, Google muestra un mapa con tres negocios locales — esto se llama el Local Pack, y aparecer aquí puede generar el 50 por ciento o más del tráfico de tu sitio web. A diferencia de los anuncios pagados, el SEO local trae tráfico gratuito y consistente de personas que buscan activamente lo que ofreces.",
+        "post4_s2Title": "Los 5 pilares del éxito en SEO local",
+        "post4_s2Text": "Cinco elementos determinan tu ranking en búsquedas locales. Primero, un Perfil de Negocio de Google completo y optimizado con horarios precisos, servicios, fotos y categorías. Segundo, NAP consistente — tu Nombre, Dirección y Teléfono deben ser idénticos en todos los directorios y tu sitio web. Tercero, reseñas de clientes — los negocios con más reseñas positivas rankean más alto y convierten más visitantes. Cuarto, contenido local en tu sitio web que mencione las zonas que atiendes. Quinto, backlinks de calidad de directorios locales, cámaras de comercio y asociaciones de tu industria.",
+        "post4_s3Title": "Acciones rápidas: rankea más alto en tu ciudad este mes",
+        "post4_s3Text": "Empieza con estas acciones hoy. Reclama y completa tu Perfil de Negocio de Google — agrega todos tus servicios, sube 10 o más fotos de alta calidad, escribe una descripción rica en palabras clave y define tu área de servicio. Pide a tus 5 mejores clientes que dejen una reseña en Google esta semana. Asegúrate de que tu sitio web tenga el nombre de tu ciudad en el título de la página, la meta descripción y al menos un encabezado H1. Crea una página dedicada para cada servicio en cada ciudad que atiendas. Agrega schema markup a tu sitio para que Google entienda tu tipo de negocio, ubicación y servicios.",
         "ctaTitle": "¿Quieres recibir tips directamente?",
         "ctaDesc": "Síguenos en redes sociales para más contenido sobre automatización e IA.",
         "ctaButton": "Seguir en Instagram"
@@ -614,7 +639,12 @@
         "placeholderParagraph3": "Si tienes preguntas o quieres saber más sobre este tema, contáctanos directamente y te asesoramos sin compromiso.",
         "ctaTitle": "¿Necesitas ayuda con tu proyecto?",
         "ctaDesc": "Agenda una llamada gratuita y te asesoramos.",
-        "ctaButton": "Contactar"
+        "ctaButton": "Contactar",
+        "relatedLinks": "Servicios relacionados:",
+        "linkWeb": "Diseño Web →",
+        "linkAuto": "Automatización IA →",
+        "linkPricing": "Ver Precios →",
+        "postNotFound": "Artículo no encontrado"
     },
     "ServicePillars": {
         "subtitle": "Nuestros Servicios",
@@ -711,7 +741,10 @@
         "role7": "Gerente Comercial, Estética Bella Vita",
         "quote8": "Lanzamos la web en tiempo récord y en la primera semana ya teníamos 35 consultas nuevas. El soporte post-lanzamiento es excelente.",
         "name8": "Diego Navarro",
-        "role8": "Fundador, Bufete Legal Navarro"
+        "role8": "Fundador, Bufete Legal Navarro",
+        "prevTestimonial": "Testimonio anterior",
+        "nextTestimonial": "Testimonio siguiente",
+        "goToTestimonial": "Ir al testimonio"
     },
     "ContentBlock": {
         "title": "Páginas web, automatizaciones y marketing IA a tu medida.",
@@ -782,8 +815,8 @@
         "retry": "Intentar de nuevo"
     },
     "WebServicePage": {
-        "metaTitle": "Páginas Web Profesionales — Paquetes de Diseño Web | AION",
-        "metaDesc": "Sitios web profesionales que convierten visitantes en clientes. Desde $497 USD. Diseño responsive, SEO y entrega rápida.",
+        "metaTitle": "Diseño de Páginas Web Profesionales para Empresas | AION",
+        "metaDesc": "Páginas web profesionales que generan clientes. Desde $497 USD. Diseño responsive, SEO incluido y entrega rápida. Cotiza tu página web hoy.",
         "breadcrumbHome": "Inicio",
         "breadcrumbServices": "Servicios",
         "breadcrumbCurrent": "Páginas Web",
@@ -835,8 +868,8 @@
         "ctaButton": "Agendar Llamada Gratis"
     },
     "AutomationsServicePage": {
-        "metaTitle": "Automatizaciones con IA — Paquetes de Automatización | AION",
-        "metaDesc": "Automatiza tu negocio con IA: WhatsApp, CRM, seguimiento de leads y flujos de trabajo. Desde $997 USD.",
+        "metaTitle": "Automatización con IA — Chatbots WhatsApp | AION",
+        "metaDesc": "Automatización de procesos con IA para tu negocio. Chatbots WhatsApp, CRM automatizado, seguimiento de leads y workflows. Desde $997 USD.",
         "breadcrumbHome": "Inicio",
         "breadcrumbServices": "Servicios",
         "breadcrumbCurrent": "Automatizaciones IA",
@@ -995,5 +1028,56 @@
         "faq9A": "Sí. Usamos hosting con certificado SSL, servidores seguros y cumplimos con las mejores prácticas de protección de datos. Tu información y la de tus clientes siempre está protegida.",
         "faq10Q": "¿Puedo ver ejemplos de proyectos anteriores?",
         "faq10A": "Sí. Puedes ver nuestro portafolio con proyectos reales de páginas web, automatizaciones y campañas de marketing que hemos realizado para clientes de diferentes industrias."
+    },
+    "ScrollToTop": {
+        "ariaLabel": "Volver arriba"
+    },
+    "InternalNav": {
+        "explore": "Explorar:",
+        "ariaLabel": "Páginas relacionadas"
+    },
+    "PrivacyPage": {
+        "metaTitle": "Política de Privacidad | AION Automations",
+        "metaDesc": "Conoce cómo AION Automations protege tu información personal y la de tus clientes. Política de privacidad y protección de datos.",
+        "breadcrumbHome": "Inicio",
+        "breadcrumbPrivacy": "Privacidad",
+        "title": "Política de Privacidad",
+        "lastUpdated": "Última actualización: marzo 2026",
+        "intro": "En AION Automations nos tomamos en serio la protección de tu información personal. Esta política explica qué datos recopilamos, cómo los usamos y cómo los protegemos.",
+        "section1Title": "1. Información que recopilamos",
+        "section1Text": "Recopilamos únicamente la información que nos proporcionas voluntariamente a través de nuestro formulario de contacto: nombre, correo electrónico, empresa (opcional) y el mensaje que nos envías. No recopilamos datos de navegación con fines publicitarios.",
+        "section2Title": "2. Cómo usamos tu información",
+        "section2Text": "Usamos tu información exclusivamente para responder a tu consulta, enviarte la cotización solicitada y comunicarnos contigo sobre el proyecto. Nunca vendemos, alquilamos ni compartimos tu información con terceros para fines de marketing.",
+        "section3Title": "3. Protección de datos",
+        "section3Text": "Tu información se transmite mediante conexión cifrada (SSL/TLS). Nuestros servidores están protegidos con las mejores prácticas de seguridad. Solo el personal autorizado tiene acceso a los datos de contacto.",
+        "section4Title": "4. Cookies",
+        "section4Text": "Nuestro sitio utiliza cookies esenciales para el funcionamiento del sitio y cookies de análisis (Vercel Analytics) para mejorar la experiencia. No usamos cookies de rastreo publicitario.",
+        "section5Title": "5. Tus derechos",
+        "section5Text": "Puedes solicitar acceso, corrección o eliminación de tu información personal en cualquier momento enviando un correo a aionautomations@gmail.com.",
+        "section6Title": "6. Contacto",
+        "section6Text": "Si tienes preguntas sobre esta política, contáctanos en aionautomations@gmail.com."
+    },
+    "TermsPage": {
+        "metaTitle": "Términos de Servicio | AION Automations",
+        "metaDesc": "Términos y condiciones de uso de los servicios de AION Automations. Diseño web, automatización con IA y marketing digital.",
+        "breadcrumbHome": "Inicio",
+        "breadcrumbTerms": "Términos",
+        "title": "Términos de Servicio",
+        "lastUpdated": "Última actualización: marzo 2026",
+        "intro": "Al usar los servicios de AION Automations, aceptas los siguientes términos y condiciones.",
+        "section1Title": "1. Servicios",
+        "section1Text": "AION Automations ofrece servicios de diseño de páginas web, automatización con inteligencia artificial y marketing digital. El alcance de cada proyecto se define en la propuesta o cotización acordada entre ambas partes.",
+        "section2Title": "2. Proceso de trabajo",
+        "section2Text": "Cada proyecto comienza con una consulta gratuita. Tras aceptar la cotización, se establece un timeline de entrega. Revisiones y cambios se incluyen según lo especificado en el paquete contratado.",
+        "section3Title": "3. Pagos",
+        "section3Text": "Los pagos se realizan según los términos acordados en la cotización. Aceptamos transferencias bancarias y pagos electrónicos. Los detalles específicos se proporcionan al inicio de cada proyecto.",
+        "section4Title": "4. Propiedad intelectual",
+        "section4Text": "Una vez completado el pago total, el cliente recibe los derechos completos sobre el diseño y contenido creado específicamente para su proyecto. AION Automations se reserva el derecho de mostrar el trabajo en su portafolio.",
+        "section5Title": "5. Soporte y mantenimiento",
+        "section5Text": "Todos los paquetes incluyen un período de soporte técnico posterior a la entrega. Planes Growth y Enterprise incluyen soporte prioritario continuo según lo especificado en la propuesta.",
+        "section6Title": "6. Limitación de responsabilidad",
+        "section6Text": "AION Automations se compromete a entregar trabajo de calidad profesional según lo acordado. No somos responsables de resultados de negocio específicos, ya que estos dependen de múltiples factores fuera de nuestro control.",
+        "section7Title": "7. Contacto",
+        "section7Text": "Para preguntas sobre estos términos, contáctanos en aionautomations@gmail.com."
     }
 }

@@ -90,7 +90,7 @@ export function TestimonialsSection() {
         {/* Left arrow */}
         <button
           onClick={prev}
-          aria-label="Anterior testimonio"
+          aria-label={t("prevTestimonial")}
           className="absolute left-0 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-cyan-500/30 bg-background/80 text-cyan-400 shadow-lg backdrop-blur-sm transition hover:border-cyan-400 hover:bg-cyan-500/10 hover:scale-110 active:scale-95"
         >
           <ChevronLeft className="h-5 w-5" />
@@ -99,7 +99,7 @@ export function TestimonialsSection() {
         {/* Right arrow */}
         <button
           onClick={next}
-          aria-label="Siguiente testimonio"
+          aria-label={t("nextTestimonial")}
           className="absolute right-0 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-cyan-500/30 bg-background/80 text-cyan-400 shadow-lg backdrop-blur-sm transition hover:border-cyan-400 hover:bg-cyan-500/10 hover:scale-110 active:scale-95"
         >
           <ChevronRight className="h-5 w-5" />
@@ -156,7 +156,7 @@ export function TestimonialsSection() {
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              aria-label={`Ir a testimonio ${i + 1}`}
+              aria-label={`${t("goToTestimonial")} ${i + 1}`}
               className={`h-1.5 rounded-full transition-all duration-300 ${
                 i === current
                   ? "w-5 bg-cyan-400"

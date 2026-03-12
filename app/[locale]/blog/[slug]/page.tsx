@@ -11,11 +11,11 @@ import { ArrowLeft } from 'lucide-react';
 
 /* ─── Static blog post data map ─── */
 
-const BLOG_POSTS: Record<string, { titleKey: string; date: string; namespace: string }> = {
-  'ai-automation-2026': { titleKey: 'post1Title', date: '2026-02-28', namespace: 'BlogPage' },
-  'website-cost-guide': { titleKey: 'post2Title', date: '2026-02-20', namespace: 'BlogPage' },
-  'whatsapp-ai-automation': { titleKey: 'post3Title', date: '2026-02-12', namespace: 'BlogPage' },
-  'local-seo-guide': { titleKey: 'post4Title', date: '2026-02-05', namespace: 'BlogPage' },
+const BLOG_POSTS: Record<string, { titleKey: string; date: string; namespace: string; prefix: string; sections: number }> = {
+  'ai-automation-2026': { titleKey: 'post1Title', date: '2026-02-28', namespace: 'BlogPage', prefix: 'post1', sections: 3 },
+  'website-cost-guide': { titleKey: 'post2Title', date: '2026-02-20', namespace: 'BlogPage', prefix: 'post2', sections: 3 },
+  'whatsapp-ai-automation': { titleKey: 'post3Title', date: '2026-02-12', namespace: 'BlogPage', prefix: 'post3', sections: 3 },
+  'local-seo-guide': { titleKey: 'post4Title', date: '2026-02-05', namespace: 'BlogPage', prefix: 'post4', sections: 3 },
 };
 
 /* ─── Static params for SSG ─── */
@@ -34,7 +34,10 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const post = BLOG_POSTS[slug];
 
-  if (!post) return { title: 'Post not found' };
+  if (!post) {
+    const tPost = await getTranslations({ locale, namespace: 'BlogPostPage' });
+    return { title: tPost('postNotFound') };
+  }
 
   const t = await getTranslations({ locale, namespace: post.namespace });
   const title = t(post.titleKey);
@@ -64,19 +67,20 @@ export default async function BlogPostPage({
 
   /* Fallback for unknown slugs */
   if (!post) {
+    const tPost = await getTranslations({ locale, namespace: 'BlogPostPage' });
     return (
       <main id="main-content" className="relative min-h-screen animate-page-in">
         <div className="relative z-10">
           <Navbar />
           <section className="pt-32 pb-16 md:pt-40 md:pb-20">
             <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
-              <h1 className="text-4xl font-bold text-foreground">Post not found</h1>
+              <h1 className="text-4xl font-bold text-foreground">{tPost('postNotFound')}</h1>
               <Link
                 href="/blog"
                 className="mt-6 inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors"
               >
                 <ArrowLeft className="h-4 w-4" />
-                Back to blog
+                {tPost('backToBlog')}
               </Link>
             </div>
           </section>
@@ -162,19 +166,38 @@ export default async function BlogPostPage({
             {/* Divider */}
             <div className="my-10 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
 
-            {/* Placeholder article content */}
+            {/* Article content */}
             <div className="prose prose-invert prose-cyan max-w-none text-foreground">
-              <p className="text-muted-foreground leading-relaxed">
-                {tPost('placeholderParagraph1')}
-              </p>
+              {Array.from({ length: post.sections }, (_, i) => (
+                <section key={i} className={i > 0 ? 'mt-10' : ''}>
+                  <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+                    {t(`${post.prefix}_s${i + 1}Title`)}
+                  </h2>
+                  <p className="mt-4 text-muted-foreground leading-relaxed">
+                    {t(`${post.prefix}_s${i + 1}Text`)}
+                  </p>
+                </section>
+              ))}
 
-              <p className="mt-6 text-muted-foreground leading-relaxed">
-                {tPost('placeholderParagraph2')}
-              </p>
-
-              <p className="mt-6 text-muted-foreground leading-relaxed">
-                {tPost('placeholderParagraph3')}
-              </p>
+              {/* Internal links */}
+              <div className="mt-12 rounded-xl border border-border/50 bg-white/[0.02] p-6">
+                <p className="text-sm font-semibold text-foreground">
+                  {tPost('relatedLinks')}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-3">
+                  <Link href="/services/web" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                    {tPost('linkWeb')}
+                  </Link>
+                  <span className="text-border">·</span>
+                  <Link href="/services/automations" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                    {tPost('linkAuto')}
+                  </Link>
+                  <span className="text-border">·</span>
+                  <Link href="/pricing" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                    {tPost('linkPricing')}
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </article>

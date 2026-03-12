@@ -8,7 +8,7 @@ import { FloatingSocialButtons } from "@/components/floating-social-buttons"
 import { ScrollRevealInit } from "@/components/scroll-reveal-init"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { CursorGlow } from "@/components/cursor-glow"
-import { siteUrl } from "@/lib/seo"
+import { siteUrl, faqSchema } from "@/lib/seo"
 
 export async function generateMetadata({
   params,
@@ -26,23 +26,52 @@ export async function generateMetadata({
       languages: {
         en: `${siteUrl}/en`,
         es: `${siteUrl}/es`,
-        "x-default": siteUrl,
+        "x-default": `${siteUrl}/en`,
       },
     },
   }
 }
 
-const ServicePillars = dynamic(() => import("@/components/service-pillars").then(m => ({ default: m.ServicePillars })))
-const AboutUsPreview = dynamic(() => import("@/components/about-us-preview").then(m => ({ default: m.AboutUsPreview })))
-const CaseStudies = dynamic(() => import("@/components/case-studies").then(m => ({ default: m.CaseStudies })))
-const TestimonialsSection = dynamic(() => import("@/components/testimonials-section").then(m => ({ default: m.TestimonialsSection })))
-const HomeFaq = dynamic(() => import("@/components/home-faq").then(m => ({ default: m.HomeFaq })))
-const FinalCTA = dynamic(() => import("@/components/final-cta").then(m => ({ default: m.FinalCTA })))
+const SectionLoader = () => <div className="min-h-[200px]" />
+
+const ServicePillars = dynamic(() => import("@/components/service-pillars").then(m => ({ default: m.ServicePillars })), { loading: SectionLoader })
+const AboutUsPreview = dynamic(() => import("@/components/about-us-preview").then(m => ({ default: m.AboutUsPreview })), { loading: SectionLoader })
+const CaseStudies = dynamic(() => import("@/components/case-studies").then(m => ({ default: m.CaseStudies })), { loading: SectionLoader })
+const TestimonialsSection = dynamic(() => import("@/components/testimonials-section").then(m => ({ default: m.TestimonialsSection })), { loading: SectionLoader })
+const HomeFaq = dynamic(() => import("@/components/home-faq").then(m => ({ default: m.HomeFaq })), { loading: SectionLoader })
+const FinalCTA = dynamic(() => import("@/components/final-cta").then(m => ({ default: m.FinalCTA })), { loading: SectionLoader })
 const GlobalModals = dynamic(() => import("@/components/global-modals").then(m => ({ default: m.GlobalModals })))
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: "HomeFaq" })
+
+  const faqItems = [
+    { question: t("faq1Q"), answer: t("faq1A") },
+    { question: t("faq2Q"), answer: t("faq2A") },
+    { question: t("faq3Q"), answer: t("faq3A") },
+    { question: t("faq4Q"), answer: t("faq4A") },
+    { question: t("faq5Q"), answer: t("faq5A") },
+    { question: t("faq6Q"), answer: t("faq6A") },
+    { question: t("faq7Q"), answer: t("faq7A") },
+    { question: t("faq8Q"), answer: t("faq8A") },
+    { question: t("faq9Q"), answer: t("faq9A") },
+    { question: t("faq10Q"), answer: t("faq10A") },
+  ]
+
   return (
     <main id="main-content" className="relative min-h-screen animate-page-in">
+      {/* FAQ rich snippet schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema(faqItems)),
+        }}
+      />
       {/* Cosmic space background */}
       <div className="cosmic-bg" aria-hidden="true">
         <div className="cosmic-bg-base" />

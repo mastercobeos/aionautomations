@@ -18,19 +18,25 @@ export const organizationSchema = {
   name: "AION Automations",
   url: siteUrl,
   description:
-    "Agencia de diseño de páginas web, automatización y marketing con inteligencia artificial",
-  logo: `${siteUrl}/LOGO.svg`,
-  image: `${siteUrl}/LOGO.svg`,
+    "Web design agency and AI automation for small businesses. Custom websites, WhatsApp chatbots, workflow automation, and digital marketing. Agencia de diseño web y automatización con IA para pymes.",
+  logo: `${siteUrl}/favicon.png`,
+  image: `${siteUrl}/favicon.png`,
   telephone: process.env.NEXT_PUBLIC_PHONE || "+52 341 168 7566",
   email: "aionautomations@gmail.com",
   priceRange: "$$",
   serviceType: [
+    "Web Design",
+    "Custom Website Development",
+    "AI Automation Agency",
+    "Business Process Automation",
+    "WhatsApp Chatbot Development",
+    "AI Marketing",
+    "Ecommerce Website Design",
+    "Workflow Automation",
     "Diseño de páginas web",
     "Automatización con IA",
+    "Chatbot para empresas",
     "Marketing digital con IA",
-    "Web Design",
-    "AI Automation",
-    "AI Marketing",
   ],
   areaServed: [
     { "@type": "Continent", name: "South America" },
@@ -40,20 +46,41 @@ export const organizationSchema = {
   availableLanguage: ["Spanish", "English"],
   knowsAbout: [
     "Web Design",
+    "Custom Website Development",
     "AI Automation",
+    "Business Process Automation",
     "Lead Generation",
     "CRM Integration",
+    "CRM Automation",
     "WhatsApp Business Automation",
+    "WhatsApp Chatbot Development",
     "Digital Marketing",
+    "AI Chatbot Development",
+    "Workflow Automation",
+    "Ecommerce Website Design",
+    "Small Business Web Design",
+    "SEO Optimization",
+    "Landing Page Design",
+    "n8n Automation",
+    "Make.com Automation",
   ],
   sameAs: [
     process.env.NEXT_PUBLIC_INSTAGRAM_URL || "",
     process.env.NEXT_PUBLIC_FACEBOOK_PAGE_URL || "",
   ].filter(Boolean),
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday", "Tuesday", "Wednesday", "Thursday",
+      "Friday", "Saturday", "Sunday",
+    ],
+    opens: "00:00",
+    closes: "23:59",
+  },
   potentialAction: {
-    "@type": "ContactAction",
-    target: `${siteUrl}/#contact`,
-    "http://schema.org/contactType": "customer service",
+    "@type": "CommunicateAction",
+    target: `${siteUrl}/en/contact`,
+    name: "Request a free consultation",
   },
 };
 
@@ -64,14 +91,9 @@ export const websiteSchema = (locale: string) => ({
   url: siteUrl,
   description:
     locale === "es"
-      ? "Páginas web, automatizaciones y marketing IA. Diseño web, automatización de procesos y marketing con inteligencia artificial."
-      : "Web pages, automations and AI marketing. Website design, process automation and artificial intelligence marketing.",
+      ? "Agencia de diseño web profesional y automatización con IA para pymes. Chatbots WhatsApp, CRM, flujos de trabajo automatizados y marketing digital con inteligencia artificial."
+      : "Professional web design agency and AI automation for small businesses. WhatsApp chatbots, CRM, workflow automation, and AI-powered digital marketing.",
   inLanguage: locale === "es" ? "es" : "en",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: { "@type": "EntryPoint", urlTemplate: `${siteUrl}/${locale}#contact` },
-    "query-input": "required name=search_term_string",
-  },
 });
 
 /** Servicios principales para SEO y schema (tres pilares) */
@@ -84,11 +106,11 @@ export const coreServices = {
 export const serviceSchema = (locale: string) => ({
   "@context": "https://schema.org",
   "@type": "Service",
-  name: locale === "es" ? "Páginas Web, Automatizaciones y Marketing IA" : "Web Pages, Automations & AI Marketing",
+  name: locale === "es" ? "Diseño Web, Automatización con IA y Marketing Digital" : "Web Design, AI Automation & Digital Marketing",
   description:
     locale === "es"
-      ? "Diseño de páginas web profesionales, automatizaciones a medida y marketing con inteligencia artificial."
-      : "Professional web page design, custom automations, and artificial intelligence marketing.",
+      ? "Diseño de páginas web profesionales para pymes. Automatización de procesos con IA, chatbots WhatsApp, integración CRM y marketing digital con inteligencia artificial."
+      : "Professional web design for small businesses. AI process automation, WhatsApp chatbots, CRM integration, and AI-powered digital marketing.",
   provider: {
     "@type": "ProfessionalService",
     "@id": `${siteUrl}/#organization`,
@@ -182,7 +204,7 @@ export function blogPostSchema(opts: {
     url: `${siteUrl}/${opts.locale}/blog/${opts.slug}`,
     datePublished: opts.datePublished,
     dateModified: opts.dateModified || opts.datePublished,
-    image: opts.image || `${siteUrl}/LOGO.svg`,
+    image: opts.image || `${siteUrl}/favicon.png`,
     inLanguage: opts.locale === "es" ? "es" : "en",
     author: {
       "@type": "ProfessionalService",
@@ -193,7 +215,7 @@ export function blogPostSchema(opts: {
       "@type": "ProfessionalService",
       "@id": `${siteUrl}/#organization`,
       name: "AION Automations",
-      logo: { "@type": "ImageObject", url: `${siteUrl}/LOGO.svg` },
+      logo: { "@type": "ImageObject", url: `${siteUrl}/favicon.png` },
     },
   };
 }
@@ -220,4 +242,6 @@ export const pageRoutes = [
   "/about",
   "/contact",
   "/blog",
+  "/privacy",
+  "/terms",
 ] as const;

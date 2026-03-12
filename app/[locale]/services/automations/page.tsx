@@ -7,6 +7,7 @@ import { Breadcrumbs } from '@/components/breadcrumbs';
 import { FaqAccordion } from '@/components/faq-accordion';
 import { PageSchema } from '@/components/page-schema';
 import { FloatingSocialButtons } from '@/components/floating-social-buttons';
+import { InternalNav } from '@/components/internal-nav';
 import { webPageSchema, breadcrumbSchema, faqSchema, siteUrl } from '@/lib/seo';
 import { Link } from '@/i18n/routing';
 
@@ -192,6 +193,7 @@ export default async function AutomationsServicePage({
           </div>
         </section>
 
+        <InternalNav locale={locale} exclude={['/services/automations']} />
         <Footer />
       </div>
 

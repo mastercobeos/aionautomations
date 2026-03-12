@@ -10,6 +10,7 @@ import { FloatingSocialButtons } from '@/components/floating-social-buttons';
 import { MessageCircle, Check } from 'lucide-react';
 import { siteConfig } from "@/lib/site-config"
 import { Link } from '@/i18n/routing';
+import { InternalNav } from '@/components/internal-nav';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -108,6 +109,7 @@ export default async function SalonIndustryPage({ params }: { params: Promise<{ 
         </div>
       </section>
 
+      <InternalNav locale={locale} exclude={['/industries']} />
       <Footer />
       <FloatingSocialButtons />
       <PageSchema schemas={[

@@ -6,6 +6,7 @@ import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { PageSchema } from '@/components/page-schema';
 import { FloatingSocialButtons } from '@/components/floating-social-buttons';
+import { InternalNav } from '@/components/internal-nav';
 import { webPageSchema, breadcrumbSchema, siteUrl } from '@/lib/seo';
 import { ArrowRight } from 'lucide-react';
 
@@ -163,6 +164,7 @@ export default async function WorkPage({
           </div>
         </section>
 
+        <InternalNav locale={locale} exclude={['/blog']} />
         <Footer />
       </div>
 

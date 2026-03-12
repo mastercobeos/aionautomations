@@ -8,11 +8,6 @@ export default function robots() {
         allow: "/",
         disallow: ["/api/", "/*/demo-buttons", "/*/scroll-preview"],
       },
-      {
-        userAgent: "Googlebot",
-        allow: "/",
-        disallow: ["/api/", "/*/demo-buttons", "/*/scroll-preview"],
-      },
     ],
     sitemap: `${siteUrl}/sitemap.xml`,
     host: siteUrl,

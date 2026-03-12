@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Instagram, Facebook, MessageCircle } from 'lucide-react';
+import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { siteConfig } from '@/lib/site-config';
 
@@ -12,9 +13,11 @@ export function Footer() {
         {/* Brand + tagline */}
         <div className="reveal mb-10 text-center">
           <Link href="/" className="inline-flex items-center">
-            <img
+            <Image
               src="/LOGO.svg"
               alt="AION Automations"
+              width={120}
+              height={80}
               className="h-16 w-auto md:h-20"
             />
           </Link>
@@ -30,9 +33,9 @@ export function Footer() {
         <div className="grid gap-8 border-t border-border/50 pt-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Services */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground">
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-foreground">
               {t('services')}
-            </h3>
+            </h2>
             <nav className="mt-4 flex flex-col gap-3" aria-label={t('services')}>
               <Link href="/services/web" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
                 {t('serviceWeb')}
@@ -48,9 +51,9 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground">
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-foreground">
               {t('company')}
-            </h3>
+            </h2>
             <nav className="mt-4 flex flex-col gap-3" aria-label={t('company')}>
               <Link href="/about" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
                 {t('aboutUs')}
@@ -75,9 +78,9 @@ export function Footer() {
 
           {/* Social */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground">
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-foreground">
               {t('followUs')}
-            </h3>
+            </h2>
             <div className="mt-4 flex gap-3">
               <a
                 href={siteConfig.instagram.url}
@@ -111,16 +114,16 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground">
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-foreground">
               {t('legal')}
-            </h3>
+            </h2>
             <nav className="mt-4 flex flex-col gap-3" aria-label={t('legal')}>
-              <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+              <Link href="/privacy" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
                 {t('privacy')}
-              </a>
-              <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+              </Link>
+              <Link href="/terms" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
                 {t('terms')}
-              </a>
+              </Link>
             </nav>
           </div>
         </div>
