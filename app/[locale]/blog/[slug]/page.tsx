@@ -45,7 +45,7 @@ export async function generateMetadata({
   const title = t(post.titleKey);
 
   return {
-    title: `${title} | AION Blog`,
+    title,
     description: t(post.titleKey.replace('Title', 'Desc')),
     alternates: {
       canonical: `${siteUrl}/${locale}/blog/${slug}`,
