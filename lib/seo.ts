@@ -3,7 +3,7 @@
  * Set NEXT_PUBLIC_SITE_URL in .env.local (e.g. https://www.aionautomations.com)
  */
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://www.aionautomations.com";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://aionautomations.io";
 
 export const defaultLocale = "en";
 export const locales = ["en", "es"] as const;
