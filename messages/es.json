@@ -1,6 +1,6 @@
 {
     "HomePage": {
-        "metaTitle": "Agencia de Diseño Web y Automatización IA | AION",
+        "metaTitle": "Diseño Web y Automatización IA | AION",
         "metaDesc": "Diseño de páginas web y automatización con IA para pymes. Chatbots WhatsApp, CRM, flujos de trabajo y marketing digital. Consulta gratis hoy."
     },
     "Navbar": {
@@ -80,7 +80,7 @@
         "quality": "Calidad garantizada"
     },
     "PricingPage": {
-        "metaTitle": "Precios — Diseño Web y Automatización con IA | AION",
+        "metaTitle": "Precios — Diseño Web e IA",
         "metaDesc": "Paquetes de diseño web profesional, automatización de procesos con IA y marketing digital para pymes. Precios transparentes. Cotiza hoy.",
         "breadcrumbHome": "Inicio",
         "breadcrumbPricing": "Servicios",
@@ -119,7 +119,7 @@
         "ctaButton": "Agendar Llamada Gratis"
     },
     "IndustriesPage": {
-        "metaTitle": "Industrias — Soluciones Web y Automatización | AION",
+        "metaTitle": "Industrias que Servimos",
         "metaDesc": "Diseño web y automatización con IA por industria: dentistas, inmobiliarias, restaurantes, tours, gimnasios, salones, escuelas, veterinarias y más.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -162,7 +162,7 @@
         "ctaButton": "Hablar con un Especialista"
     },
     "DentalPage": {
-        "metaTitle": "Web para Dentistas — Diseño y Automatización | AION",
+        "metaTitle": "Web para Clínicas Dentales",
         "metaDesc": "Sitios web profesionales para dentistas que generan pacientes nuevos. Agendamiento en línea, seguimiento por WhatsApp y SEO local.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -196,7 +196,7 @@
         "ctaButton": "Escríbenos por WhatsApp"
     },
     "RealEstatePage": {
-        "metaTitle": "Web para Inmobiliarias — Diseño y Automatización | AION",
+        "metaTitle": "Web para Inmobiliarias",
         "metaDesc": "Sitios web para inmobiliarias que captan compradores y dan seguimiento automático. Catálogo de propiedades, CRM y WhatsApp integrado.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -230,7 +230,7 @@
         "ctaButton": "Escríbenos por WhatsApp"
     },
     "RestaurantsPage": {
-        "metaTitle": "Web para Restaurantes — Menú y Reservaciones | AION",
+        "metaTitle": "Web para Restaurantes",
         "metaDesc": "Sitios web para restaurantes con menú digital, sistema de reservaciones en línea y marketing automático. Llena tus mesas todos los días.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -264,7 +264,7 @@
         "ctaButton": "Escríbenos por WhatsApp"
     },
     "ToursPage": {
-        "metaTitle": "Web para Tours — Reservas y Automatización | AION",
+        "metaTitle": "Web para Tours y Turismo",
         "metaDesc": "Sitios web para empresas de tours con sistema de reservas en línea, itinerarios digitales y seguimiento automático de viajeros.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -298,7 +298,7 @@
         "ctaButton": "Escríbenos por WhatsApp"
     },
     "GymPage": {
-        "metaTitle": "Web para Gimnasios — Membresías y Automatización | AION",
+        "metaTitle": "Web para Gimnasios",
         "metaDesc": "Sitios web para gimnasios con registro de membresías en línea, agenda de clases y seguimiento automático de prospectos.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -332,7 +332,7 @@
         "ctaButton": "Escríbenos por WhatsApp"
     },
     "SalonPage": {
-        "metaTitle": "Web para Salones de Belleza — Citas Online | AION",
+        "metaTitle": "Web para Salones de Belleza",
         "metaDesc": "Sitios web para salones de belleza con reserva de citas en línea, catálogo de servicios y recordatorios automáticos por WhatsApp.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -366,7 +366,7 @@
         "ctaButton": "Escríbenos por WhatsApp"
     },
     "SchoolPage": {
-        "metaTitle": "Web para Escuelas — Inscripciones Online | AION",
+        "metaTitle": "Web para Escuelas",
         "metaDesc": "Sitios web para escuelas y academias con inscripciones en línea, catálogo de cursos y portal para padres.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -400,7 +400,7 @@
         "ctaButton": "Escríbenos por WhatsApp"
     },
     "VetPage": {
-        "metaTitle": "Web para Veterinarias — Citas y Recordatorios | AION",
+        "metaTitle": "Web para Veterinarias",
         "metaDesc": "Sitios web para veterinarias con agendamiento de consultas, recordatorios de vacunas por WhatsApp y ficha digital de pacientes.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -434,7 +434,7 @@
         "ctaButton": "Escríbenos por WhatsApp"
     },
     "LegalPage": {
-        "metaTitle": "Web para Abogados y Contadores | AION",
+        "metaTitle": "Web para Abogados",
         "metaDesc": "Sitios web profesionales para despachos de abogados y contadores. Agenda de consultas, calificación de leads y SEO local.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -468,7 +468,7 @@
         "ctaButton": "Escríbenos por WhatsApp"
     },
     "HotelPage": {
-        "metaTitle": "Web para Hoteles — Reservas y Automatización | AION",
+        "metaTitle": "Web para Hoteles",
         "metaDesc": "Sitios web para hoteles con motor de reservas directo, galería de habitaciones y confirmaciones automáticas. Sin comisiones de intermediarios.",
         "breadcrumbHome": "Inicio",
         "breadcrumbIndustries": "Industrias",
@@ -502,7 +502,7 @@
         "ctaButton": "Escríbenos por WhatsApp"
     },
     "WorkPage": {
-        "metaTitle": "Lo que Construimos — Soluciones Web y Automatización | AION",
+        "metaTitle": "Soluciones y Portafolio",
         "metaDesc": "Descubre las soluciones digitales que construimos: sitios web profesionales, automatizaciones con IA y campañas de marketing para negocios de servicios.",
         "breadcrumbHome": "Inicio",
         "breadcrumbWork": "Lo que Construimos",
@@ -533,7 +533,7 @@
         "ctaButton": "Agendar Llamada Gratis"
     },
     "AboutPage": {
-        "metaTitle": "Sobre Nosotros — Agencia Diseño Web e IA | AION",
+        "metaTitle": "Sobre Nosotros — Agencia IA",
         "metaDesc": "Somos AION Automations: una agencia especializada en páginas web que venden y automatización con IA para negocios de servicios.",
         "breadcrumbHome": "Inicio",
         "breadcrumbAbout": "Nosotros",
@@ -559,7 +559,7 @@
         "ctaButton": "Contactar Ahora"
     },
     "ContactPage": {
-        "metaTitle": "Cotiza Gratis — Diseño Web y Automatización con IA | AION",
+        "metaTitle": "Cotiza Gratis — Web e IA",
         "metaDesc": "Solicita una consulta gratis para diseño web profesional, automatización con IA o chatbots WhatsApp. Respuesta en menos de 24 horas.",
         "breadcrumbHome": "Inicio",
         "breadcrumbContact": "Contacto",
@@ -580,7 +580,7 @@
         "scheduleValue": "Lunes a Viernes, 9:00 - 18:00 (CST)"
     },
     "BlogPage": {
-        "metaTitle": "Blog — Tips de Diseño Web, Automatización e IA | AION",
+        "metaTitle": "Blog — Diseño Web e IA",
         "metaDesc": "Artículos, guías y recursos sobre diseño web, automatización con IA y marketing digital para negocios de servicios.",
         "breadcrumbHome": "Inicio",
         "breadcrumbBlog": "Blog",
@@ -815,7 +815,7 @@
         "retry": "Intentar de nuevo"
     },
     "WebServicePage": {
-        "metaTitle": "Diseño de Páginas Web Profesionales para Empresas | AION",
+        "metaTitle": "Diseño de Páginas Web",
         "metaDesc": "Páginas web profesionales que generan clientes. Desde $497 USD. Diseño responsive, SEO incluido y entrega rápida. Cotiza tu página web hoy.",
         "breadcrumbHome": "Inicio",
         "breadcrumbServices": "Servicios",
@@ -868,7 +868,7 @@
         "ctaButton": "Agendar Llamada Gratis"
     },
     "AutomationsServicePage": {
-        "metaTitle": "Automatización con IA — Chatbots WhatsApp | AION",
+        "metaTitle": "Automatización con IA",
         "metaDesc": "Automatización de procesos con IA para tu negocio. Chatbots WhatsApp, CRM automatizado, seguimiento de leads y workflows. Desde $997 USD.",
         "breadcrumbHome": "Inicio",
         "breadcrumbServices": "Servicios",
@@ -921,7 +921,7 @@
         "ctaButton": "Agendar Demostración"
     },
     "MarketingServicePage": {
-        "metaTitle": "Marketing con IA — Paquetes de Marketing Digital | AION",
+        "metaTitle": "Marketing con IA",
         "metaDesc": "Marketing digital potenciado con inteligencia artificial. Campañas multi-canal, segmentación y optimización automática. Desde $1,497 USD/mes.",
         "breadcrumbHome": "Inicio",
         "breadcrumbServices": "Servicios",

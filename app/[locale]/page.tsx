@@ -19,7 +19,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "HomePage" })
 
   return {
-    title: t("metaTitle"),
+    title: { absolute: locale === 'es' ? 'Diseño Web y Automatización IA | AION' : 'Web Design & AI Automation | AION' },
     description: t("metaDesc"),
     alternates: {
       canonical: `${siteUrl}/${locale}`,
