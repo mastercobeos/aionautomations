@@ -22,7 +22,7 @@ export const organizationSchema = {
   logo: `${siteUrl}/favicon.png`,
   image: `${siteUrl}/favicon.png`,
   telephone: process.env.NEXT_PUBLIC_PHONE || "+52 341 168 7566",
-  email: "aionautomations@gmail.com",
+  email: "info@aionautomations.io",
   priceRange: "$$",
   serviceType: [
     "Web Design",

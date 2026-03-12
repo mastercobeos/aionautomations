@@ -573,7 +573,7 @@
         "responseTime": "Average response time: under 2 hours during business hours.",
         "infoTitle": "Contact information",
         "emailLabel": "Email",
-        "emailValue": "aionautomations@gmail.com",
+        "emailValue": "info@aionautomations.io",
         "phoneLabel": "Phone",
         "phoneValue": "+52 341 168 7566",
         "scheduleLabel": "Hours",
@@ -1053,9 +1053,9 @@
         "section4Title": "4. Cookies",
         "section4Text": "Our site uses essential cookies for site functionality and analytics cookies (Vercel Analytics) to improve the experience. We do not use advertising tracking cookies.",
         "section5Title": "5. Your Rights",
-        "section5Text": "You may request access, correction, or deletion of your personal information at any time by emailing aionautomations@gmail.com.",
+        "section5Text": "You may request access, correction, or deletion of your personal information at any time by emailing info@aionautomations.io.",
         "section6Title": "6. Contact",
-        "section6Text": "If you have questions about this policy, contact us at aionautomations@gmail.com."
+        "section6Text": "If you have questions about this policy, contact us at info@aionautomations.io."
     },
     "TermsPage": {
         "metaTitle": "Terms of Service | AION Automations",
@@ -1078,6 +1078,6 @@
         "section6Title": "6. Limitation of Liability",
         "section6Text": "AION Automations is committed to delivering professional-quality work as agreed. We are not responsible for specific business results, as these depend on multiple factors outside our control.",
         "section7Title": "7. Contact",
-        "section7Text": "For questions about these terms, contact us at aionautomations@gmail.com."
+        "section7Text": "For questions about these terms, contact us at info@aionautomations.io."
     }
 }
