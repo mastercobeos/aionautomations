@@ -136,8 +136,8 @@ export default async function RootLayout({
         <meta name="msvalidate.01" content="178D0590652682BBEF864F25A14CE9CE" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-6GW9VD5REP" strategy="afterInteractive" />
-        <Script id="gtag-init" strategy="afterInteractive">
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-6GW9VD5REP" strategy="lazyOnload" />
+        <Script id="gtag-init" strategy="lazyOnload">
           {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6GW9VD5REP');`}
         </Script>
       </head>
