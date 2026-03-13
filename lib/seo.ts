@@ -24,6 +24,20 @@ export const organizationSchema = {
   telephone: process.env.NEXT_PUBLIC_PHONE || "+52 341 168 7566",
   email: "info@aionautomations.io",
   priceRange: "$$",
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: process.env.NEXT_PUBLIC_PHONE || "+52 341 168 7566",
+      contactType: "customer service",
+      availableLanguage: ["Spanish", "English"],
+    },
+    {
+      "@type": "ContactPoint",
+      email: "info@aionautomations.io",
+      contactType: "sales",
+      availableLanguage: ["Spanish", "English"],
+    },
+  ],
   serviceType: [
     "Web Design",
     "Custom Website Development",
@@ -68,15 +82,20 @@ export const organizationSchema = {
     process.env.NEXT_PUBLIC_INSTAGRAM_URL || "",
     process.env.NEXT_PUBLIC_FACEBOOK_PAGE_URL || "",
   ].filter(Boolean),
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: [
-      "Monday", "Tuesday", "Wednesday", "Thursday",
-      "Friday", "Saturday", "Sunday",
-    ],
-    opens: "00:00",
-    closes: "23:59",
-  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Saturday"],
+      opens: "10:00",
+      closes: "14:00",
+    },
+  ],
   potentialAction: {
     "@type": "CommunicateAction",
     target: `${siteUrl}/en/contact`,

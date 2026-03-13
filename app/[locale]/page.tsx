@@ -8,7 +8,7 @@ import { FloatingSocialButtons } from "@/components/floating-social-buttons"
 import { ScrollRevealInit } from "@/components/scroll-reveal-init"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { CursorGlow } from "@/components/cursor-glow"
-import { siteUrl, faqSchema } from "@/lib/seo"
+import { siteUrl, faqSchema, webPageSchema } from "@/lib/seo"
 
 export async function generateMetadata({
   params,
@@ -63,9 +63,24 @@ export default async function Home({
     { question: t("faq10Q"), answer: t("faq10A") },
   ]
 
+  const homePageSchema = webPageSchema({
+    locale,
+    title: locale === "es" ? "Diseño Web y Automatización IA" : "Web Design & AI Automation",
+    description: locale === "es"
+      ? "Agencia de diseño web profesional y automatización con IA para pymes."
+      : "Professional web design agency and AI automation for small businesses.",
+    path: "",
+  });
+
   return (
     <main id="main-content" className="relative min-h-screen animate-page-in">
-      {/* FAQ rich snippet schema */}
+      {/* WebPage + FAQ rich snippet schemas */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(homePageSchema),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
