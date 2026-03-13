@@ -681,7 +681,7 @@
         "post10_s3Title": "Getting started with n8n: a step-by-step guide",
         "post10_s3Text": "Start with n8n Cloud for the easiest setup — you can always self-host later. Create your free account and open the workflow editor. Your first automation should be simple: connect a webhook trigger (this creates a URL that accepts data) to a Google Sheets node that logs incoming data. Test it by sending a test request. Once this works, build the lead response automation. Add a webhook trigger, connect it to your website form. Add a node to format the data, then branch into parallel paths: one sends a WhatsApp message via the WhatsApp Business API node, another adds the contact to your CRM via the HubSpot or Pipedrive node, and a third sends a Slack notification to your team. Use the IF node to add logic — for example, if the lead mentions a budget over 5000 dollars, tag them as high priority and notify the sales manager directly. Save, activate, and your automation runs 24 hours a day. The n8n community forum and template library have hundreds of pre-built workflows you can import and customize for your specific needs.",
 
-        "post11Title": "Lead Generation for Service Businesses: 7 Strategies",
+        "post11Title": "Lead Generation for Service Businesses",
         "post11Desc": "Proven lead generation strategies for service businesses. From SEO to AI chatbots — get more qualified leads without increasing your ad spend.",
         "post11Date": "Apr 23, 2026",
         "post11_s1Title": "Why traditional lead generation is broken for service businesses",
