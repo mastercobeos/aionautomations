@@ -37,9 +37,9 @@ export function FloatingSocialButtons() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={t(key)}
-          className="floating-social-btn flex h-10 w-10 items-center justify-center rounded-full border border-cyan-500/50 text-cyan-400 shadow-[0_0_15px_rgba(34,212,254,0.1)] transition-all hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(34,212,254,0.25)] hover:text-cyan-300"
+          className="floating-social-btn flex h-12 w-12 items-center justify-center rounded-full border border-cyan-500/50 text-cyan-400 shadow-[0_0_15px_rgba(34,212,254,0.1)] transition-all hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(34,212,254,0.25)] hover:text-cyan-300"
         >
-          <Icon className="h-4.5 w-4.5" strokeWidth={2} />
+          <Icon className="h-5 w-5" strokeWidth={2} />
         </a>
       ))}
     </div>
