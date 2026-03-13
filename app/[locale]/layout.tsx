@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import Script from 'next/script'
 import '../globals.css'
 import { siteUrl } from '@/lib/seo'
 
@@ -138,12 +139,10 @@ export default async function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GW9VD5REP" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6GW9VD5REP');`,
-          }}
-        />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-6GW9VD5REP" strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6GW9VD5REP');`}
+        </Script>
       </head>
       <body className="font-sans antialiased">
         <JsonLd locale={locale} />

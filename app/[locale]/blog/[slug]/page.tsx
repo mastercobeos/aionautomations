@@ -18,8 +18,8 @@ const BLOG_POSTS: Record<string, { titleKey: string; date: string; namespace: st
   'local-seo-guide': { titleKey: 'post4Title', date: '2026-02-05', namespace: 'BlogPage', prefix: 'post4', sections: 3 },
 };
 
-/* ─── Force dynamic rendering (next-intl requires request context) ─── */
-export const dynamic = 'force-dynamic';
+/* ─── ISR: regenerate every hour (better performance than force-dynamic) ─── */
+export const revalidate = 3600;
 
 /* ─── Static params hint ─── */
 export function generateStaticParams() {
