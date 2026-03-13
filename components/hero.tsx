@@ -34,13 +34,13 @@ export function Hero() {
           {/* Left side - Text content */}
           <div className="text-center lg:text-left">
             {/* Badge — NO TOCAR */}
-            <div className="animate-fade-up mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-500/50 px-4 py-1.5 text-sm text-cyan-400 shadow-[0_0_15px_rgba(34,212,254,0.1)]">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-500/50 px-4 py-1.5 text-sm text-cyan-400 shadow-[0_0_15px_rgba(34,212,254,0.1)]">
               <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
               {t('badge')}
             </div>
 
             {/* H1 */}
-            <h1 className="animate-fade-up text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-5xl">
+            <h1 className="text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-5xl">
               {t('title1')}{" "}
               {t('title2')}{" "}
               <br className="hidden sm:block" />
