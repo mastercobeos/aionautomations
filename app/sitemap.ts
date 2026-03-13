@@ -34,6 +34,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { slug: "ai-marketing-small-business", date: "2026-03-19" },
     { slug: "small-business-automation-ideas", date: "2026-03-26" },
     { slug: "choose-web-design-agency", date: "2026-04-02" },
+    { slug: "ai-chatbot-for-business", date: "2026-04-09" },
+    { slug: "n8n-automation-tutorial", date: "2026-04-16" },
+    { slug: "lead-generation-service-business", date: "2026-04-23" },
+    { slug: "ecommerce-website-guide", date: "2026-04-30" },
+    { slug: "restaurant-ai-automation", date: "2026-05-07" },
+    { slug: "dental-clinic-marketing", date: "2026-05-14" },
+    { slug: "conversion-rate-optimization", date: "2026-05-21" },
   ];
 
   for (const post of blogPosts) {

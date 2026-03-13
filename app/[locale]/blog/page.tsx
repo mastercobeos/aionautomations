@@ -60,6 +60,48 @@ const BLOG_POSTS = [
     descKey: 'post8Desc',
     dateKey: 'post8Date',
   },
+  {
+    slug: 'ai-chatbot-for-business',
+    titleKey: 'post9Title',
+    descKey: 'post9Desc',
+    dateKey: 'post9Date',
+  },
+  {
+    slug: 'n8n-automation-tutorial',
+    titleKey: 'post10Title',
+    descKey: 'post10Desc',
+    dateKey: 'post10Date',
+  },
+  {
+    slug: 'lead-generation-service-business',
+    titleKey: 'post11Title',
+    descKey: 'post11Desc',
+    dateKey: 'post11Date',
+  },
+  {
+    slug: 'ecommerce-website-guide',
+    titleKey: 'post12Title',
+    descKey: 'post12Desc',
+    dateKey: 'post12Date',
+  },
+  {
+    slug: 'restaurant-ai-automation',
+    titleKey: 'post13Title',
+    descKey: 'post13Desc',
+    dateKey: 'post13Date',
+  },
+  {
+    slug: 'dental-clinic-marketing',
+    titleKey: 'post14Title',
+    descKey: 'post14Desc',
+    dateKey: 'post14Date',
+  },
+  {
+    slug: 'conversion-rate-optimization',
+    titleKey: 'post15Title',
+    descKey: 'post15Desc',
+    dateKey: 'post15Date',
+  },
 ] as const;
 
 /* ─── Metadata ─── */

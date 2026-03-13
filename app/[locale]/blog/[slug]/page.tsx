@@ -20,6 +20,13 @@ const BLOG_POSTS: Record<string, { titleKey: string; date: string; namespace: st
   'ai-marketing-small-business': { titleKey: 'post6Title', date: '2026-03-19', namespace: 'BlogPage', prefix: 'post6', sections: 3 },
   'small-business-automation-ideas': { titleKey: 'post7Title', date: '2026-03-26', namespace: 'BlogPage', prefix: 'post7', sections: 3 },
   'choose-web-design-agency': { titleKey: 'post8Title', date: '2026-04-02', namespace: 'BlogPage', prefix: 'post8', sections: 3 },
+  'ai-chatbot-for-business': { titleKey: 'post9Title', date: '2026-04-09', namespace: 'BlogPage', prefix: 'post9', sections: 3 },
+  'n8n-automation-tutorial': { titleKey: 'post10Title', date: '2026-04-16', namespace: 'BlogPage', prefix: 'post10', sections: 3 },
+  'lead-generation-service-business': { titleKey: 'post11Title', date: '2026-04-23', namespace: 'BlogPage', prefix: 'post11', sections: 3 },
+  'ecommerce-website-guide': { titleKey: 'post12Title', date: '2026-04-30', namespace: 'BlogPage', prefix: 'post12', sections: 3 },
+  'restaurant-ai-automation': { titleKey: 'post13Title', date: '2026-05-07', namespace: 'BlogPage', prefix: 'post13', sections: 3 },
+  'dental-clinic-marketing': { titleKey: 'post14Title', date: '2026-05-14', namespace: 'BlogPage', prefix: 'post14', sections: 3 },
+  'conversion-rate-optimization': { titleKey: 'post15Title', date: '2026-05-21', namespace: 'BlogPage', prefix: 'post15', sections: 3 },
 };
 
 /* ─── ISR: regenerate every hour (better performance than force-dynamic) ─── */
