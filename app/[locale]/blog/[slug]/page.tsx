@@ -29,8 +29,8 @@ const BLOG_POSTS: Record<string, { titleKey: string; date: string; namespace: st
   'conversion-rate-optimization': { titleKey: 'post15Title', date: '2026-05-21', namespace: 'BlogPage', prefix: 'post15', sections: 3 },
 };
 
-/* ─── ISR: regenerate every hour (better performance than force-dynamic) ─── */
-export const revalidate = 3600;
+/* ─── Force dynamic rendering — required for next-intl getTranslations ─── */
+export const dynamic = 'force-dynamic';
 
 /* ─── Static params hint ─── */
 export function generateStaticParams() {
