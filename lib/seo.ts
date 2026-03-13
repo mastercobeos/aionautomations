@@ -19,8 +19,13 @@ export const organizationSchema = {
   url: siteUrl,
   description:
     "Web design agency and AI automation for small businesses. Custom websites, WhatsApp chatbots, workflow automation, and digital marketing. Agencia de diseño web y automatización con IA para pymes.",
-  logo: `${siteUrl}/favicon.png`,
-  image: `${siteUrl}/favicon.png`,
+  logo: {
+    "@type": "ImageObject",
+    url: `${siteUrl}/favicon.png`,
+    width: 512,
+    height: 512,
+  },
+  image: `${siteUrl}/og-image-en.jpg`,
   telephone: process.env.NEXT_PUBLIC_PHONE || "+52 341 168 7566",
   email: "info@aionautomations.io",
   priceRange: "$$",
@@ -223,7 +228,7 @@ export function blogPostSchema(opts: {
     url: `${siteUrl}/${opts.locale}/blog/${opts.slug}`,
     datePublished: opts.datePublished,
     dateModified: opts.dateModified || opts.datePublished,
-    image: opts.image || `${siteUrl}/favicon.png`,
+    image: opts.image || `${siteUrl}/og-image-${opts.locale === "es" ? "es" : "en"}.jpg`,
     inLanguage: opts.locale === "es" ? "es" : "en",
     author: {
       "@type": "ProfessionalService",
@@ -234,7 +239,7 @@ export function blogPostSchema(opts: {
       "@type": "ProfessionalService",
       "@id": `${siteUrl}/#organization`,
       name: "AION Automations",
-      logo: { "@type": "ImageObject", url: `${siteUrl}/favicon.png` },
+      logo: { "@type": "ImageObject", url: `${siteUrl}/favicon.png`, width: 512, height: 512 },
     },
   };
 }

@@ -11,27 +11,29 @@ import { ArrowLeft } from 'lucide-react';
 
 /* ─── Static blog post data map ─── */
 
-const BLOG_POSTS: Record<string, { titleKey: string; date: string; namespace: string; prefix: string; sections: number }> = {
-  'ai-automation-2026': { titleKey: 'post1Title', date: '2026-02-28', namespace: 'BlogPage', prefix: 'post1', sections: 3 },
-  'website-cost-guide': { titleKey: 'post2Title', date: '2026-02-20', namespace: 'BlogPage', prefix: 'post2', sections: 3 },
-  'whatsapp-ai-automation': { titleKey: 'post3Title', date: '2026-02-12', namespace: 'BlogPage', prefix: 'post3', sections: 3 },
-  'local-seo-guide': { titleKey: 'post4Title', date: '2026-02-05', namespace: 'BlogPage', prefix: 'post4', sections: 3 },
-  'ai-crm-small-business': { titleKey: 'post5Title', date: '2026-03-12', namespace: 'BlogPage', prefix: 'post5', sections: 3 },
-  'ai-marketing-small-business': { titleKey: 'post6Title', date: '2026-03-19', namespace: 'BlogPage', prefix: 'post6', sections: 3 },
-  'small-business-automation-ideas': { titleKey: 'post7Title', date: '2026-03-26', namespace: 'BlogPage', prefix: 'post7', sections: 3 },
-  'choose-web-design-agency': { titleKey: 'post8Title', date: '2026-04-02', namespace: 'BlogPage', prefix: 'post8', sections: 3 },
-  'ai-chatbot-for-business': { titleKey: 'post9Title', date: '2026-04-09', namespace: 'BlogPage', prefix: 'post9', sections: 3 },
-  'n8n-automation-tutorial': { titleKey: 'post10Title', date: '2026-04-16', namespace: 'BlogPage', prefix: 'post10', sections: 3 },
-  'lead-generation-service-business': { titleKey: 'post11Title', date: '2026-04-23', namespace: 'BlogPage', prefix: 'post11', sections: 3 },
-  'ecommerce-website-guide': { titleKey: 'post12Title', date: '2026-04-30', namespace: 'BlogPage', prefix: 'post12', sections: 3 },
-  'restaurant-ai-automation': { titleKey: 'post13Title', date: '2026-05-07', namespace: 'BlogPage', prefix: 'post13', sections: 3 },
-  'dental-clinic-marketing': { titleKey: 'post14Title', date: '2026-05-14', namespace: 'BlogPage', prefix: 'post14', sections: 3 },
-  'conversion-rate-optimization': { titleKey: 'post15Title', date: '2026-05-21', namespace: 'BlogPage', prefix: 'post15', sections: 3 },
-  'social-media-automation': { titleKey: 'post16Title', date: '2026-05-28', namespace: 'BlogPage', prefix: 'post16', sections: 3 },
-  'ai-email-marketing': { titleKey: 'post17Title', date: '2026-06-04', namespace: 'BlogPage', prefix: 'post17', sections: 3 },
-  'business-website-checklist': { titleKey: 'post18Title', date: '2026-06-11', namespace: 'BlogPage', prefix: 'post18', sections: 3 },
-  'real-estate-ai-marketing': { titleKey: 'post19Title', date: '2026-06-18', namespace: 'BlogPage', prefix: 'post19', sections: 3 },
-  'gym-fitness-automation': { titleKey: 'post20Title', date: '2026-06-25', namespace: 'BlogPage', prefix: 'post20', sections: 3 },
+type BlogPost = { titleKey: string; date: string; namespace: string; prefix: string; sections: number; links: { href: string; labelKey: string }[] };
+
+const BLOG_POSTS: Record<string, BlogPost> = {
+  'ai-automation-2026': { titleKey: 'post1Title', date: '2026-02-28', namespace: 'BlogPage', prefix: 'post1', sections: 3, links: [{ href: '/services/automations', labelKey: 'linkAuto' }, { href: '/services/web', labelKey: 'linkWeb' }, { href: '/pricing', labelKey: 'linkPricing' }] },
+  'website-cost-guide': { titleKey: 'post2Title', date: '2026-02-20', namespace: 'BlogPage', prefix: 'post2', sections: 3, links: [{ href: '/services/web', labelKey: 'linkWeb' }, { href: '/pricing', labelKey: 'linkPricing' }, { href: '/contact', labelKey: 'linkContact' }] },
+  'whatsapp-ai-automation': { titleKey: 'post3Title', date: '2026-02-12', namespace: 'BlogPage', prefix: 'post3', sections: 3, links: [{ href: '/services/automations', labelKey: 'linkAuto' }, { href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/pricing', labelKey: 'linkPricing' }] },
+  'local-seo-guide': { titleKey: 'post4Title', date: '2026-02-05', namespace: 'BlogPage', prefix: 'post4', sections: 3, links: [{ href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/services/web', labelKey: 'linkWeb' }, { href: '/contact', labelKey: 'linkContact' }] },
+  'ai-crm-small-business': { titleKey: 'post5Title', date: '2026-03-12', namespace: 'BlogPage', prefix: 'post5', sections: 3, links: [{ href: '/services/automations', labelKey: 'linkAuto' }, { href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/pricing', labelKey: 'linkPricing' }] },
+  'ai-marketing-small-business': { titleKey: 'post6Title', date: '2026-03-19', namespace: 'BlogPage', prefix: 'post6', sections: 3, links: [{ href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/services/automations', labelKey: 'linkAuto' }, { href: '/pricing', labelKey: 'linkPricing' }] },
+  'small-business-automation-ideas': { titleKey: 'post7Title', date: '2026-03-26', namespace: 'BlogPage', prefix: 'post7', sections: 3, links: [{ href: '/services/automations', labelKey: 'linkAuto' }, { href: '/services/web', labelKey: 'linkWeb' }, { href: '/pricing', labelKey: 'linkPricing' }] },
+  'choose-web-design-agency': { titleKey: 'post8Title', date: '2026-04-02', namespace: 'BlogPage', prefix: 'post8', sections: 3, links: [{ href: '/services/web', labelKey: 'linkWeb' }, { href: '/work', labelKey: 'linkWork' }, { href: '/pricing', labelKey: 'linkPricing' }] },
+  'ai-chatbot-for-business': { titleKey: 'post9Title', date: '2026-04-09', namespace: 'BlogPage', prefix: 'post9', sections: 3, links: [{ href: '/services/automations', labelKey: 'linkAuto' }, { href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/contact', labelKey: 'linkContact' }] },
+  'n8n-automation-tutorial': { titleKey: 'post10Title', date: '2026-04-16', namespace: 'BlogPage', prefix: 'post10', sections: 3, links: [{ href: '/services/automations', labelKey: 'linkAuto' }, { href: '/pricing', labelKey: 'linkPricing' }, { href: '/contact', labelKey: 'linkContact' }] },
+  'lead-generation-service-business': { titleKey: 'post11Title', date: '2026-04-23', namespace: 'BlogPage', prefix: 'post11', sections: 3, links: [{ href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/services/web', labelKey: 'linkWeb' }, { href: '/contact', labelKey: 'linkContact' }] },
+  'ecommerce-website-guide': { titleKey: 'post12Title', date: '2026-04-30', namespace: 'BlogPage', prefix: 'post12', sections: 3, links: [{ href: '/services/web', labelKey: 'linkWeb' }, { href: '/pricing', labelKey: 'linkPricing' }, { href: '/contact', labelKey: 'linkContact' }] },
+  'restaurant-ai-automation': { titleKey: 'post13Title', date: '2026-05-07', namespace: 'BlogPage', prefix: 'post13', sections: 3, links: [{ href: '/industries/restaurants', labelKey: 'linkRestaurants' }, { href: '/services/automations', labelKey: 'linkAuto' }, { href: '/contact', labelKey: 'linkContact' }] },
+  'dental-clinic-marketing': { titleKey: 'post14Title', date: '2026-05-14', namespace: 'BlogPage', prefix: 'post14', sections: 3, links: [{ href: '/industries/dental', labelKey: 'linkDental' }, { href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/contact', labelKey: 'linkContact' }] },
+  'conversion-rate-optimization': { titleKey: 'post15Title', date: '2026-05-21', namespace: 'BlogPage', prefix: 'post15', sections: 3, links: [{ href: '/services/web', labelKey: 'linkWeb' }, { href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/pricing', labelKey: 'linkPricing' }] },
+  'social-media-automation': { titleKey: 'post16Title', date: '2026-05-28', namespace: 'BlogPage', prefix: 'post16', sections: 3, links: [{ href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/services/automations', labelKey: 'linkAuto' }, { href: '/contact', labelKey: 'linkContact' }] },
+  'ai-email-marketing': { titleKey: 'post17Title', date: '2026-06-04', namespace: 'BlogPage', prefix: 'post17', sections: 3, links: [{ href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/services/automations', labelKey: 'linkAuto' }, { href: '/pricing', labelKey: 'linkPricing' }] },
+  'business-website-checklist': { titleKey: 'post18Title', date: '2026-06-11', namespace: 'BlogPage', prefix: 'post18', sections: 3, links: [{ href: '/services/web', labelKey: 'linkWeb' }, { href: '/pricing', labelKey: 'linkPricing' }, { href: '/contact', labelKey: 'linkContact' }] },
+  'real-estate-ai-marketing': { titleKey: 'post19Title', date: '2026-06-18', namespace: 'BlogPage', prefix: 'post19', sections: 3, links: [{ href: '/industries/real-estate', labelKey: 'linkRealEstate' }, { href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/contact', labelKey: 'linkContact' }] },
+  'gym-fitness-automation': { titleKey: 'post20Title', date: '2026-06-25', namespace: 'BlogPage', prefix: 'post20', sections: 3, links: [{ href: '/industries/gyms', labelKey: 'linkGyms' }, { href: '/services/automations', labelKey: 'linkAuto' }, { href: '/contact', labelKey: 'linkContact' }] },
 };
 
 /* ─── Force dynamic rendering — required for next-intl getTranslations ─── */
@@ -216,17 +218,14 @@ export default async function BlogPostPage({
                   {tPost('relatedLinks')}
                 </p>
                 <div className="mt-3 flex flex-wrap gap-3">
-                  <Link href="/services/web" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
-                    {tPost('linkWeb')}
-                  </Link>
-                  <span className="text-border">·</span>
-                  <Link href="/services/automations" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
-                    {tPost('linkAuto')}
-                  </Link>
-                  <span className="text-border">·</span>
-                  <Link href="/pricing" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
-                    {tPost('linkPricing')}
-                  </Link>
+                  {post.links.map((link, i) => (
+                    <span key={link.href} className="contents">
+                      {i > 0 && <span className="text-border">·</span>}
+                      <Link href={link.href} className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                        {tPost(link.labelKey)}
+                      </Link>
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>

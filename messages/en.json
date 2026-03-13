@@ -788,7 +788,14 @@
         "linkWeb": "Web Design →",
         "linkAuto": "AI Automation →",
         "linkPricing": "View Pricing →",
-        "postNotFound": "Post not found"
+        "postNotFound": "Post not found",
+        "linkMarketing": "AI Marketing →",
+        "linkContact": "Free Consultation →",
+        "linkWork": "Our Work →",
+        "linkRestaurants": "Restaurant Solutions →",
+        "linkDental": "Dental Solutions →",
+        "linkRealEstate": "Real Estate Solutions →",
+        "linkGyms": "Gym Solutions →"
     },
     "ServicePillars": {
         "subtitle": "Our Services",

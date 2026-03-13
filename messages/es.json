@@ -788,7 +788,14 @@
         "linkWeb": "Diseño Web →",
         "linkAuto": "Automatización IA →",
         "linkPricing": "Ver Precios →",
-        "postNotFound": "Artículo no encontrado"
+        "postNotFound": "Artículo no encontrado",
+        "linkMarketing": "Marketing IA →",
+        "linkContact": "Consulta Gratis →",
+        "linkWork": "Nuestro Trabajo →",
+        "linkRestaurants": "Soluciones Restaurantes →",
+        "linkDental": "Soluciones Dentistas →",
+        "linkRealEstate": "Soluciones Inmobiliarias →",
+        "linkGyms": "Soluciones Gimnasios →"
     },
     "ServicePillars": {
         "subtitle": "Nuestros Servicios",
