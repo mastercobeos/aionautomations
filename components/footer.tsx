@@ -14,7 +14,7 @@ export function Footer() {
         <div className="reveal mb-10 text-center">
           <Link href="/" className="inline-flex items-center">
             <Image
-              src="/LOGO.svg"
+              src="/LOGO.webp"
               alt="AION Automations"
               width={120}
               height={80}

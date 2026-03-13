@@ -63,7 +63,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex shrink-0 items-center" aria-label={t('logoAriaLabel')}>
           <Image
-            src="/LOGO.svg"
+            src="/LOGO.webp"
             alt="AION Automations"
             width={120}
             height={80}
