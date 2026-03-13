@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: t('metaDesc'),
     alternates: {
       canonical: `${siteUrl}/${locale}/industries/schools`,
-      languages: { en: `${siteUrl}/en/industries/schools`, es: `${siteUrl}/es/industries/schools` },
+      languages: { en: `${siteUrl}/en/industries/schools`, es: `${siteUrl}/es/industries/schools`, "x-default": `${siteUrl}/en/industries/schools` },
     },
   };
 }

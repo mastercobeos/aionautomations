@@ -24,7 +24,7 @@ export async function generateMetadata({
     description: t('metaDesc'),
     alternates: {
       canonical: `${siteUrl}/${locale}/pricing`,
-      languages: { en: `${siteUrl}/en/pricing`, es: `${siteUrl}/es/pricing` },
+      languages: { en: `${siteUrl}/en/pricing`, es: `${siteUrl}/es/pricing`, "x-default": `${siteUrl}/en/pricing` },
     },
   };
 }

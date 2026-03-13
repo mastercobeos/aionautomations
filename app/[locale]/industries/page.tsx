@@ -39,6 +39,7 @@ export async function generateMetadata({
       languages: {
         en: `${siteUrl}/en/industries`,
         es: `${siteUrl}/es/industries`,
+        "x-default": `${siteUrl}/en/industries`,
       },
     },
   };

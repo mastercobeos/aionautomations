@@ -50,7 +50,7 @@ export async function generateMetadata({
     description: t('metaDesc'),
     alternates: {
       canonical: `${siteUrl}/${locale}${PATH}`,
-      languages: { en: `${siteUrl}/en${PATH}`, es: `${siteUrl}/es${PATH}` },
+      languages: { en: `${siteUrl}/en${PATH}`, es: `${siteUrl}/es${PATH}`, "x-default": `${siteUrl}/en${PATH}` },
     },
   };
 }
