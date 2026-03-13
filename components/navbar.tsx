@@ -186,7 +186,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="rounded-lg px-6 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                className="rounded-lg px-6 py-3 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
               >
                 {link.label}
               </Link>
@@ -205,7 +205,7 @@ export function Navbar() {
                 <Link
                   href="/industries"
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-lg px-6 py-2 text-sm font-medium text-cyan-400 transition-colors hover:bg-muted"
+                  className="rounded-lg px-6 py-3 text-sm font-medium text-cyan-400 transition-colors hover:bg-muted"
                 >
                   {t('industries')}
                 </Link>
@@ -214,7 +214,7 @@ export function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="rounded-lg px-6 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                    className="rounded-lg px-6 py-3 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                   >
                     {link.label}
                   </Link>

@@ -151,18 +151,20 @@ export function TestimonialsSection() {
         </div>
 
         {/* Dot indicators — one dot per possible starting position */}
-        <div className="mt-6 flex justify-center gap-2">
+        <div className="mt-6 flex justify-center gap-1">
           {Array.from({ length: maxIndex + 1 }).map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
               aria-label={`${t("goToTestimonial")} ${i + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
+              className="flex items-center justify-center h-10 w-10 rounded-full"
+            >
+              <span className={`block h-1.5 rounded-full transition-all duration-300 ${
                 i === current
                   ? "w-5 bg-cyan-400"
                   : "w-1.5 bg-cyan-400/30 hover:bg-cyan-400/60"
-              }`}
-            />
+              }`} />
+            </button>
           ))}
         </div>
       </div>

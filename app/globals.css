@@ -265,8 +265,22 @@ html {
 
 @media (max-width: 768px) {
   .hero-bg-slide {
-    animation-duration: 32s;
+    animation: none;
     opacity: 0.85;
+  }
+  .gradient-border-card::before,
+  .gradient-border-premium::before,
+  .shimmer-card::before {
+    animation: none;
+  }
+  .btn-glow {
+    animation: none;
+  }
+  .hero-streak {
+    display: none;
+  }
+  .hero-glow-orb {
+    animation: none;
   }
 }
 
@@ -433,6 +447,7 @@ html {
   height: 600px;
   background: radial-gradient(circle, rgba(34, 212, 254, 0.35), transparent 70%);
   animation: glow-drift-1 12s ease-in-out infinite;
+  will-change: transform;
 }
 
 .hero-glow-orb-purple {
@@ -440,6 +455,7 @@ html {
   height: 500px;
   background: radial-gradient(circle, rgba(115, 120, 255, 0.3), transparent 70%);
   animation: glow-drift-2 15s ease-in-out infinite;
+  will-change: transform;
 }
 
 /* ═══════════════════════════════════════════════════
