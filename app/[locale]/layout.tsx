@@ -1,12 +1,11 @@
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
 import '../globals.css'
 import { siteUrl } from '@/lib/seo'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const geist = Geist({ subsets: ["latin"], display: "swap" });
 
 export async function generateMetadata({
   params,
@@ -112,7 +111,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { JsonLd } from '@/components/json-ld';
 import { PageLoader } from '@/components/page-loader';
-import { Starfield } from '@/components/starfield';
+import { LazyStarfield } from '@/components/lazy-starfield';
 
 export default async function RootLayout({
   children,
@@ -142,7 +141,7 @@ export default async function RootLayout({
           {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6GW9VD5REP');`}
         </Script>
       </head>
-      <body className="font-sans antialiased">
+      <body className={`${geist.className} antialiased`}>
         <JsonLd locale={locale} />
         <a
           href="#main-content"
@@ -150,7 +149,7 @@ export default async function RootLayout({
         >
           {locale === 'es' ? 'Ir al contenido' : 'Skip to content'}
         </a>
-        <Starfield />
+        <LazyStarfield />
         <NextIntlClientProvider messages={messages}>
           <PageLoader />
           {children}
