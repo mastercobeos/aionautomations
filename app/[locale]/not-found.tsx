@@ -9,6 +9,8 @@ export default function NotFound() {
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <meta name="robots" content="noindex, nofollow" />
+      <title>{`404 | AION Automations`}</title>
       <Navbar />
 
       <div className="flex flex-1 flex-col items-center justify-center px-6 text-center">

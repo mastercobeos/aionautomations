@@ -143,6 +143,9 @@ export function Navbar() {
           <Link href="/blog" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap">
             {t('blog')}
           </Link>
+          <Link href="/about" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap">
+            {t('about')}
+          </Link>
 
           <div className="h-5 w-px bg-border shrink-0" aria-hidden />
           <div className="flex items-center gap-3">
@@ -242,6 +245,13 @@ export function Navbar() {
               className="rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               {t('blog')}
+            </Link>
+            <Link
+              href="/about"
+              onClick={() => setMobileOpen(false)}
+              className="rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              {t('about')}
             </Link>
 
             <Link
