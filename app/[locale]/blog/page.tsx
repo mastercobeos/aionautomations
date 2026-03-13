@@ -102,6 +102,36 @@ const BLOG_POSTS = [
     descKey: 'post15Desc',
     dateKey: 'post15Date',
   },
+  {
+    slug: 'social-media-automation',
+    titleKey: 'post16Title',
+    descKey: 'post16Desc',
+    dateKey: 'post16Date',
+  },
+  {
+    slug: 'ai-email-marketing',
+    titleKey: 'post17Title',
+    descKey: 'post17Desc',
+    dateKey: 'post17Date',
+  },
+  {
+    slug: 'business-website-checklist',
+    titleKey: 'post18Title',
+    descKey: 'post18Desc',
+    dateKey: 'post18Date',
+  },
+  {
+    slug: 'real-estate-ai-marketing',
+    titleKey: 'post19Title',
+    descKey: 'post19Desc',
+    dateKey: 'post19Date',
+  },
+  {
+    slug: 'gym-fitness-automation',
+    titleKey: 'post20Title',
+    descKey: 'post20Desc',
+    dateKey: 'post20Date',
+  },
 ] as const;
 
 /* ─── Metadata ─── */

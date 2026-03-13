@@ -41,6 +41,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { slug: "restaurant-ai-automation", date: "2026-05-07" },
     { slug: "dental-clinic-marketing", date: "2026-05-14" },
     { slug: "conversion-rate-optimization", date: "2026-05-21" },
+    { slug: "social-media-automation", date: "2026-05-28" },
+    { slug: "ai-email-marketing", date: "2026-06-04" },
+    { slug: "business-website-checklist", date: "2026-06-11" },
+    { slug: "real-estate-ai-marketing", date: "2026-06-18" },
+    { slug: "gym-fitness-automation", date: "2026-06-25" },
   ];
 
   for (const post of blogPosts) {

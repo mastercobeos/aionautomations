@@ -27,6 +27,11 @@ const BLOG_POSTS: Record<string, { titleKey: string; date: string; namespace: st
   'restaurant-ai-automation': { titleKey: 'post13Title', date: '2026-05-07', namespace: 'BlogPage', prefix: 'post13', sections: 3 },
   'dental-clinic-marketing': { titleKey: 'post14Title', date: '2026-05-14', namespace: 'BlogPage', prefix: 'post14', sections: 3 },
   'conversion-rate-optimization': { titleKey: 'post15Title', date: '2026-05-21', namespace: 'BlogPage', prefix: 'post15', sections: 3 },
+  'social-media-automation': { titleKey: 'post16Title', date: '2026-05-28', namespace: 'BlogPage', prefix: 'post16', sections: 3 },
+  'ai-email-marketing': { titleKey: 'post17Title', date: '2026-06-04', namespace: 'BlogPage', prefix: 'post17', sections: 3 },
+  'business-website-checklist': { titleKey: 'post18Title', date: '2026-06-11', namespace: 'BlogPage', prefix: 'post18', sections: 3 },
+  'real-estate-ai-marketing': { titleKey: 'post19Title', date: '2026-06-18', namespace: 'BlogPage', prefix: 'post19', sections: 3 },
+  'gym-fitness-automation': { titleKey: 'post20Title', date: '2026-06-25', namespace: 'BlogPage', prefix: 'post20', sections: 3 },
 };
 
 /* ─── Force dynamic rendering — required for next-intl getTranslations ─── */
