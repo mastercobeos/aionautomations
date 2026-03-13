@@ -106,6 +106,39 @@ export const organizationSchema = {
     target: `${siteUrl}/en/contact`,
     name: "Request a free consultation",
   },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Digital Services",
+    itemListElement: [
+      {
+        "@type": "OfferCatalog",
+        name: "Web Design",
+        itemListElement: [
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom Website Design" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Ecommerce Website" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Landing Page Design" } },
+        ],
+      },
+      {
+        "@type": "OfferCatalog",
+        name: "AI Automation",
+        itemListElement: [
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "WhatsApp Chatbot" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Workflow Automation" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "CRM Integration" } },
+        ],
+      },
+      {
+        "@type": "OfferCatalog",
+        name: "AI Marketing",
+        itemListElement: [
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "SEO Optimization" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Social Media Marketing" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Email Marketing" } },
+        ],
+      },
+    ],
+  },
 };
 
 export const websiteSchema = (locale: string) => ({
@@ -210,7 +243,7 @@ export function webPageSchema(opts: {
   };
 }
 
-/** Blog posting schema */
+/** Blog posting schema (with speakable for AI/voice search) */
 export function blogPostSchema(opts: {
   locale: string;
   title: string;
@@ -240,6 +273,38 @@ export function blogPostSchema(opts: {
       "@id": `${siteUrl}/#organization`,
       name: "AION Automations",
       logo: { "@type": "ImageObject", url: `${siteUrl}/favicon.png`, width: 512, height: 512 },
+    },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["article h1", "article h2", "article p"],
+    },
+  };
+}
+
+/** HowTo schema for tutorial blog posts */
+export function howToSchema(opts: {
+  locale: string;
+  name: string;
+  description: string;
+  slug: string;
+  steps: { name: string; text: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: opts.name,
+    description: opts.description,
+    url: `${siteUrl}/${opts.locale}/blog/${opts.slug}`,
+    inLanguage: opts.locale === "es" ? "es" : "en",
+    step: opts.steps.map((step, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: step.name,
+      text: step.text,
+    })),
+    provider: {
+      "@type": "ProfessionalService",
+      "@id": `${siteUrl}/#organization`,
     },
   };
 }

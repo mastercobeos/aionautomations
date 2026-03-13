@@ -114,6 +114,7 @@ import { routing } from '@/i18n/routing';
 import { JsonLd } from '@/components/json-ld';
 import { PageLoader } from '@/components/page-loader';
 import { LazyStarfield } from '@/components/lazy-starfield';
+import { CookieConsent } from '@/components/cookie-consent';
 
 export default async function RootLayout({
   children,
@@ -156,6 +157,7 @@ export default async function RootLayout({
           <PageLoader />
           {children}
           <Analytics />
+          <CookieConsent />
         </NextIntlClientProvider>
       </body>
     </html>

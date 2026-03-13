@@ -6,12 +6,12 @@ import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { PageSchema } from '@/components/page-schema';
 import { FloatingSocialButtons } from '@/components/floating-social-buttons';
-import { blogPostSchema, breadcrumbSchema, siteUrl } from '@/lib/seo';
+import { blogPostSchema, breadcrumbSchema, howToSchema, siteUrl } from '@/lib/seo';
 import { ArrowLeft } from 'lucide-react';
 
 /* ─── Static blog post data map ─── */
 
-type BlogPost = { titleKey: string; date: string; namespace: string; prefix: string; sections: number; links: { href: string; labelKey: string }[] };
+type BlogPost = { titleKey: string; date: string; namespace: string; prefix: string; sections: number; links: { href: string; labelKey: string }[]; isTutorial?: boolean };
 
 const BLOG_POSTS: Record<string, BlogPost> = {
   'ai-automation-2026': { titleKey: 'post1Title', date: '2026-02-28', namespace: 'BlogPage', prefix: 'post1', sections: 3, links: [{ href: '/services/automations', labelKey: 'linkAuto' }, { href: '/services/web', labelKey: 'linkWeb' }, { href: '/pricing', labelKey: 'linkPricing' }] },
@@ -22,16 +22,16 @@ const BLOG_POSTS: Record<string, BlogPost> = {
   'ai-marketing-small-business': { titleKey: 'post6Title', date: '2026-03-19', namespace: 'BlogPage', prefix: 'post6', sections: 3, links: [{ href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/services/automations', labelKey: 'linkAuto' }, { href: '/pricing', labelKey: 'linkPricing' }] },
   'small-business-automation-ideas': { titleKey: 'post7Title', date: '2026-03-26', namespace: 'BlogPage', prefix: 'post7', sections: 3, links: [{ href: '/services/automations', labelKey: 'linkAuto' }, { href: '/services/web', labelKey: 'linkWeb' }, { href: '/pricing', labelKey: 'linkPricing' }] },
   'choose-web-design-agency': { titleKey: 'post8Title', date: '2026-04-02', namespace: 'BlogPage', prefix: 'post8', sections: 3, links: [{ href: '/services/web', labelKey: 'linkWeb' }, { href: '/work', labelKey: 'linkWork' }, { href: '/pricing', labelKey: 'linkPricing' }] },
-  'ai-chatbot-for-business': { titleKey: 'post9Title', date: '2026-04-09', namespace: 'BlogPage', prefix: 'post9', sections: 3, links: [{ href: '/services/automations', labelKey: 'linkAuto' }, { href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/contact', labelKey: 'linkContact' }] },
-  'n8n-automation-tutorial': { titleKey: 'post10Title', date: '2026-04-16', namespace: 'BlogPage', prefix: 'post10', sections: 3, links: [{ href: '/services/automations', labelKey: 'linkAuto' }, { href: '/pricing', labelKey: 'linkPricing' }, { href: '/contact', labelKey: 'linkContact' }] },
-  'lead-generation-service-business': { titleKey: 'post11Title', date: '2026-04-23', namespace: 'BlogPage', prefix: 'post11', sections: 3, links: [{ href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/services/web', labelKey: 'linkWeb' }, { href: '/contact', labelKey: 'linkContact' }] },
-  'ecommerce-website-guide': { titleKey: 'post12Title', date: '2026-04-30', namespace: 'BlogPage', prefix: 'post12', sections: 3, links: [{ href: '/services/web', labelKey: 'linkWeb' }, { href: '/pricing', labelKey: 'linkPricing' }, { href: '/contact', labelKey: 'linkContact' }] },
+  'ai-chatbot-for-business': { titleKey: 'post9Title', date: '2026-04-09', namespace: 'BlogPage', prefix: 'post9', sections: 3, isTutorial: true, links: [{ href: '/services/automations', labelKey: 'linkAuto' }, { href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/contact', labelKey: 'linkContact' }] },
+  'n8n-automation-tutorial': { titleKey: 'post10Title', date: '2026-04-16', namespace: 'BlogPage', prefix: 'post10', sections: 3, isTutorial: true, links: [{ href: '/services/automations', labelKey: 'linkAuto' }, { href: '/pricing', labelKey: 'linkPricing' }, { href: '/contact', labelKey: 'linkContact' }] },
+  'lead-generation-service-business': { titleKey: 'post11Title', date: '2026-04-23', namespace: 'BlogPage', prefix: 'post11', sections: 3, isTutorial: true, links: [{ href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/services/web', labelKey: 'linkWeb' }, { href: '/contact', labelKey: 'linkContact' }] },
+  'ecommerce-website-guide': { titleKey: 'post12Title', date: '2026-04-30', namespace: 'BlogPage', prefix: 'post12', sections: 3, isTutorial: true, links: [{ href: '/services/web', labelKey: 'linkWeb' }, { href: '/pricing', labelKey: 'linkPricing' }, { href: '/contact', labelKey: 'linkContact' }] },
   'restaurant-ai-automation': { titleKey: 'post13Title', date: '2026-05-07', namespace: 'BlogPage', prefix: 'post13', sections: 3, links: [{ href: '/industries/restaurants', labelKey: 'linkRestaurants' }, { href: '/services/automations', labelKey: 'linkAuto' }, { href: '/contact', labelKey: 'linkContact' }] },
   'dental-clinic-marketing': { titleKey: 'post14Title', date: '2026-05-14', namespace: 'BlogPage', prefix: 'post14', sections: 3, links: [{ href: '/industries/dental', labelKey: 'linkDental' }, { href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/contact', labelKey: 'linkContact' }] },
-  'conversion-rate-optimization': { titleKey: 'post15Title', date: '2026-05-21', namespace: 'BlogPage', prefix: 'post15', sections: 3, links: [{ href: '/services/web', labelKey: 'linkWeb' }, { href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/pricing', labelKey: 'linkPricing' }] },
+  'conversion-rate-optimization': { titleKey: 'post15Title', date: '2026-05-21', namespace: 'BlogPage', prefix: 'post15', sections: 3, isTutorial: true, links: [{ href: '/services/web', labelKey: 'linkWeb' }, { href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/pricing', labelKey: 'linkPricing' }] },
   'social-media-automation': { titleKey: 'post16Title', date: '2026-05-28', namespace: 'BlogPage', prefix: 'post16', sections: 3, links: [{ href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/services/automations', labelKey: 'linkAuto' }, { href: '/contact', labelKey: 'linkContact' }] },
   'ai-email-marketing': { titleKey: 'post17Title', date: '2026-06-04', namespace: 'BlogPage', prefix: 'post17', sections: 3, links: [{ href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/services/automations', labelKey: 'linkAuto' }, { href: '/pricing', labelKey: 'linkPricing' }] },
-  'business-website-checklist': { titleKey: 'post18Title', date: '2026-06-11', namespace: 'BlogPage', prefix: 'post18', sections: 3, links: [{ href: '/services/web', labelKey: 'linkWeb' }, { href: '/pricing', labelKey: 'linkPricing' }, { href: '/contact', labelKey: 'linkContact' }] },
+  'business-website-checklist': { titleKey: 'post18Title', date: '2026-06-11', namespace: 'BlogPage', prefix: 'post18', sections: 3, isTutorial: true, links: [{ href: '/services/web', labelKey: 'linkWeb' }, { href: '/pricing', labelKey: 'linkPricing' }, { href: '/contact', labelKey: 'linkContact' }] },
   'real-estate-ai-marketing': { titleKey: 'post19Title', date: '2026-06-18', namespace: 'BlogPage', prefix: 'post19', sections: 3, links: [{ href: '/industries/real-estate', labelKey: 'linkRealEstate' }, { href: '/services/marketing', labelKey: 'linkMarketing' }, { href: '/contact', labelKey: 'linkContact' }] },
   'gym-fitness-automation': { titleKey: 'post20Title', date: '2026-06-25', namespace: 'BlogPage', prefix: 'post20', sections: 3, links: [{ href: '/industries/gyms', labelKey: 'linkGyms' }, { href: '/services/automations', labelKey: 'linkAuto' }, { href: '/contact', labelKey: 'linkContact' }] },
 };
@@ -135,7 +135,7 @@ export default async function BlogPostPage({
     { label: postTitle },
   ];
 
-  const schemas = [
+  const schemas: Record<string, unknown>[] = [
     blogPostSchema({
       locale,
       title: postTitle,
@@ -149,6 +149,15 @@ export default async function BlogPostPage({
       { name: postTitle, url: `${siteUrl}/${locale}/blog/${slug}` },
     ]),
   ];
+
+  // Add HowTo schema for tutorial posts (AI Search / voice optimization)
+  if (post.isTutorial) {
+    const steps = Array.from({ length: post.sections }, (_, i) => ({
+      name: t(`${post.prefix}_s${i + 1}Title`),
+      text: t(`${post.prefix}_s${i + 1}Text`).slice(0, 200),
+    }));
+    schemas.push(howToSchema({ locale, name: postTitle, description: postDesc, slug, steps }));
+  }
 
   return (
     <main id="main-content" className="relative min-h-screen animate-page-in">

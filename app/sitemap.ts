@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
   // Last real deployment / content update date
-  const siteLastModified = new Date("2026-03-06");
+  const siteLastModified = new Date("2026-03-13");
 
   for (const route of pageRoutes) {
     for (const locale of locales) {
