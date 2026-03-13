@@ -60,16 +60,28 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: post.namespace });
   const title = t(post.titleKey);
 
+  const description = t(post.titleKey.replace('Title', 'Desc'));
+  const url = `${siteUrl}/${locale}/blog/${slug}`;
+
   return {
     title,
-    description: t(post.titleKey.replace('Title', 'Desc')),
+    description,
     alternates: {
-      canonical: `${siteUrl}/${locale}/blog/${slug}`,
+      canonical: url,
       languages: {
         en: `${siteUrl}/en/blog/${slug}`,
         es: `${siteUrl}/es/blog/${slug}`,
         "x-default": `${siteUrl}/en/blog/${slug}`,
       },
+    },
+    openGraph: {
+      type: 'article',
+      title,
+      description,
+      url,
+      publishedTime: post.date,
+      authors: ['AION Automations'],
+      locale: locale === 'es' ? 'es_ES' : 'en_US',
     },
   };
 }

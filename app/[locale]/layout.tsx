@@ -89,6 +89,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
+      site: '@aionautomations',
+      creator: '@aionautomations',
       images: [ogImage],
     },
     robots: {
