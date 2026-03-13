@@ -16,6 +16,10 @@ const BLOG_POSTS: Record<string, { titleKey: string; date: string; namespace: st
   'website-cost-guide': { titleKey: 'post2Title', date: '2026-02-20', namespace: 'BlogPage', prefix: 'post2', sections: 3 },
   'whatsapp-ai-automation': { titleKey: 'post3Title', date: '2026-02-12', namespace: 'BlogPage', prefix: 'post3', sections: 3 },
   'local-seo-guide': { titleKey: 'post4Title', date: '2026-02-05', namespace: 'BlogPage', prefix: 'post4', sections: 3 },
+  'ai-crm-small-business': { titleKey: 'post5Title', date: '2026-03-12', namespace: 'BlogPage', prefix: 'post5', sections: 3 },
+  'ai-marketing-small-business': { titleKey: 'post6Title', date: '2026-03-19', namespace: 'BlogPage', prefix: 'post6', sections: 3 },
+  'small-business-automation-ideas': { titleKey: 'post7Title', date: '2026-03-26', namespace: 'BlogPage', prefix: 'post7', sections: 3 },
+  'choose-web-design-agency': { titleKey: 'post8Title', date: '2026-04-02', namespace: 'BlogPage', prefix: 'post8', sections: 3 },
 };
 
 /* ─── ISR: regenerate every hour (better performance than force-dynamic) ─── */

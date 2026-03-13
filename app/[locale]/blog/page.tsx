@@ -36,6 +36,30 @@ const BLOG_POSTS = [
     descKey: 'post4Desc',
     dateKey: 'post4Date',
   },
+  {
+    slug: 'ai-crm-small-business',
+    titleKey: 'post5Title',
+    descKey: 'post5Desc',
+    dateKey: 'post5Date',
+  },
+  {
+    slug: 'ai-marketing-small-business',
+    titleKey: 'post6Title',
+    descKey: 'post6Desc',
+    dateKey: 'post6Date',
+  },
+  {
+    slug: 'small-business-automation-ideas',
+    titleKey: 'post7Title',
+    descKey: 'post7Desc',
+    dateKey: 'post7Date',
+  },
+  {
+    slug: 'choose-web-design-agency',
+    titleKey: 'post8Title',
+    descKey: 'post8Desc',
+    dateKey: 'post8Date',
+  },
 ] as const;
 
 /* ─── Metadata ─── */

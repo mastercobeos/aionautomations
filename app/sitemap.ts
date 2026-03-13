@@ -30,6 +30,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { slug: "website-cost-guide", date: "2026-02-20" },
     { slug: "whatsapp-ai-automation", date: "2026-02-12" },
     { slug: "local-seo-guide", date: "2026-02-05" },
+    { slug: "ai-crm-small-business", date: "2026-03-12" },
+    { slug: "ai-marketing-small-business", date: "2026-03-19" },
+    { slug: "small-business-automation-ideas", date: "2026-03-26" },
+    { slug: "choose-web-design-agency", date: "2026-04-02" },
   ];
 
   for (const post of blogPosts) {
