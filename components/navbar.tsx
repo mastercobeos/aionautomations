@@ -67,7 +67,7 @@ export function Navbar() {
             alt="AION Automations"
             width={180}
             height={130}
-            className="h-16 w-auto sm:h-20"
+            className="h-12 w-auto sm:h-14"
             priority
             sizes="(max-width: 640px) 64px, 80px"
           />
