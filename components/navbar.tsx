@@ -65,9 +65,9 @@ export function Navbar() {
           <Image
             src="/LOGO.webp"
             alt="AION Automations"
-            width={160}
-            height={139}
-            className="h-20 w-auto sm:h-24"
+            width={180}
+            height={130}
+            className="h-16 w-auto sm:h-20"
             priority
             sizes="(max-width: 640px) 64px, 80px"
           />
