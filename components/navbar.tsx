@@ -65,10 +65,11 @@ export function Navbar() {
           <Image
             src="/LOGO.webp"
             alt="AION Automations"
-            width={120}
-            height={80}
+            width={200}
+            height={143}
             className="h-16 w-auto sm:h-20"
             priority
+            sizes="(max-width: 640px) 64px, 80px"
           />
         </Link>
 
@@ -80,6 +81,7 @@ export function Navbar() {
               onClick={() => { setServicesOpen(!servicesOpen); setIndustriesOpen(false) }}
               className="flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap"
               aria-expanded={servicesOpen}
+              aria-haspopup="menu"
             >
               {t('services')}
               <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
@@ -106,6 +108,7 @@ export function Navbar() {
               onClick={() => { setIndustriesOpen(!industriesOpen); setServicesOpen(false) }}
               className="flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap"
               aria-expanded={industriesOpen}
+              aria-haspopup="menu"
             >
               {t('industries')}
               <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${industriesOpen ? 'rotate-180' : ''}`} />
