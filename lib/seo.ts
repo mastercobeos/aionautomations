@@ -16,9 +16,12 @@ export const organizationSchema = {
   "@type": "ProfessionalService",
   "@id": `${siteUrl}/#organization`,
   name: "AION Automations",
+  alternateName: "AION",
   url: siteUrl,
   description:
     "Web design agency and AI automation for small businesses. Custom websites, WhatsApp chatbots, workflow automation, and digital marketing. Agencia de diseño web y automatización con IA para pymes.",
+  slogan: "Automate. Accelerate. Dominate.",
+  foundingDate: "2024",
   logo: {
     "@type": "ImageObject",
     url: `${siteUrl}/favicon.png`,
@@ -82,6 +85,33 @@ export const organizationSchema = {
     "Landing Page Design",
     "n8n Automation",
     "Make.com Automation",
+  ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "8",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  review: [
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Maria Gonzalez" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody: "In 3 weeks we increased appointments by 65%. The WhatsApp system books patients on its own, even at 2 AM.",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Pablo Ruiz" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody: "The new site converts 3x more than the old one. And the WhatsApp bot books property tours without anyone watching the phone.",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Andrea Mendez" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody: "We went from losing 40% of leads to capturing 90%. AION integrated everything: website, CRM, and automated flows.",
+    },
   ],
   sameAs: [
     process.env.NEXT_PUBLIC_INSTAGRAM_URL || "",
@@ -151,6 +181,11 @@ export const websiteSchema = (locale: string) => ({
       ? "Agencia de diseño web profesional y automatización con IA para pymes. Chatbots WhatsApp, CRM, flujos de trabajo automatizados y marketing digital con inteligencia artificial."
       : "Professional web design agency and AI automation for small businesses. WhatsApp chatbots, CRM, workflow automation, and AI-powered digital marketing.",
   inLanguage: locale === "es" ? "es" : "en",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${siteUrl}/${locale}/blog?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
 });
 
 /** Servicios principales para SEO y schema (tres pilares) */
@@ -253,12 +288,14 @@ export function blogPostSchema(opts: {
   dateModified?: string;
   image?: string;
 }) {
+  const url = `${siteUrl}/${opts.locale}/blog/${opts.slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: opts.title,
     description: opts.description,
-    url: `${siteUrl}/${opts.locale}/blog/${opts.slug}`,
+    url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
     datePublished: opts.datePublished,
     dateModified: opts.dateModified || opts.datePublished,
     image: opts.image || `${siteUrl}/og-image-${opts.locale === "es" ? "es" : "en"}.jpg`,
@@ -303,6 +340,174 @@ export function howToSchema(opts: {
       text: step.text,
     })),
     provider: {
+      "@type": "ProfessionalService",
+      "@id": `${siteUrl}/#organization`,
+    },
+  };
+}
+
+/** CollectionPage schema for listing pages (blog index, industries hub) */
+export function collectionPageSchema(opts: {
+  locale: string;
+  title: string;
+  description: string;
+  path: string;
+  items: { name: string; url: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: opts.title,
+    description: opts.description,
+    url: `${siteUrl}/${opts.locale}${opts.path}`,
+    inLanguage: opts.locale === "es" ? "es" : "en",
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: opts.items.length,
+      itemListElement: opts.items.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: item.name,
+        url: item.url,
+      })),
+    },
+  };
+}
+
+/** SiteNavigationElement schema for main navigation */
+export function siteNavigationSchema(locale: string) {
+  const nav = [
+    { name: locale === "es" ? "Inicio" : "Home", url: `${siteUrl}/${locale}` },
+    { name: locale === "es" ? "Páginas Web" : "Web Design", url: `${siteUrl}/${locale}/services/web` },
+    { name: locale === "es" ? "Automatizaciones" : "Automations", url: `${siteUrl}/${locale}/services/automations` },
+    { name: locale === "es" ? "Marketing" : "Marketing", url: `${siteUrl}/${locale}/services/marketing` },
+    { name: locale === "es" ? "Industrias" : "Industries", url: `${siteUrl}/${locale}/industries` },
+    { name: locale === "es" ? "Portafolio" : "Portfolio", url: `${siteUrl}/${locale}/work` },
+    { name: locale === "es" ? "Precios" : "Pricing", url: `${siteUrl}/${locale}/pricing` },
+    { name: "Blog", url: `${siteUrl}/${locale}/blog` },
+    { name: locale === "es" ? "Nosotros" : "About", url: `${siteUrl}/${locale}/about` },
+    { name: locale === "es" ? "Contacto" : "Contact", url: `${siteUrl}/${locale}/contact` },
+  ];
+  return {
+    "@context": "https://schema.org",
+    "@type": "SiteNavigationElement",
+    name: locale === "es" ? "Navegación principal" : "Main navigation",
+    url: `${siteUrl}/${locale}`,
+    hasPart: nav.map((item) => ({
+      "@type": "WebPage",
+      name: item.name,
+      url: item.url,
+    })),
+  };
+}
+
+/** Reusable OG + Twitter metadata for interior pages */
+export function ogMeta(opts: { locale: string; title: string; description: string; path: string }) {
+  const url = `${siteUrl}/${opts.locale}${opts.path}`;
+  const ogImage = opts.locale === 'es' ? `${siteUrl}/og-image-es.jpg` : `${siteUrl}/og-image-en.jpg`;
+  return {
+    openGraph: {
+      type: 'website' as const,
+      url,
+      title: opts.title,
+      description: opts.description,
+      siteName: 'AION Automations',
+      locale: opts.locale === 'es' ? 'es_ES' : 'en_US',
+      images: [{ url: ogImage, width: 1200, height: 630, alt: opts.title }],
+    },
+    twitter: {
+      card: 'summary_large_image' as const,
+      title: opts.title,
+      description: opts.description,
+      images: [ogImage],
+      site: '@aionautomations',
+      creator: '@aionautomations',
+    },
+  };
+}
+
+/** Service Offer schema for pricing pages (rich snippets) */
+export function serviceOfferSchema(opts: {
+  locale: string;
+  serviceName: string;
+  description: string;
+  path: string;
+  tiers: { name: string; price: string; currency?: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: opts.serviceName,
+    description: opts.description,
+    url: `${siteUrl}/${opts.locale}${opts.path}`,
+    provider: {
+      "@type": "ProfessionalService",
+      "@id": `${siteUrl}/#organization`,
+      name: "AION Automations",
+    },
+    offers: opts.tiers.map((tier) => ({
+      "@type": "Offer",
+      name: tier.name,
+      price: tier.price,
+      priceCurrency: tier.currency || "USD",
+      availability: "https://schema.org/InStock",
+      url: `${siteUrl}/${opts.locale}${opts.path}`,
+    })),
+  };
+}
+
+/** AboutPage schema — specialized WebPage type for "About Us" */
+export function aboutPageSchema(opts: {
+  locale: string;
+  title: string;
+  description: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: opts.title,
+    description: opts.description,
+    url: `${siteUrl}/${opts.locale}/about`,
+    inLanguage: opts.locale === "es" ? "es" : "en",
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      name: "AION Automations",
+    },
+    about: {
+      "@type": "ProfessionalService",
+      "@id": `${siteUrl}/#organization`,
+    },
+    publisher: {
+      "@type": "ProfessionalService",
+      "@id": `${siteUrl}/#organization`,
+    },
+  };
+}
+
+/** ContactPage schema — specialized WebPage type for "Contact" */
+export function contactPageSchema(opts: {
+  locale: string;
+  title: string;
+  description: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: opts.title,
+    description: opts.description,
+    url: `${siteUrl}/${opts.locale}/contact`,
+    inLanguage: opts.locale === "es" ? "es" : "en",
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      name: "AION Automations",
+    },
+    publisher: {
       "@type": "ProfessionalService",
       "@id": `${siteUrl}/#organization`,
     },
