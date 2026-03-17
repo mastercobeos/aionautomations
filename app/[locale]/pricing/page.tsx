@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { ArrowRight, Globe, Workflow, TrendingUp } from 'lucide-react';
+import { ArrowRight, Globe, Workflow, TrendingUp, Zap, Check } from 'lucide-react';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { FaqAccordion } from '@/components/faq-accordion';
 import { PageSchema } from '@/components/page-schema';
 import { FloatingSocialButtons } from '@/components/floating-social-buttons';
-import { webPageSchema, breadcrumbSchema, faqSchema, siteUrl } from '@/lib/seo';
+import { webPageSchema, breadcrumbSchema, faqSchema, siteUrl, ogMeta } from '@/lib/seo';
 import { Link } from '@/i18n/routing';
 
 /* ─── Metadata ─── */
@@ -19,13 +19,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'PricingPage' });
+  const title = t('metaTitle');
+  const description = t('metaDesc');
+  const keywords = locale === 'es'
+    ? ['precios diseño web', 'costo página web', 'paquetes automatización IA', 'precios marketing digital']
+    : ['web design pricing', 'website cost', 'AI automation packages', 'digital marketing pricing'];
   return {
-    title: t('metaTitle'),
-    description: t('metaDesc'),
+    title,
+    description,
+    keywords,
     alternates: {
       canonical: `${siteUrl}/${locale}/pricing`,
       languages: { en: `${siteUrl}/en/pricing`, es: `${siteUrl}/es/pricing`, "x-default": `${siteUrl}/en/pricing` },
     },
+    ...ogMeta({ locale, title, description, path: '/pricing' }),
   };
 }
 
@@ -169,6 +176,47 @@ export default async function PricingPage({
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Bundle Card */}
+            <div className="relative mt-10 rounded-xl border border-cyan-500/40 bg-gradient-to-br from-cyan-500/10 via-purple-500/5 to-transparent p-6 md:p-8">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 px-4 py-1 text-xs font-bold uppercase tracking-wider text-white">
+                {t('bundleBadge')}
+              </span>
+
+              <div className="grid gap-6 md:grid-cols-2 md:items-center">
+                <div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500/15 border border-cyan-400/30">
+                      <Zap className="h-6 w-6 text-cyan-300" />
+                    </div>
+                    <h2 className="text-2xl font-bold text-foreground">{t('bundleName')}</h2>
+                  </div>
+                  <div className="flex items-baseline gap-3 mb-3">
+                    <span className="text-lg text-muted-foreground line-through">{t('bundleOriginal')}</span>
+                    <span className="text-3xl font-bold text-cyan-400">{t('bundlePrice')}</span>
+                  </div>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{t('bundleDesc')}</p>
+                  <div className="mt-5">
+                    <Link
+                      href="/contact"
+                      className="btn-glow inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-cyan-500 to-purple-600 px-6 py-3 text-sm font-semibold text-white transition-all hover:scale-[1.02]"
+                    >
+                      {t('bundleButton')}
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </div>
+
+                <ul className="space-y-3">
+                  {['bundleFeat1','bundleFeat2','bundleFeat3','bundleFeat4','bundleFeat5','bundleFeat6'].map((key) => (
+                    <li key={key} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <Check className="h-4 w-4 mt-0.5 shrink-0 text-cyan-400" />
+                      {t(key)}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             <p className="mt-10 text-center text-sm text-muted-foreground">
