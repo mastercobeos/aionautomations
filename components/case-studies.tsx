@@ -2,14 +2,14 @@
 
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { ExternalLink, ArrowRight, Construction } from 'lucide-react';
+import { ExternalLink, ArrowRight, Construction, Star } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
 const PROJECTS = [
-  { titleKey: 'project1Title', descKey: 'project1Desc', tagKey: 'project1Tag', industryKey: 'project1Industry', url: 'https://axelstourspdc.com/', image: '/project-axels.jpg' },
-  { titleKey: 'project2Title', descKey: 'project2Desc', tagKey: 'project2Tag', industryKey: 'project2Industry', url: 'https://stareventrentaltx.com/', image: '/project-star.jpg' },
-  { titleKey: 'project3Title', descKey: 'project3Desc', tagKey: 'project3Tag', industryKey: 'project3Industry', url: 'https://ahomeqroo.com/', image: '/project-ahome.jpg' },
-  { titleKey: 'project4Title', descKey: 'project4Desc', tagKey: 'project4Tag', industryKey: 'project4Industry', url: null, image: null },
+  { titleKey: 'project1Title', descKey: 'project1Desc', tagKey: 'project1Tag', industryKey: 'project1Industry', quoteKey: 'project1Quote', url: 'https://axelstourspdc.com/', image: '/project-axels.jpg' },
+  { titleKey: 'project2Title', descKey: 'project2Desc', tagKey: 'project2Tag', industryKey: 'project2Industry', quoteKey: 'project2Quote', url: 'https://stareventrentaltx.com/', image: '/project-star.jpg' },
+  { titleKey: 'project3Title', descKey: 'project3Desc', tagKey: 'project3Tag', industryKey: 'project3Industry', quoteKey: 'project3Quote', url: 'https://ahomeqroo.com/', image: '/project-ahome.jpg' },
+  { titleKey: 'project4Title', descKey: 'project4Desc', tagKey: 'project4Tag', industryKey: 'project4Industry', quoteKey: 'project4Quote', url: null, image: null },
 ]
 
 export function CaseStudies() {
@@ -95,10 +95,17 @@ export function CaseStudies() {
                   {t(project.titleKey)}
                 </h3>
 
-                {/* Description */}
-                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                  {t(project.descKey)}
-                </p>
+                {/* Quote */}
+                <div className="mt-3 rounded-lg border border-white/5 bg-white/[0.02] p-3">
+                  <div className="flex gap-0.5 mb-1.5">
+                    {Array.from({ length: 5 }).map((_, si) => (
+                      <Star key={si} className="h-3 w-3 star-filled fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-xs leading-relaxed text-muted-foreground italic">
+                    &ldquo;{t(project.quoteKey)}&rdquo;
+                  </p>
+                </div>
 
                 {/* Link */}
                 {project.url && (
