@@ -6,9 +6,9 @@ import { ExternalLink, ArrowRight, Construction } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
 const PROJECTS = [
-  { titleKey: 'project1Title', descKey: 'project1Desc', tagKey: 'project1Tag', industryKey: 'project1Industry', url: 'https://axelstourspdc.com/', image: '/project-axels.png' },
-  { titleKey: 'project2Title', descKey: 'project2Desc', tagKey: 'project2Tag', industryKey: 'project2Industry', url: 'https://stareventrentaltx.com/', image: '/project-star.png' },
-  { titleKey: 'project3Title', descKey: 'project3Desc', tagKey: 'project3Tag', industryKey: 'project3Industry', url: 'https://ahomeqroo.com/', image: '/project-ahome.png' },
+  { titleKey: 'project1Title', descKey: 'project1Desc', tagKey: 'project1Tag', industryKey: 'project1Industry', url: 'https://axelstourspdc.com/', image: '/project-axels.jpg' },
+  { titleKey: 'project2Title', descKey: 'project2Desc', tagKey: 'project2Tag', industryKey: 'project2Industry', url: 'https://stareventrentaltx.com/', image: '/project-star.jpg' },
+  { titleKey: 'project3Title', descKey: 'project3Desc', tagKey: 'project3Tag', industryKey: 'project3Industry', url: 'https://ahomeqroo.com/', image: '/project-ahome.jpg' },
   { titleKey: 'project4Title', descKey: 'project4Desc', tagKey: 'project4Tag', industryKey: 'project4Industry', url: null, image: null },
 ]
 

@@ -52,7 +52,7 @@ const PROJECTS = [
     industryKey: 'project1Industry',
     locationKey: 'project1Location',
     url: 'https://axelstourspdc.com/',
-    image: '/project-axels.png',
+    image: '/project-axels.jpg',
   },
   {
     titleKey: 'project2Title',
@@ -61,7 +61,7 @@ const PROJECTS = [
     industryKey: 'project2Industry',
     locationKey: 'project2Location',
     url: 'https://stareventrentaltx.com/',
-    image: '/project-star.png',
+    image: '/project-star.jpg',
   },
   {
     titleKey: 'project3Title',
@@ -70,7 +70,7 @@ const PROJECTS = [
     industryKey: 'project3Industry',
     locationKey: 'project3Location',
     url: 'https://ahomeqroo.com/',
-    image: '/project-ahome.png',
+    image: '/project-ahome.jpg',
   },
   {
     titleKey: 'project4Title',
