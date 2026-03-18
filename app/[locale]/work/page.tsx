@@ -8,7 +8,7 @@ import { PageSchema } from '@/components/page-schema';
 import { FloatingSocialButtons } from '@/components/floating-social-buttons';
 import { InternalNav } from '@/components/internal-nav';
 import { webPageSchema, breadcrumbSchema, siteUrl, ogMeta } from '@/lib/seo';
-import { ArrowRight, ExternalLink, MapPin } from 'lucide-react';
+import { ArrowRight, ExternalLink, MapPin, Construction } from 'lucide-react';
 
 /* ─── Metadata ─── */
 
@@ -150,53 +150,97 @@ export default async function WorkPage({
               {PROJECTS.map((project) => (
                 <div
                   key={project.titleKey}
-                  className="gradient-border-static shimmer-card group rounded-2xl p-6 md:p-8 transition-all duration-300 flex flex-col"
+                  className="gradient-border-static shimmer-card group rounded-2xl overflow-hidden transition-all duration-300 flex flex-col"
                 >
-                  {/* Tags row */}
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <span className="inline-flex items-center rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-400">
-                      {t(project.tagKey)}
-                    </span>
-                    <span className="inline-flex items-center rounded-full border border-purple-500/30 bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-400">
-                      {t(project.industryKey)}
-                    </span>
-                    {!project.url && (
-                      <span className="inline-flex items-center rounded-full border border-yellow-500/30 bg-yellow-500/10 px-3 py-1 text-xs font-medium text-yellow-400">
-                        {t('inProgress')}
-                      </span>
+                  {/* Site Preview */}
+                  <div className="relative w-full overflow-hidden bg-black/40 border-b border-white/10" style={{ height: '260px' }}>
+                    {/* Browser chrome */}
+                    <div className="flex items-center gap-1.5 px-3 py-2 bg-white/5 border-b border-white/10">
+                      <div className="h-2 w-2 rounded-full bg-red-500/60" />
+                      <div className="h-2 w-2 rounded-full bg-yellow-500/60" />
+                      <div className="h-2 w-2 rounded-full bg-green-500/60" />
+                      <div className="ml-2 flex-1 h-4 rounded-full bg-white/10 flex items-center px-2">
+                        <span className="text-[9px] text-white/30 truncate">
+                          {project.url ? project.url.replace('https://', '') : '...'}
+                        </span>
+                      </div>
+                    </div>
+
+                    {project.url ? (
+                      <div className="relative w-full" style={{ height: '230px' }}>
+                        <iframe
+                          src={project.url}
+                          title={t(project.titleKey)}
+                          className="absolute top-0 left-0 border-0 pointer-events-none"
+                          style={{
+                            width: '1280px',
+                            height: '960px',
+                            transform: 'scale(0.45)',
+                            transformOrigin: 'top left',
+                          }}
+                          loading="lazy"
+                          sandbox="allow-scripts allow-same-origin"
+                          tabIndex={-1}
+                        />
+                      </div>
+                    ) : (
+                      <div className="flex items-center justify-center h-[230px] bg-gradient-to-br from-yellow-500/5 to-transparent">
+                        <div className="text-center">
+                          <Construction className="h-10 w-10 text-yellow-400/50 mx-auto mb-2" />
+                          <span className="text-sm text-yellow-400/60 font-medium">{t('inProgress')}</span>
+                        </div>
+                      </div>
                     )}
                   </div>
 
-                  {/* Title */}
-                  <h2 className="mt-4 text-2xl font-bold text-foreground">
-                    {t(project.titleKey)}
-                  </h2>
-
-                  {/* Location */}
-                  <div className="mt-2 flex items-center gap-1.5 text-sm text-muted-foreground">
-                    <MapPin className="h-3.5 w-3.5 text-cyan-400" />
-                    {t(project.locationKey)}
-                  </div>
-
-                  {/* Description */}
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {t(project.descKey)}
-                  </p>
-
-                  {/* CTA */}
-                  {project.url && (
-                    <div className="mt-auto pt-6">
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-lg border border-cyan-500/20 bg-cyan-500/5 px-4 py-2.5 text-sm font-semibold text-foreground transition-all hover:bg-cyan-500/10 hover:border-cyan-500/40"
-                      >
-                        {t('viewProject')}
-                        <ExternalLink className="h-3.5 w-3.5" />
-                      </a>
+                  {/* Card Content */}
+                  <div className="p-6 md:p-8 flex flex-col flex-1">
+                    {/* Tags row */}
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="inline-flex items-center rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-400">
+                        {t(project.tagKey)}
+                      </span>
+                      <span className="inline-flex items-center rounded-full border border-purple-500/30 bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-400">
+                        {t(project.industryKey)}
+                      </span>
+                      {!project.url && (
+                        <span className="inline-flex items-center rounded-full border border-yellow-500/30 bg-yellow-500/10 px-3 py-1 text-xs font-medium text-yellow-400">
+                          {t('inProgress')}
+                        </span>
+                      )}
                     </div>
-                  )}
+
+                    {/* Title */}
+                    <h2 className="mt-4 text-2xl font-bold text-foreground">
+                      {t(project.titleKey)}
+                    </h2>
+
+                    {/* Location */}
+                    <div className="mt-2 flex items-center gap-1.5 text-sm text-muted-foreground">
+                      <MapPin className="h-3.5 w-3.5 text-cyan-400" />
+                      {t(project.locationKey)}
+                    </div>
+
+                    {/* Description */}
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                      {t(project.descKey)}
+                    </p>
+
+                    {/* CTA */}
+                    {project.url && (
+                      <div className="mt-auto pt-6">
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-lg border border-cyan-500/20 bg-cyan-500/5 px-4 py-2.5 text-sm font-semibold text-foreground transition-all hover:bg-cyan-500/10 hover:border-cyan-500/40"
+                        >
+                          {t('viewProject')}
+                          <ExternalLink className="h-3.5 w-3.5" />
+                        </a>
+                      </div>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
