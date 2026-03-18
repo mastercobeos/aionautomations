@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { ExternalLink, ArrowRight, Construction, Star } from 'lucide-react';
+import { ExternalLink, ArrowRight, Construction } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
 const PROJECTS = [
@@ -94,18 +94,6 @@ export function CaseStudies() {
                 <h3 className="mt-2.5 text-lg font-bold text-foreground">
                   {t(project.titleKey)}
                 </h3>
-
-                {/* Quote */}
-                <div className="mt-3 rounded-lg border border-white/5 bg-white/[0.02] p-3">
-                  <div className="flex gap-0.5 mb-1.5">
-                    {Array.from({ length: 5 }).map((_, si) => (
-                      <Star key={si} className="h-3 w-3 star-filled fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-xs leading-relaxed text-muted-foreground italic">
-                    &ldquo;{t(project.quoteKey)}&rdquo;
-                  </p>
-                </div>
 
                 {/* Link */}
                 {project.url && (
