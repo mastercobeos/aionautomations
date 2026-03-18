@@ -1,12 +1,14 @@
 "use client"
 
 import { useTranslations } from 'next-intl';
-import { MousePointerClick, Users, Clock } from 'lucide-react';
+import { ExternalLink, ArrowRight } from 'lucide-react';
+import { Link } from '@/i18n/routing';
 
-const BENEFITS = [
-  { icon: MousePointerClick, labelKey: 'metric1Label', descKey: 'metric1Desc' },
-  { icon: Users, labelKey: 'metric2Label', descKey: 'metric2Desc' },
-  { icon: Clock, labelKey: 'metric3Label', descKey: 'metric3Desc' },
+const PROJECTS = [
+  { titleKey: 'project1Title', descKey: 'project1Desc', tagKey: 'project1Tag', industryKey: 'project1Industry', url: 'https://axelstourspdc.com/' },
+  { titleKey: 'project2Title', descKey: 'project2Desc', tagKey: 'project2Tag', industryKey: 'project2Industry', url: 'https://stareventrentaltx.com/' },
+  { titleKey: 'project3Title', descKey: 'project3Desc', tagKey: 'project3Tag', industryKey: 'project3Industry', url: 'https://ahomeqroo.com/' },
+  { titleKey: 'project4Title', descKey: 'project4Desc', tagKey: 'project4Tag', industryKey: 'project4Industry', url: null },
 ]
 
 export function CaseStudies() {
@@ -28,24 +30,65 @@ export function CaseStudies() {
           </p>
         </div>
 
-        {/* Benefit Cards */}
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
-          {BENEFITS.map((benefit, i) => (
+        {/* Project Cards */}
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {PROJECTS.map((project, i) => (
             <div
-              key={benefit.labelKey}
-              className={`reveal reveal-delay-${i + 1} gradient-border-static shimmer-card rounded-2xl p-8 text-center md:p-12`}
+              key={project.titleKey}
+              className={`reveal reveal-delay-${i + 1} gradient-border-static shimmer-card rounded-2xl p-6 flex flex-col`}
             >
-              <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-500/15 border border-cyan-400/30 shadow-[0_0_20px_rgba(34,212,254,0.15),0_0_40px_rgba(34,212,254,0.05)]">
-                <benefit.icon className="h-7 w-7 text-cyan-300 drop-shadow-[0_0_6px_rgba(34,212,254,0.6)]" />
+              {/* Tags */}
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="inline-flex items-center rounded-full border border-cyan-500/30 bg-cyan-500/10 px-2.5 py-0.5 text-[10px] font-medium text-cyan-400">
+                  {t(project.tagKey)}
+                </span>
+                <span className="inline-flex items-center rounded-full border border-purple-500/30 bg-purple-500/10 px-2.5 py-0.5 text-[10px] font-medium text-purple-400">
+                  {t(project.industryKey)}
+                </span>
+                {!project.url && (
+                  <span className="inline-flex items-center rounded-full border border-yellow-500/30 bg-yellow-500/10 px-2.5 py-0.5 text-[10px] font-medium text-yellow-400">
+                    {t('inProgress')}
+                  </span>
+                )}
               </div>
-              <h3 className="text-xl font-bold text-foreground">
-                {t(benefit.labelKey)}
+
+              {/* Title */}
+              <h3 className="mt-3 text-lg font-bold text-foreground">
+                {t(project.titleKey)}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {t(benefit.descKey)}
+
+              {/* Description */}
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {t(project.descKey)}
               </p>
+
+              {/* Link */}
+              {project.url && (
+                <div className="mt-auto pt-4">
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-cyan-400 transition-colors hover:text-cyan-300"
+                  >
+                    {t('viewProject')}
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                </div>
+              )}
             </div>
           ))}
+        </div>
+
+        {/* View all link */}
+        <div className="mt-10 text-center">
+          <Link
+            href="/work"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-cyan-400"
+          >
+            {t('viewAll')}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>
