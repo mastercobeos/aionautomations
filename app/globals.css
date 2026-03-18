@@ -437,7 +437,7 @@ html {
 .hero-glow-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(40px);
   pointer-events: none;
   opacity: 0.15;
 }

@@ -8,7 +8,7 @@ import { FloatingSocialButtons } from "@/components/floating-social-buttons"
 import { ScrollRevealInit } from "@/components/scroll-reveal-init"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { CursorGlow } from "@/components/cursor-glow"
-import { siteUrl, faqSchema, webPageSchema } from "@/lib/seo"
+import { siteUrl, faqSchema, webPageSchema, breadcrumbSchema, ogMeta } from "@/lib/seo"
 
 export async function generateMetadata({
   params,
@@ -18,9 +18,15 @@ export async function generateMetadata({
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: "HomePage" })
 
+  const title = locale === 'es' ? 'Diseño Web y Automatización IA | AION' : 'Web Design & AI Automation | AION'
+  const description = t("metaDesc")
+  const keywords = locale === 'es'
+    ? ['diseño web', 'automatización IA', 'chatbot WhatsApp', 'marketing digital', 'páginas web profesionales', 'agencia digital']
+    : ['web design', 'AI automation', 'WhatsApp chatbot', 'digital marketing', 'professional websites', 'digital agency'];
   return {
-    title: { absolute: locale === 'es' ? 'Diseño Web y Automatización IA | AION' : 'Web Design & AI Automation | AION' },
-    description: t("metaDesc"),
+    title: { absolute: title },
+    description,
+    keywords,
     alternates: {
       canonical: `${siteUrl}/${locale}`,
       languages: {
@@ -29,6 +35,7 @@ export async function generateMetadata({
         "x-default": `${siteUrl}/en`,
       },
     },
+    ...ogMeta({ locale, title, description, path: '' }),
   }
 }
 
@@ -74,7 +81,7 @@ export default async function Home({
 
   return (
     <main id="main-content" className="relative min-h-screen animate-page-in">
-      {/* WebPage + FAQ rich snippet schemas */}
+      {/* WebPage + FAQ + Breadcrumb rich snippet schemas */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -85,6 +92,14 @@ export default async function Home({
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(faqSchema(faqItems)),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema([
+            { name: locale === "es" ? "Inicio" : "Home", url: `${siteUrl}/${locale}` },
+          ])),
         }}
       />
       {/* Cosmic space background */}

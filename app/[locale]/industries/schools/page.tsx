@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { siteUrl, webPageSchema, breadcrumbSchema, faqSchema } from '@/lib/seo';
+import { siteUrl, webPageSchema, breadcrumbSchema, faqSchema, ogMeta } from '@/lib/seo';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
@@ -11,17 +11,25 @@ import { MessageCircle, Check } from 'lucide-react';
 import { siteConfig } from "@/lib/site-config"
 import { Link } from '@/i18n/routing';
 import { InternalNav } from '@/components/internal-nav';
+import { RelatedIndustries } from '@/components/related-industries';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'SchoolPage' });
+  const title = t('metaTitle');
+  const description = t('metaDesc');
+  const keywords = locale === 'es'
+    ? ['web para escuelas', 'diseño web educación', 'inscripciones en línea', 'web academia']
+    : ['school websites', 'education web design', 'online enrollment', 'academy website'];
   return {
-    title: t('metaTitle'),
-    description: t('metaDesc'),
+    title,
+    description,
+    keywords,
     alternates: {
       canonical: `${siteUrl}/${locale}/industries/schools`,
       languages: { en: `${siteUrl}/en/industries/schools`, es: `${siteUrl}/es/industries/schools`, "x-default": `${siteUrl}/en/industries/schools` },
     },
+    ...ogMeta({ locale, title, description, path: '/industries/schools' }),
   };
 }
 
@@ -109,6 +117,7 @@ export default async function SchoolIndustryPage({ params }: { params: Promise<{
         </div>
       </section>
 
+      <RelatedIndustries locale={locale} current="schools" />
       <InternalNav locale={locale} exclude={['/industries']} />
       <Footer />
       <FloatingSocialButtons />

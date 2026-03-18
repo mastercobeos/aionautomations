@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { Link } from '@/i18n/routing';
 
 export function AgencySection() {
   const t = useTranslations("AgencySection");
@@ -16,12 +17,12 @@ export function AgencySection() {
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-muted-foreground">
             {t("description")}
           </p>
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="mt-10 inline-flex rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition-all hover:shadow-cyan-500/40 hover:scale-[1.02]"
           >
             {t("cta")}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

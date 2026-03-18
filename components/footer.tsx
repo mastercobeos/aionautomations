@@ -19,6 +19,8 @@ export function Footer() {
               width={120}
               height={80}
               className="h-16 w-auto md:h-20"
+              loading="lazy"
+              sizes="(max-width: 640px) 64px, 80px"
             />
           </Link>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">

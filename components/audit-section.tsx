@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react"
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 export function AuditSection() {
   const t = useTranslations('AuditSection');
@@ -21,13 +22,13 @@ export function AuditSection() {
             {t('description')}
           </p>
           <div className="mt-8">
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:shadow-cyan-500/35 hover:scale-[1.02]"
             >
               {t('button')}
               <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

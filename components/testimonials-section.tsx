@@ -15,14 +15,10 @@ export function TestimonialsSection() {
   const [paused, setPaused] = useState(false);
 
   const ITEMS = [
-    { quote: t("quote1"), name: t("name1"), role: t("role1"), initials: "MG", rating: 5 },
-    { quote: t("quote2"), name: t("name2"), role: t("role2"), initials: "PR", rating: 5 },
-    { quote: t("quote3"), name: t("name3"), role: t("role3"), initials: "AM", rating: 5 },
-    { quote: t("quote4"), name: t("name4"), role: t("role4"), initials: "CH", rating: 5 },
-    { quote: t("quote5"), name: t("name5"), role: t("role5"), initials: "LT", rating: 5 },
-    { quote: t("quote6"), name: t("name6"), role: t("role6"), initials: "SF", rating: 5 },
-    { quote: t("quote7"), name: t("name7"), role: t("role7"), initials: "VR", rating: 5 },
-    { quote: t("quote8"), name: t("name8"), role: t("role8"), initials: "DN", rating: 5 },
+    { quote: t("quote1"), name: t("name1"), role: t("role1"), initials: "AT", rating: 5 },
+    { quote: t("quote2"), name: t("name2"), role: t("role2"), initials: "SE", rating: 5 },
+    { quote: t("quote3"), name: t("name3"), role: t("role3"), initials: "AH", rating: 5 },
+    { quote: t("quote4"), name: t("name4"), role: t("role4"), initials: "LD", rating: 5 },
   ];
 
   const N = ITEMS.length;

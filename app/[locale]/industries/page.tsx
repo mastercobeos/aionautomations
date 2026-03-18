@@ -6,7 +6,7 @@ import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { PageSchema } from '@/components/page-schema';
 import { FloatingSocialButtons } from '@/components/floating-social-buttons';
-import { webPageSchema, breadcrumbSchema, siteUrl } from '@/lib/seo';
+import { webPageSchema, breadcrumbSchema, collectionPageSchema, siteUrl, ogMeta } from '@/lib/seo';
 import {
   ArrowRight,
   Stethoscope,
@@ -31,9 +31,15 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'IndustriesPage' });
 
+  const title = t('metaTitle');
+  const description = t('metaDesc');
+  const keywords = locale === 'es'
+    ? ['web por industria', 'automatización por sector', 'diseño web dentistas', 'web restaurantes', 'web inmobiliarias']
+    : ['industry web design', 'sector automation', 'dental websites', 'restaurant websites', 'real estate websites'];
   return {
-    title: t('metaTitle'),
-    description: t('metaDesc'),
+    title,
+    description,
+    keywords,
     alternates: {
       canonical: `${siteUrl}/${locale}/industries`,
       languages: {
@@ -42,6 +48,7 @@ export async function generateMetadata({
         "x-default": `${siteUrl}/en/industries`,
       },
     },
+    ...ogMeta({ locale, title, description, path: '/industries' }),
   };
 }
 
@@ -136,11 +143,15 @@ export default async function IndustriesPage({
   ];
 
   const schemas = [
-    webPageSchema({
+    collectionPageSchema({
       locale,
       title: t('metaTitle'),
       description: t('metaDesc'),
       path: '/industries',
+      items: INDUSTRIES.map((ind) => ({
+        name: t(ind.titleKey),
+        url: `${siteUrl}/${locale}${ind.href}`,
+      })),
     }),
     breadcrumbSchema([
       { name: t('breadcrumbHome'), url: `${siteUrl}/${locale}` },

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { siteUrl, webPageSchema, breadcrumbSchema, faqSchema } from '@/lib/seo';
+import { siteUrl, webPageSchema, breadcrumbSchema, faqSchema, ogMeta } from '@/lib/seo';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
@@ -11,17 +11,25 @@ import { MessageCircle, Check } from 'lucide-react';
 import { siteConfig } from "@/lib/site-config"
 import { Link } from '@/i18n/routing';
 import { InternalNav } from '@/components/internal-nav';
+import { RelatedIndustries } from '@/components/related-industries';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'RealEstatePage' });
+  const title = t('metaTitle');
+  const description = t('metaDesc');
+  const keywords = locale === 'es'
+    ? ['web para inmobiliarias', 'catálogo de propiedades', 'CRM inmobiliario', 'diseño web agentes']
+    : ['real estate websites', 'property listing website', 'real estate CRM', 'agent website design'];
   return {
-    title: t('metaTitle'),
-    description: t('metaDesc'),
+    title,
+    description,
+    keywords,
     alternates: {
       canonical: `${siteUrl}/${locale}/industries/real-estate`,
       languages: { en: `${siteUrl}/en/industries/real-estate`, es: `${siteUrl}/es/industries/real-estate`, "x-default": `${siteUrl}/en/industries/real-estate` },
     },
+    ...ogMeta({ locale, title, description, path: '/industries/real-estate' }),
   };
 }
 
@@ -113,6 +121,7 @@ export default async function RealEstateIndustryPage({ params }: { params: Promi
         </div>
       </section>
 
+      <RelatedIndustries locale={locale} current="real-estate" />
       <InternalNav locale={locale} exclude={['/industries']} />
       <Footer />
       <FloatingSocialButtons />

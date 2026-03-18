@@ -6,7 +6,7 @@ import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { PageSchema } from '@/components/page-schema';
 import { FloatingSocialButtons } from '@/components/floating-social-buttons';
-import { webPageSchema, breadcrumbSchema, siteUrl } from '@/lib/seo';
+import { webPageSchema, breadcrumbSchema, collectionPageSchema, siteUrl, ogMeta } from '@/lib/seo';
 import { ArrowRight } from 'lucide-react';
 
 /* ─── Static blog post data ─── */
@@ -144,9 +144,15 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'BlogPage' });
 
+  const title = t('metaTitle');
+  const description = t('metaDesc');
+  const keywords = locale === 'es'
+    ? ['blog diseño web', 'artículos automatización IA', 'guías marketing digital', 'recursos para pymes']
+    : ['web design blog', 'AI automation articles', 'digital marketing guides', 'small business resources'];
   return {
-    title: t('metaTitle'),
-    description: t('metaDesc'),
+    title,
+    description,
+    keywords,
     alternates: {
       canonical: `${siteUrl}/${locale}/blog`,
       languages: {
@@ -155,6 +161,7 @@ export async function generateMetadata({
         "x-default": `${siteUrl}/en/blog`,
       },
     },
+    ...ogMeta({ locale, title, description, path: '/blog' }),
   };
 }
 
@@ -174,11 +181,15 @@ export default async function BlogPage({
   ];
 
   const schemas = [
-    webPageSchema({
+    collectionPageSchema({
       locale,
       title: t('metaTitle'),
       description: t('metaDesc'),
       path: '/blog',
+      items: BLOG_POSTS.map((post) => ({
+        name: t(post.titleKey),
+        url: `${siteUrl}/${locale}/blog/${post.slug}`,
+      })),
     }),
     breadcrumbSchema([
       { name: t('breadcrumbHome'), url: `${siteUrl}/${locale}` },

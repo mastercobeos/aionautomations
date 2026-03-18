@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { ArrowRight, Globe, Workflow, TrendingUp, Zap, Check } from 'lucide-react';
+import { ArrowRight, Zap, Check } from 'lucide-react';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { FaqAccordion } from '@/components/faq-accordion';
 import { PageSchema } from '@/components/page-schema';
 import { FloatingSocialButtons } from '@/components/floating-social-buttons';
+import { PricingTabs } from '@/components/pricing-tabs';
 import { webPageSchema, breadcrumbSchema, faqSchema, siteUrl, ogMeta } from '@/lib/seo';
 import { Link } from '@/i18n/routing';
 
@@ -35,32 +36,6 @@ export async function generateMetadata({
     ...ogMeta({ locale, title, description, path: '/pricing' }),
   };
 }
-
-/* ─── Service overview config ─── */
-
-const SERVICES = [
-  {
-    icon: Globe,
-    nameKey: 'webName',
-    rangeKey: 'webRange',
-    descKey: 'webDesc',
-    hrefKey: 'webHref',
-  },
-  {
-    icon: Workflow,
-    nameKey: 'autoName',
-    rangeKey: 'autoRange',
-    descKey: 'autoDesc',
-    hrefKey: 'autoHref',
-  },
-  {
-    icon: TrendingUp,
-    nameKey: 'mktName',
-    rangeKey: 'mktRange',
-    descKey: 'mktDesc',
-    hrefKey: 'mktHref',
-  },
-];
 
 /* ─── Page ─── */
 
@@ -135,48 +110,10 @@ export default async function PricingPage({
           </div>
         </section>
 
-        {/* 3 Service Overview Cards */}
+        {/* Service Tabs + Tiers */}
         <section className="pb-16 md:pb-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="grid gap-6 md:grid-cols-3 items-stretch">
-              {SERVICES.map((svc) => (
-                <div
-                  key={svc.nameKey}
-                  className="gradient-border-static shimmer-card relative flex flex-col rounded-xl p-6 md:p-8 transition-all duration-300"
-                >
-                  {/* Icon */}
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-500/15 border border-cyan-400/30 shadow-[0_0_20px_rgba(34,212,254,0.15),0_0_40px_rgba(34,212,254,0.05)] mb-5">
-                    <svc.icon className="h-6 w-6 text-cyan-300 drop-shadow-[0_0_6px_rgba(34,212,254,0.6)]" />
-                  </div>
-
-                  {/* Name */}
-                  <h2 className="text-xl font-bold text-foreground">
-                    {t(svc.nameKey)}
-                  </h2>
-
-                  {/* Price range */}
-                  <p className="mt-2 text-2xl font-bold text-cyan-400">
-                    {t(svc.rangeKey)}
-                  </p>
-
-                  {/* Description */}
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {t(svc.descKey)}
-                  </p>
-
-                  {/* CTA */}
-                  <div className="mt-auto pt-6">
-                    <Link
-                      href={t(svc.hrefKey) as '/services/web' | '/services/automations' | '/services/marketing'}
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border/50 px-4 py-3 text-sm font-semibold text-foreground transition-all hover:bg-white/5 hover:border-cyan-500/30"
-                    >
-                      {t('viewPackages')}
-                      <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <PricingTabs />
 
             {/* Bundle Card */}
             <div className="relative mt-10 rounded-xl border border-cyan-500/40 bg-gradient-to-br from-cyan-500/10 via-purple-500/5 to-transparent p-6 md:p-8">

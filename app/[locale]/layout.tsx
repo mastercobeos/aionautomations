@@ -41,6 +41,12 @@ export async function generateMetadata({
     'flujos de trabajo automatizados',
     'chatbot para empresas',
     'diseño web profesional SEO',
+    'inteligencia artificial para negocios',
+    'automatización para pymes',
+    'agente de IA para empresas',
+    'automatización sin código',
+    'página web económica',
+    'rediseño de página web',
   ];
   const keywordsEn = [
     'web design agency',
@@ -58,6 +64,12 @@ export async function generateMetadata({
     'lead generation automation',
     'AI integration services',
     'web design and SEO',
+    'AI agent for business',
+    'no-code automation',
+    'website redesign',
+    'marketing automation small business',
+    'AI tools for business',
+    'affordable web design',
   ];
 
   return {
@@ -96,7 +108,13 @@ export async function generateMetadata({
     robots: {
       index: true,
       follow: true,
-      googleBot: { index: true, follow: true },
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+      },
     },
   };
 }

@@ -37,7 +37,7 @@ export function PricingSection() {
               <p className="mt-2 text-2xl font-bold text-cyan-400">{plan.price}</p>
               <p className="mt-4 text-sm text-muted-foreground">{plan.description}</p>
               <a
-                href="#contact"
+                href="/contact"
                 className={`mt-6 block w-full rounded-xl py-3 text-center text-sm font-semibold transition ${
                   plan.popular
                     ? "bg-gradient-to-r from-cyan-500 to-purple-600 text-white"

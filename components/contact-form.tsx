@@ -43,6 +43,7 @@ export function ContactForm() {
           type="text"
           name="name"
           required
+          aria-label={t("name")}
           placeholder={t("name")}
           className="w-full rounded-lg border border-border/50 bg-white/5 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 backdrop-blur-sm transition-all focus:border-cyan-500/50 focus:outline-none focus:ring-1 focus:ring-cyan-500/30"
         />
@@ -52,6 +53,7 @@ export function ContactForm() {
           type="email"
           name="email"
           required
+          aria-label={t("email")}
           placeholder={t("email")}
           className="w-full rounded-lg border border-border/50 bg-white/5 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 backdrop-blur-sm transition-all focus:border-cyan-500/50 focus:outline-none focus:ring-1 focus:ring-cyan-500/30"
         />
@@ -61,6 +63,7 @@ export function ContactForm() {
           name="message"
           required
           rows={3}
+          aria-label={t("message")}
           placeholder={t("message")}
           className="w-full resize-none rounded-lg border border-border/50 bg-white/5 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 backdrop-blur-sm transition-all focus:border-cyan-500/50 focus:outline-none focus:ring-1 focus:ring-cyan-500/30"
         />

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { siteUrl, webPageSchema, breadcrumbSchema, faqSchema } from '@/lib/seo';
+import { siteUrl, webPageSchema, breadcrumbSchema, faqSchema, ogMeta } from '@/lib/seo';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
@@ -11,17 +11,25 @@ import { MessageCircle, Check } from 'lucide-react';
 import { siteConfig } from "@/lib/site-config"
 import { Link } from '@/i18n/routing';
 import { InternalNav } from '@/components/internal-nav';
+import { RelatedIndustries } from '@/components/related-industries';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'RestaurantsPage' });
+  const title = t('metaTitle');
+  const description = t('metaDesc');
+  const keywords = locale === 'es'
+    ? ['web para restaurantes', 'menú digital', 'reservaciones en línea', 'marketing restaurantes']
+    : ['restaurant websites', 'digital menu', 'online reservations', 'restaurant marketing'];
   return {
-    title: t('metaTitle'),
-    description: t('metaDesc'),
+    title,
+    description,
+    keywords,
     alternates: {
       canonical: `${siteUrl}/${locale}/industries/restaurants`,
       languages: { en: `${siteUrl}/en/industries/restaurants`, es: `${siteUrl}/es/industries/restaurants`, "x-default": `${siteUrl}/en/industries/restaurants` },
     },
+    ...ogMeta({ locale, title, description, path: '/industries/restaurants' }),
   };
 }
 
@@ -113,6 +121,7 @@ export default async function RestaurantsIndustryPage({ params }: { params: Prom
         </div>
       </section>
 
+      <RelatedIndustries locale={locale} current="restaurants" />
       <InternalNav locale={locale} exclude={['/industries']} />
       <Footer />
       <FloatingSocialButtons />

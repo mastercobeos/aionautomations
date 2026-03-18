@@ -7,7 +7,7 @@ import { Breadcrumbs } from '@/components/breadcrumbs';
 import { PageSchema } from '@/components/page-schema';
 import { FloatingSocialButtons } from '@/components/floating-social-buttons';
 import { ContactForm } from '@/components/contact-form';
-import { webPageSchema, breadcrumbSchema, siteUrl } from '@/lib/seo';
+import { contactPageSchema, breadcrumbSchema, siteUrl, ogMeta } from '@/lib/seo';
 import { siteConfig } from '@/lib/site-config';
 import {
   ArrowRight,
@@ -27,9 +27,15 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'ContactPage' });
 
+  const title = t('metaTitle');
+  const description = t('metaDesc');
+  const keywords = locale === 'es'
+    ? ['cotización gratis', 'contacto agencia web', 'consulta diseño web', 'presupuesto automatización']
+    : ['free quote', 'contact web agency', 'web design consultation', 'automation quote'];
   return {
-    title: t('metaTitle'),
-    description: t('metaDesc'),
+    title,
+    description,
+    keywords,
     alternates: {
       canonical: `${siteUrl}/${locale}/contact`,
       languages: {
@@ -38,6 +44,7 @@ export async function generateMetadata({
         "x-default": `${siteUrl}/en/contact`,
       },
     },
+    ...ogMeta({ locale, title, description, path: '/contact' }),
   };
 }
 
@@ -57,11 +64,10 @@ export default async function ContactPage({
   ];
 
   const schemas = [
-    webPageSchema({
+    contactPageSchema({
       locale,
       title: t('metaTitle'),
       description: t('metaDesc'),
-      path: '/contact',
     }),
     breadcrumbSchema([
       { name: t('breadcrumbHome'), url: `${siteUrl}/${locale}` },
@@ -113,9 +119,9 @@ export default async function ContactPage({
                       <MessageCircle className="h-5 w-5 text-cyan-400" />
                     </div>
                     <div>
-                      <h3 className="text-base font-semibold text-foreground">
+                      <h2 className="text-base font-semibold text-foreground">
                         {t('whatsappTitle')}
-                      </h3>
+                      </h2>
                       <p className="mt-1 text-sm text-muted-foreground">
                         {t('whatsappDesc')}
                       </p>

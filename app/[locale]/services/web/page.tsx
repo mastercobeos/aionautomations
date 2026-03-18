@@ -8,7 +8,7 @@ import { FaqAccordion } from '@/components/faq-accordion';
 import { PageSchema } from '@/components/page-schema';
 import { FloatingSocialButtons } from '@/components/floating-social-buttons';
 import { InternalNav } from '@/components/internal-nav';
-import { webPageSchema, breadcrumbSchema, faqSchema, siteUrl } from '@/lib/seo';
+import { webPageSchema, breadcrumbSchema, faqSchema, siteUrl, ogMeta, serviceOfferSchema } from '@/lib/seo';
 import { Link } from '@/i18n/routing';
 
 const NAMESPACE = 'WebServicePage';
@@ -45,13 +45,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: NAMESPACE });
+  const title = t('metaTitle');
+  const description = t('metaDesc');
+  const keywords = locale === 'es'
+    ? ['diseño web personalizado', 'diseño web responsive', 'diseño web SEO', 'páginas web económicas', 'contratar diseñador web']
+    : ['custom website design', 'responsive web design', 'SEO web design', 'affordable websites', 'hire web designer'];
   return {
-    title: t('metaTitle'),
-    description: t('metaDesc'),
+    title,
+    description,
+    keywords,
     alternates: {
       canonical: `${siteUrl}/${locale}${PATH}`,
       languages: { en: `${siteUrl}/en${PATH}`, es: `${siteUrl}/es${PATH}`, "x-default": `${siteUrl}/en${PATH}` },
     },
+    ...ogMeta({ locale, title, description, path: PATH }),
   };
 }
 
@@ -84,6 +91,13 @@ export default async function WebServicePage({
       { name: t('breadcrumbCurrent'), url: `${siteUrl}/${locale}${PATH}` },
     ]),
     faqSchema(faqItems),
+    serviceOfferSchema({
+      locale,
+      serviceName: t('metaTitle'),
+      description: t('metaDesc'),
+      path: PATH,
+      tiers: TIERS.map((tier) => ({ name: t(tier.nameKey), price: t(tier.priceKey) })),
+    }),
   ];
 
   return (

@@ -6,7 +6,7 @@ import { Breadcrumbs } from '@/components/breadcrumbs'
 import { PageSchema } from '@/components/page-schema'
 import { FloatingSocialButtons } from '@/components/floating-social-buttons'
 import { InternalNav } from '@/components/internal-nav'
-import { webPageSchema, breadcrumbSchema, siteUrl } from '@/lib/seo'
+import { webPageSchema, breadcrumbSchema, siteUrl, ogMeta } from '@/lib/seo'
 
 export async function generateMetadata({
   params,
@@ -16,9 +16,15 @@ export async function generateMetadata({
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'TermsPage' })
 
+  const title = t('metaTitle')
+  const description = t('metaDesc')
+  const keywords = locale === 'es'
+    ? ['términos de servicio', 'condiciones de uso', 'AION Automations términos']
+    : ['terms of service', 'conditions of use', 'AION Automations terms'];
   return {
-    title: t('metaTitle'),
-    description: t('metaDesc'),
+    title,
+    description,
+    keywords,
     alternates: {
       canonical: `${siteUrl}/${locale}/terms`,
       languages: {
@@ -27,6 +33,7 @@ export async function generateMetadata({
         "x-default": `${siteUrl}/en/terms`,
       },
     },
+    ...ogMeta({ locale, title, description, path: '/terms' }),
   }
 }
 
