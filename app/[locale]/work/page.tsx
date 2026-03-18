@@ -8,6 +8,7 @@ import { PageSchema } from '@/components/page-schema';
 import { FloatingSocialButtons } from '@/components/floating-social-buttons';
 import { InternalNav } from '@/components/internal-nav';
 import { webPageSchema, breadcrumbSchema, siteUrl, ogMeta } from '@/lib/seo';
+import Image from 'next/image';
 import { ArrowRight, ExternalLink, MapPin, Construction } from 'lucide-react';
 
 /* ─── Metadata ─── */
@@ -51,6 +52,7 @@ const PROJECTS = [
     industryKey: 'project1Industry',
     locationKey: 'project1Location',
     url: 'https://axelstourspdc.com/',
+    image: '/project-axels.png',
   },
   {
     titleKey: 'project2Title',
@@ -59,6 +61,7 @@ const PROJECTS = [
     industryKey: 'project2Industry',
     locationKey: 'project2Location',
     url: 'https://stareventrentaltx.com/',
+    image: '/project-star.png',
   },
   {
     titleKey: 'project3Title',
@@ -67,6 +70,7 @@ const PROJECTS = [
     industryKey: 'project3Industry',
     locationKey: 'project3Location',
     url: 'https://ahomeqroo.com/',
+    image: '/project-ahome.png',
   },
   {
     titleKey: 'project4Title',
@@ -75,6 +79,7 @@ const PROJECTS = [
     industryKey: 'project4Industry',
     locationKey: 'project4Location',
     url: null,
+    image: null,
   },
 ] as const;
 
@@ -153,7 +158,7 @@ export default async function WorkPage({
                   className="gradient-border-static shimmer-card group rounded-2xl overflow-hidden transition-all duration-300 flex flex-col"
                 >
                   {/* Site Preview */}
-                  <div className="relative w-full overflow-hidden bg-black/40 border-b border-white/10" style={{ height: '260px' }}>
+                  <div className="relative w-full overflow-hidden bg-black/40 border-b border-white/10">
                     {/* Browser chrome */}
                     <div className="flex items-center gap-1.5 px-3 py-2 bg-white/5 border-b border-white/10">
                       <div className="h-2 w-2 rounded-full bg-red-500/60" />
@@ -166,25 +171,18 @@ export default async function WorkPage({
                       </div>
                     </div>
 
-                    {project.url ? (
-                      <div className="relative w-full" style={{ height: '230px' }}>
-                        <iframe
-                          src={project.url}
-                          title={t(project.titleKey)}
-                          className="absolute top-0 left-0 border-0 pointer-events-none"
-                          style={{
-                            width: '1280px',
-                            height: '960px',
-                            transform: 'scale(0.45)',
-                            transformOrigin: 'top left',
-                          }}
-                          loading="lazy"
-                          sandbox="allow-scripts allow-same-origin"
-                          tabIndex={-1}
+                    {project.image ? (
+                      <div className="relative w-full aspect-[16/9]">
+                        <Image
+                          src={project.image}
+                          alt={t(project.titleKey)}
+                          fill
+                          className="object-cover object-top"
+                          sizes="(max-width: 640px) 100vw, 50vw"
                         />
                       </div>
                     ) : (
-                      <div className="flex items-center justify-center h-[230px] bg-gradient-to-br from-yellow-500/5 to-transparent">
+                      <div className="flex items-center justify-center aspect-[16/9] bg-gradient-to-br from-yellow-500/5 to-transparent">
                         <div className="text-center">
                           <Construction className="h-10 w-10 text-yellow-400/50 mx-auto mb-2" />
                           <span className="text-sm text-yellow-400/60 font-medium">{t('inProgress')}</span>

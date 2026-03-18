@@ -1,14 +1,15 @@
 "use client"
 
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { ExternalLink, ArrowRight, Construction } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
 const PROJECTS = [
-  { titleKey: 'project1Title', descKey: 'project1Desc', tagKey: 'project1Tag', industryKey: 'project1Industry', url: 'https://axelstourspdc.com/' },
-  { titleKey: 'project2Title', descKey: 'project2Desc', tagKey: 'project2Tag', industryKey: 'project2Industry', url: 'https://stareventrentaltx.com/' },
-  { titleKey: 'project3Title', descKey: 'project3Desc', tagKey: 'project3Tag', industryKey: 'project3Industry', url: 'https://ahomeqroo.com/' },
-  { titleKey: 'project4Title', descKey: 'project4Desc', tagKey: 'project4Tag', industryKey: 'project4Industry', url: null },
+  { titleKey: 'project1Title', descKey: 'project1Desc', tagKey: 'project1Tag', industryKey: 'project1Industry', url: 'https://axelstourspdc.com/', image: '/project-axels.png' },
+  { titleKey: 'project2Title', descKey: 'project2Desc', tagKey: 'project2Tag', industryKey: 'project2Industry', url: 'https://stareventrentaltx.com/', image: '/project-star.png' },
+  { titleKey: 'project3Title', descKey: 'project3Desc', tagKey: 'project3Tag', industryKey: 'project3Industry', url: 'https://ahomeqroo.com/', image: '/project-ahome.png' },
+  { titleKey: 'project4Title', descKey: 'project4Desc', tagKey: 'project4Tag', industryKey: 'project4Industry', url: null, image: null },
 ]
 
 export function CaseStudies() {
@@ -38,7 +39,7 @@ export function CaseStudies() {
               className={`reveal reveal-delay-${Math.min(i + 1, 3)} gradient-border-static shimmer-card rounded-2xl overflow-hidden flex flex-col`}
             >
               {/* Site Preview */}
-              <div className="relative w-full overflow-hidden bg-black/40 border-b border-white/10" style={{ height: '220px' }}>
+              <div className="relative w-full overflow-hidden bg-black/40 border-b border-white/10">
                 {/* Browser chrome */}
                 <div className="flex items-center gap-1.5 px-3 py-2 bg-white/5 border-b border-white/10">
                   <div className="h-2 w-2 rounded-full bg-red-500/60" />
@@ -51,26 +52,19 @@ export function CaseStudies() {
                   </div>
                 </div>
 
-                {/* Iframe preview or placeholder */}
-                {project.url ? (
-                  <div className="relative w-full" style={{ height: '190px' }}>
-                    <iframe
-                      src={project.url}
-                      title={`Preview of ${project.titleKey}`}
-                      className="absolute top-0 left-0 border-0 pointer-events-none"
-                      style={{
-                        width: '1280px',
-                        height: '960px',
-                        transform: 'scale(0.28)',
-                        transformOrigin: 'top left',
-                      }}
-                      loading="lazy"
-                      sandbox="allow-scripts allow-same-origin"
-                      tabIndex={-1}
+                {/* Screenshot or placeholder */}
+                {project.image ? (
+                  <div className="relative w-full aspect-[16/9]">
+                    <Image
+                      src={project.image}
+                      alt={t(project.titleKey)}
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 640px) 100vw, 50vw"
                     />
                   </div>
                 ) : (
-                  <div className="flex items-center justify-center h-[190px] bg-gradient-to-br from-yellow-500/5 to-transparent">
+                  <div className="flex items-center justify-center aspect-[16/9] bg-gradient-to-br from-yellow-500/5 to-transparent">
                     <div className="text-center">
                       <Construction className="h-8 w-8 text-yellow-400/50 mx-auto mb-2" />
                       <span className="text-xs text-yellow-400/60 font-medium">{t('inProgress')}</span>
