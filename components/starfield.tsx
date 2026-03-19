@@ -95,7 +95,8 @@ export function Starfield() {
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none fixed inset-0 z-[1]"
+      className="pointer-events-none"
+      style={{ position: 'fixed', inset: 0, zIndex: 1 }}
       aria-hidden="true"
     />
   );
