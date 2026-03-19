@@ -256,13 +256,11 @@ function AboutModal({ open, onClose }: { open: boolean; onClose: () => void }) {
 }
 
 /* ─── Work Modal ─── */
-const SOLUTIONS = [
-  { titleKey: 'solution1Title', descKey: 'solution1Desc', tagKey: 'solution1Tag' },
-  { titleKey: 'solution2Title', descKey: 'solution2Desc', tagKey: 'solution2Tag' },
-  { titleKey: 'solution3Title', descKey: 'solution3Desc', tagKey: 'solution3Tag' },
-  { titleKey: 'solution4Title', descKey: 'solution4Desc', tagKey: 'solution4Tag' },
-  { titleKey: 'solution5Title', descKey: 'solution5Desc', tagKey: 'solution5Tag' },
-  { titleKey: 'solution6Title', descKey: 'solution6Desc', tagKey: 'solution6Tag' },
+const PROJECTS = [
+  { titleKey: 'project1Title', descKey: 'project1Desc', tagKey: 'project1Tag' },
+  { titleKey: 'project2Title', descKey: 'project2Desc', tagKey: 'project2Tag' },
+  { titleKey: 'project3Title', descKey: 'project3Desc', tagKey: 'project3Tag' },
+  { titleKey: 'project4Title', descKey: 'project4Desc', tagKey: 'project4Tag' },
 ] as const
 
 function WorkModal({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -272,14 +270,14 @@ function WorkModal({ open, onClose }: { open: boolean; onClose: () => void }) {
     <ModalShell open={open} onClose={onClose} title={t('title')}>
       <p className="text-center text-muted-foreground mb-6">{t('subtitle')}</p>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {SOLUTIONS.map((sol) => (
-          <div key={sol.titleKey} className="gradient-border-static shimmer-card rounded-xl p-5">
+      <div className="grid gap-4 sm:grid-cols-2">
+        {PROJECTS.map((proj) => (
+          <div key={proj.titleKey} className="gradient-border-static shimmer-card rounded-xl p-5">
             <span className="inline-flex items-center rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-400">
-              {t(sol.tagKey)}
+              {t(proj.tagKey)}
             </span>
-            <h3 className="mt-3 text-base font-semibold text-foreground">{t(sol.titleKey)}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(sol.descKey)}</p>
+            <h3 className="mt-3 text-base font-semibold text-foreground">{t(proj.titleKey)}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(proj.descKey)}</p>
           </div>
         ))}
       </div>
