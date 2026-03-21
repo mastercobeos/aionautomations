@@ -39,7 +39,12 @@ export function CaseStudies() {
               className={`reveal reveal-delay-${Math.min(i + 1, 3)} gradient-border-static shimmer-card rounded-2xl overflow-hidden flex flex-col`}
             >
               {/* Site Preview */}
-              <div className="relative w-full overflow-hidden bg-black/40 border-b border-white/10">
+              <a
+                href={project.url || undefined}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`relative block w-full overflow-hidden bg-black/40 border-b border-white/10${project.url ? ' cursor-pointer hover:opacity-90 transition-opacity' : ''}`}
+              >
                 {/* Browser chrome */}
                 <div className="flex items-center gap-1.5 px-3 py-2 bg-white/5 border-b border-white/10">
                   <div className="h-2 w-2 rounded-full bg-red-500/60" />
@@ -71,7 +76,7 @@ export function CaseStudies() {
                     </div>
                   </div>
                 )}
-              </div>
+              </a>
 
               {/* Card Content */}
               <div className="p-5 flex flex-col flex-1">
