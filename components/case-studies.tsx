@@ -9,7 +9,7 @@ const PROJECTS = [
   { titleKey: 'project1Title', descKey: 'project1Desc', tagKey: 'project1Tag', industryKey: 'project1Industry', quoteKey: 'project1Quote', url: 'https://axelstourspdc.com/', image: '/project-axels.jpg' },
   { titleKey: 'project2Title', descKey: 'project2Desc', tagKey: 'project2Tag', industryKey: 'project2Industry', quoteKey: 'project2Quote', url: 'https://stareventrentaltx.com/', image: '/project-star.jpg' },
   { titleKey: 'project3Title', descKey: 'project3Desc', tagKey: 'project3Tag', industryKey: 'project3Industry', quoteKey: 'project3Quote', url: 'https://ahomeqroo.com/', image: '/project-ahome.jpg' },
-  { titleKey: 'project4Title', descKey: 'project4Desc', tagKey: 'project4Tag', industryKey: 'project4Industry', quoteKey: 'project4Quote', url: null, image: null },
+  { titleKey: 'project4Title', descKey: 'project4Desc', tagKey: 'project4Tag', industryKey: 'project4Industry', quoteKey: 'project4Quote', url: 'https://lasdeliciaspdc.com/', image: '/project-delicias.jpg' },
 ]
 
 export function CaseStudies() {

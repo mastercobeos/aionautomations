@@ -78,8 +78,8 @@ const PROJECTS = [
     tagKey: 'project4Tag',
     industryKey: 'project4Industry',
     locationKey: 'project4Location',
-    url: null,
-    image: null,
+    url: 'https://lasdeliciaspdc.com/',
+    image: '/project-delicias.jpg',
   },
 ] as const;
 
