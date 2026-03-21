@@ -88,7 +88,7 @@ export function Footer() {
                 href={siteConfig.instagram.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg border border-transparent p-3 text-muted-foreground transition-all hover:border-cyan-500/20 hover:bg-cyan-500/10 hover:text-cyan-400 hover:shadow-[0_0_15px_rgba(34,212,254,0.15)]"
+                className="rounded-lg border border-purple-500/30 bg-purple-500/10 p-3 text-purple-400/80 transition-all hover:border-purple-400/50 hover:bg-purple-500/20 hover:text-purple-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.2)]"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
@@ -97,7 +97,7 @@ export function Footer() {
                 href={siteConfig.facebook.pageUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg border border-transparent p-3 text-muted-foreground transition-all hover:border-cyan-500/20 hover:bg-cyan-500/10 hover:text-cyan-400 hover:shadow-[0_0_15px_rgba(34,212,254,0.15)]"
+                className="rounded-lg border border-cyan-500/30 bg-cyan-500/10 p-3 text-cyan-400/80 transition-all hover:border-cyan-400/50 hover:bg-cyan-500/20 hover:text-cyan-300 hover:shadow-[0_0_15px_rgba(34,212,254,0.2)]"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
@@ -106,7 +106,7 @@ export function Footer() {
                 href={siteConfig.whatsapp.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg border border-transparent p-3 text-muted-foreground transition-all hover:border-cyan-500/20 hover:bg-cyan-500/10 hover:text-cyan-400 hover:shadow-[0_0_15px_rgba(34,212,254,0.15)]"
+                className="rounded-lg border border-cyan-500/30 bg-cyan-500/10 p-3 text-cyan-400/80 transition-all hover:border-cyan-400/50 hover:bg-cyan-500/20 hover:text-cyan-300 hover:shadow-[0_0_15px_rgba(34,212,254,0.2)]"
                 aria-label="WhatsApp"
               >
                 <MessageCircle className="h-5 w-5" />
