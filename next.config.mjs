@@ -13,6 +13,21 @@ const nextConfig = {
     if (dev) config.infrastructureLogging = { level: 'error' };
     return config;
   },
+  async redirects() {
+    return [
+      { source: '/work', destination: '/en/work', permanent: true },
+      { source: '/pricing', destination: '/en/pricing', permanent: true },
+      { source: '/services/automations', destination: '/en/services/automations', permanent: true },
+      { source: '/services/web', destination: '/en/services/web', permanent: true },
+      { source: '/services/marketing', destination: '/en/services/marketing', permanent: true },
+      { source: '/about', destination: '/en/about', permanent: true },
+      { source: '/contact', destination: '/en/contact', permanent: true },
+      { source: '/blog', destination: '/en/blog', permanent: true },
+      { source: '/industries', destination: '/en/industries', permanent: true },
+      { source: '/industries/:path*', destination: '/en/industries/:path*', permanent: true },
+      { source: '/blog/:path*', destination: '/en/blog/:path*', permanent: true },
+    ];
+  },
   async headers() {
     return [
       {
