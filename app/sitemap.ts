@@ -27,10 +27,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Blog posts with their real publish dates
   const today = new Date().toISOString().slice(0, 10);
   const blogPosts = [
-    { slug: "ai-automation-2026", date: "2026-02-28" },
-    { slug: "website-cost-guide", date: "2026-02-20" },
-    { slug: "whatsapp-ai-automation", date: "2026-02-12" },
-    { slug: "local-seo-guide", date: "2026-02-05" },
+    { slug: "ai-automation-2026", date: "2026-02-28", dateModified: "2026-04-15" },
+    { slug: "website-cost-guide", date: "2026-02-20", dateModified: "2026-04-15" },
+    { slug: "whatsapp-ai-automation", date: "2026-02-12", dateModified: "2026-04-15" },
+    { slug: "local-seo-guide", date: "2026-02-05", dateModified: "2026-04-15" },
     { slug: "ai-crm-small-business", date: "2026-03-12" },
     { slug: "ai-marketing-small-business", date: "2026-03-19" },
     { slug: "small-business-automation-ideas", date: "2026-03-26" },
@@ -53,7 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const locale of locales) {
       entries.push({
         url: `${siteUrl}/${locale}/blog/${post.slug}`,
-        lastModified: new Date(post.date),
+        lastModified: new Date((post as { dateModified?: string }).dateModified || post.date),
         changeFrequency: "monthly",
         priority: 0.6,
         alternates: {
