@@ -94,6 +94,7 @@ export function HeroProductMockup() {
 /* ──────────── Scene 1: WhatsApp ──────────── */
 
 function SceneWhatsApp({ active }: { active: boolean }) {
+  const t = useTranslations("HeroMockup")
   return (
     <div
       key={active ? "w-on" : "w-off"}
@@ -111,7 +112,7 @@ function SceneWhatsApp({ active }: { active: boolean }) {
           <p className="text-xs font-semibold text-foreground">AION Assistant</p>
           <p className="flex items-center gap-1 text-[10px] text-green-400">
             <span className="h-1 w-1 rounded-full bg-green-400 animate-pulse" />
-            online
+            {t("online")}
           </p>
         </div>
       </div>
@@ -120,18 +121,18 @@ function SceneWhatsApp({ active }: { active: boolean }) {
       {active && (
         <div className="mt-3 flex-1 space-y-2 overflow-hidden">
           <ChatBubble role="user" delay={300}>
-            ¿Tienen cita el sábado?
+            {t("msg1User")}
           </ChatBubble>
           <ChatTyping role="bot" delay={1200} />
           <ChatBubble role="bot" delay={2400}>
-            ¡Hola! Sí, 9am–2pm. ¿Te agendo una?
+            {t("msg1Bot")}
           </ChatBubble>
           <ChatBubble role="user" delay={3500}>
-            Sí, sábado 11am
+            {t("msg2User")}
           </ChatBubble>
           <ChatTyping role="bot" delay={4100} />
           <ChatBubble role="bot" delay={5000}>
-            Listo ✅ Reserva confirmada. Te envío recordatorio.
+            {t("msg2Bot")}
           </ChatBubble>
         </div>
       )}
@@ -142,7 +143,7 @@ function SceneWhatsApp({ active }: { active: boolean }) {
           className="mt-2 flex items-center gap-2 rounded-lg border border-green-500/30 bg-green-500/10 px-3 py-1.5 text-[11px] font-medium text-green-400 opacity-0 animate-[fade-in-up_0.5s_ease-out_5.5s_forwards]"
         >
           <CheckCircle2 className="h-3.5 w-3.5" />
-          Lead capturado automáticamente
+          {t("leadCaptured")}
         </div>
       )}
     </div>
@@ -200,6 +201,7 @@ function ChatTyping({ role, delay }: { role: "user" | "bot"; delay: number }) {
 /* ──────────── Scene 2: Dashboard ──────────── */
 
 function SceneDashboard({ active }: { active: boolean }) {
+  const t = useTranslations("HeroMockup")
   return (
     <div
       className={`absolute inset-0 p-4 transition-opacity duration-500 ${
@@ -209,7 +211,7 @@ function SceneDashboard({ active }: { active: boolean }) {
       <div className="grid grid-cols-2 gap-2.5">
         <MetricCard
           icon={<Users className="h-3.5 w-3.5 text-cyan-400" />}
-          label="Leads / mes"
+          label={t("leadsLabel")}
           value={127}
           prefix=""
           active={active}
@@ -217,7 +219,7 @@ function SceneDashboard({ active }: { active: boolean }) {
         />
         <MetricCard
           icon={<TrendingUp className="h-3.5 w-3.5 text-green-400" />}
-          label="Tasa de cierre"
+          label={t("closeRateLabel")}
           value={36}
           suffix="%"
           active={active}
@@ -230,7 +232,7 @@ function SceneDashboard({ active }: { active: boolean }) {
         <div className="flex items-center justify-between">
           <div>
             <p className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
-              Ingresos del mes
+              {t("revenueLabel")}
             </p>
             <p className="text-xl font-bold tabular-nums text-cyan-300">
               {active && <AnimatedNumber to={18450} prefix="$" />}
@@ -259,17 +261,17 @@ function SceneDashboard({ active }: { active: boolean }) {
       <div className="mt-2.5 grid grid-cols-2 gap-2.5">
         <div className="rounded-xl border border-border/40 bg-white/[0.03] p-3">
           <p className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
-            Tiempo ahorrado
+            {t("timeSavedLabel")}
           </p>
           <p className="mt-1 text-base font-bold text-foreground tabular-nums">
-            {active && <AnimatedNumber to={14} suffix=" hrs/sem" />}
+            {active && <AnimatedNumber to={14} suffix={t("timeSavedSuffix")} />}
           </p>
         </div>
         <div className="rounded-xl border border-border/40 bg-white/[0.03] p-3">
           <p className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
-            Respuesta promedio
+            {t("avgResponseLabel")}
           </p>
-          <p className="mt-1 text-base font-bold text-foreground">&lt; 30 seg</p>
+          <p className="mt-1 text-base font-bold text-foreground">{t("avgResponseValue")}</p>
         </div>
       </div>
     </div>
@@ -351,11 +353,12 @@ function AnimatedNumber({
 /* ──────────── Scene 3: Workflow ──────────── */
 
 function SceneWorkflow({ active }: { active: boolean }) {
+  const t = useTranslations("HeroMockup")
   const nodes = [
-    { label: "Lead", icon: Users, color: "cyan" as const, delay: 200 },
-    { label: "AI Agent", icon: Bot, color: "purple" as const, delay: 900 },
-    { label: "CRM", icon: Workflow, color: "cyan" as const, delay: 1600 },
-    { label: "Action", icon: Zap, color: "green" as const, delay: 2300 },
+    { label: t("nodeLead"), icon: Users, color: "cyan" as const, delay: 200 },
+    { label: t("nodeAi"), icon: Bot, color: "purple" as const, delay: 900 },
+    { label: t("nodeCrm"), icon: Workflow, color: "cyan" as const, delay: 1600 },
+    { label: t("nodeAction"), icon: Zap, color: "green" as const, delay: 2300 },
   ]
 
   return (
@@ -365,7 +368,7 @@ function SceneWorkflow({ active }: { active: boolean }) {
       }`}
     >
       <p className="mb-4 text-center text-[11px] font-medium uppercase tracking-widest text-cyan-400">
-        {active ? "Flujo automatizado · 24/7" : ""}
+        {active ? t("workflowHeader") : ""}
       </p>
 
       <div className="relative space-y-3">
@@ -424,7 +427,7 @@ function SceneWorkflow({ active }: { active: boolean }) {
       </div>
 
       <p className="mt-4 text-center text-[11px] text-muted-foreground">
-        {active ? "Sin intervención humana" : ""}
+        {active ? t("workflowFooter") : ""}
       </p>
     </div>
   )
