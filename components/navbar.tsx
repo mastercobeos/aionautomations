@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { Menu, X, ChevronDown, Calculator, Sparkles, BookOpen } from "lucide-react"
 import Image from "next/image"
 import { Link } from "@/i18n/routing"
 import { LanguageSwitcher } from "./language-switcher"
@@ -12,8 +12,10 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const [industriesOpen, setIndustriesOpen] = useState(false)
+  const [resourcesOpen, setResourcesOpen] = useState(false)
   const servicesRef = useRef<HTMLDivElement>(null)
   const industriesRef = useRef<HTMLDivElement>(null)
+  const resourcesRef = useRef<HTMLDivElement>(null)
   const t = useTranslations('Navbar');
 
   useEffect(() => {
@@ -29,6 +31,9 @@ export function Navbar() {
       }
       if (industriesRef.current && !industriesRef.current.contains(e.target as Node)) {
         setIndustriesOpen(false)
+      }
+      if (resourcesRef.current && !resourcesRef.current.contains(e.target as Node)) {
+        setResourcesOpen(false)
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
@@ -54,8 +59,15 @@ export function Navbar() {
     { label: t('legal'), href: "/industries/legal" as const },
   ]
 
+  const RESOURCE_LINKS = [
+    { label: t('quiz'), sub: t('quizSub'), href: "/quiz" as const, icon: Sparkles, featured: true },
+    { label: t('roiCalculator'), sub: t('roiCalculatorSub'), href: "/roi-calculator" as const, icon: Calculator, featured: true },
+    { label: t('blog'), sub: t('blogSub'), href: "/blog" as const, icon: BookOpen, featured: false },
+  ]
+
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false)
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false)
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass-nav-scrolled' : 'glass-nav'}`}>
@@ -143,9 +155,43 @@ export function Navbar() {
           <Link href="/pricing" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap">
             {t('pricing')}
           </Link>
-          <Link href="/blog" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap">
-            {t('blog')}
-          </Link>
+
+          {/* Resources dropdown */}
+          <div ref={resourcesRef} className="relative">
+            <button
+              onClick={() => { setResourcesOpen(!resourcesOpen); setServicesOpen(false); setIndustriesOpen(false) }}
+              className="flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap"
+              aria-expanded={resourcesOpen}
+              aria-haspopup="menu"
+            >
+              {t('resources')}
+              <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${resourcesOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {resourcesOpen && (
+              <div className="absolute top-full left-0 mt-2 w-72 rounded-lg border border-border/50 bg-background/95 backdrop-blur-md p-1.5 shadow-xl animate-in fade-in slide-in-from-top-2 duration-150">
+                {RESOURCE_LINKS.map((link) => {
+                  const Icon = link.icon
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setResourcesOpen(false)}
+                      className="group flex items-start gap-3 rounded-md px-3 py-2.5 transition-colors hover:bg-muted"
+                    >
+                      <div className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md ${link.featured ? 'bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-500/30' : 'bg-white/[0.04] border border-border/50'}`}>
+                        <Icon className={`h-4 w-4 ${link.featured ? 'text-cyan-400' : 'text-muted-foreground'}`} />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-sm font-medium text-foreground group-hover:text-cyan-300 transition-colors">{link.label}</p>
+                        <p className="text-xs text-muted-foreground">{link.sub}</p>
+                      </div>
+                    </Link>
+                  )
+                })}
+              </div>
+            )}
+          </div>
+
           <Link href="/about" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap">
             {t('about')}
           </Link>
@@ -242,13 +288,30 @@ export function Navbar() {
             >
               {t('pricing')}
             </Link>
-            <Link
-              href="/blog"
-              onClick={() => setMobileOpen(false)}
-              className="rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+
+            {/* Resources submenu */}
+            <button
+              onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
+              className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
-              {t('blog')}
-            </Link>
+              {t('resources')}
+              <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${mobileResourcesOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {mobileResourcesOpen && RESOURCE_LINKS.map((link) => {
+              const Icon = link.icon
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-3 rounded-lg px-6 py-3 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                >
+                  <Icon className={`h-4 w-4 ${link.featured ? 'text-cyan-400' : 'text-muted-foreground'}`} />
+                  {link.label}
+                </Link>
+              )
+            })}
+
             <Link
               href="/about"
               onClick={() => setMobileOpen(false)}

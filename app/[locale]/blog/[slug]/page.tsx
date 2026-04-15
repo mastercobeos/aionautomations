@@ -6,6 +6,7 @@ import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { PageSchema } from '@/components/page-schema';
 import { FloatingSocialButtons } from '@/components/floating-social-buttons';
+import { BlogToc } from '@/components/blog-toc';
 import { blogPostSchema, breadcrumbSchema, howToSchema, siteUrl, ogMeta } from '@/lib/seo';
 import { ArrowLeft } from 'lucide-react';
 
@@ -197,69 +198,82 @@ export default async function BlogPostPage({
 
         {/* Article */}
         <article className="pt-32 pb-16 md:pt-40 md:pb-20">
-          <div className="mx-auto max-w-3xl px-6 lg:px-8">
-            {/* Back to blog link */}
-            <Link
-              href="/blog"
-              className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-cyan-400 hover:text-cyan-300 transition-colors"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              {tPost('backToBlog')}
-            </Link>
-
-            <Breadcrumbs items={breadcrumbItems} />
-
-            {/* Post header */}
-            <header className="mt-4">
-              <time
-                dateTime={post.date}
-                className="text-xs font-medium uppercase tracking-widest text-cyan-400"
+          <div className="mx-auto max-w-6xl px-6 lg:px-8 xl:grid xl:grid-cols-[minmax(0,1fr)_260px] xl:gap-12">
+            <div className="mx-auto w-full max-w-3xl xl:max-w-none xl:mx-0 min-w-0">
+              {/* Back to blog link */}
+              <Link
+                href="/blog"
+                className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-cyan-400 hover:text-cyan-300 transition-colors"
               >
-                {t(post.titleKey.replace('Title', 'Date'))}
-              </time>
+                <ArrowLeft className="h-4 w-4" />
+                {tPost('backToBlog')}
+              </Link>
 
-              <h1 className="mt-4 text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-                {postTitle}
-              </h1>
+              <Breadcrumbs items={breadcrumbItems} />
 
-              <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
-                {postDesc}
-              </p>
-            </header>
+              {/* Post header */}
+              <header className="mt-4">
+                <time
+                  dateTime={post.date}
+                  className="text-xs font-medium uppercase tracking-widest text-cyan-400"
+                >
+                  {t(post.titleKey.replace('Title', 'Date'))}
+                </time>
 
-            {/* Divider */}
-            <div className="my-10 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
+                <h1 className="mt-4 text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+                  {postTitle}
+                </h1>
 
-            {/* Article content */}
-            <div className="prose prose-invert prose-cyan max-w-none text-foreground">
-              {Array.from({ length: post.sections }, (_, i) => (
-                <section key={i} className={i > 0 ? 'mt-10' : ''}>
-                  <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-                    {t(`${post.prefix}_s${i + 1}Title`)}
-                  </h2>
-                  <p className="mt-4 text-muted-foreground leading-relaxed">
-                    {t(`${post.prefix}_s${i + 1}Text`)}
-                  </p>
-                </section>
-              ))}
-
-              {/* Internal links */}
-              <div className="mt-12 rounded-xl border border-border/50 bg-white/[0.02] p-6">
-                <p className="text-sm font-semibold text-foreground">
-                  {tPost('relatedLinks')}
+                <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
+                  {postDesc}
                 </p>
-                <div className="mt-3 flex flex-wrap gap-3">
-                  {post.links.map((link, i) => (
-                    <span key={link.href} className="contents">
-                      {i > 0 && <span className="text-border">·</span>}
-                      <Link href={link.href} className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
-                        {tPost(link.labelKey)}
-                      </Link>
-                    </span>
-                  ))}
+              </header>
+
+              {/* Divider */}
+              <div className="my-10 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
+
+              {/* Article content */}
+              <div className="prose prose-invert prose-cyan max-w-none text-foreground">
+                {Array.from({ length: post.sections }, (_, i) => {
+                  const headingId = `${post.prefix}-s${i + 1}`;
+                  return (
+                    <section key={i} className={i > 0 ? 'mt-10 scroll-mt-28' : 'scroll-mt-28'}>
+                      <h2 id={headingId} className="text-2xl font-bold text-foreground sm:text-3xl scroll-mt-28">
+                        {t(`${post.prefix}_s${i + 1}Title`)}
+                      </h2>
+                      <p className="mt-4 text-muted-foreground leading-relaxed">
+                        {t(`${post.prefix}_s${i + 1}Text`)}
+                      </p>
+                    </section>
+                  );
+                })}
+
+                {/* Internal links */}
+                <div className="mt-12 rounded-xl border border-border/50 bg-white/[0.02] p-6">
+                  <p className="text-sm font-semibold text-foreground">
+                    {tPost('relatedLinks')}
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-3">
+                    {post.links.map((link, i) => (
+                      <span key={link.href} className="contents">
+                        {i > 0 && <span className="text-border">·</span>}
+                        <Link href={link.href} className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                          {tPost(link.labelKey)}
+                        </Link>
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
+
+            {/* Sticky TOC (xl+) */}
+            <BlogToc
+              sections={Array.from({ length: post.sections }, (_, i) => ({
+                id: `${post.prefix}-s${i + 1}`,
+                title: t(`${post.prefix}_s${i + 1}Title`),
+              }))}
+            />
           </div>
         </article>
 

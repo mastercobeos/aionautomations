@@ -43,6 +43,7 @@ const SectionLoader = () => <div className="min-h-[200px]" />
 
 const ServicePillars = dynamic(() => import("@/components/service-pillars").then(m => ({ default: m.ServicePillars })), { loading: SectionLoader })
 const CaseStudies = dynamic(() => import("@/components/case-studies").then(m => ({ default: m.CaseStudies })), { loading: SectionLoader })
+const CaseStudyTimeline = dynamic(() => import("@/components/case-study-timeline").then(m => ({ default: m.CaseStudyTimeline })), { loading: SectionLoader })
 const HomeFaq = dynamic(() => import("@/components/home-faq").then(m => ({ default: m.HomeFaq })), { loading: SectionLoader })
 const FinalCTA = dynamic(() => import("@/components/final-cta").then(m => ({ default: m.FinalCTA })), { loading: SectionLoader })
 const GlobalModals = dynamic(() => import("@/components/global-modals").then(m => ({ default: m.GlobalModals })))
@@ -119,6 +120,8 @@ export default async function Home({
         <ServicePillars />
         <div className="section-divider-gradient" />
         <CaseStudies />
+        <div className="section-divider-gradient" />
+        <CaseStudyTimeline />
         <div className="section-divider-gradient" />
         <HomeFaq />
         <FinalCTA />

@@ -10,6 +10,7 @@ import { FloatingSocialButtons } from '@/components/floating-social-buttons';
 import { InternalNav } from '@/components/internal-nav';
 import { webPageSchema, breadcrumbSchema, faqSchema, siteUrl, ogMeta, serviceOfferSchema } from '@/lib/seo';
 import { Link } from '@/i18n/routing';
+import { ChatbotDemo } from '@/components/chatbot-demo';
 
 const NAMESPACE = 'AutomationsServicePage';
 const PATH = '/services/automations';
@@ -180,6 +181,25 @@ export default async function AutomationsServicePage({
               ))}
             </div>
             <p className="mt-10 text-center text-sm text-muted-foreground">{t('note')}</p>
+          </div>
+        </section>
+
+        <div className="section-divider-gradient" />
+
+        {/* Chatbot Demo */}
+        <section className="py-16 md:py-20">
+          <div className="mx-auto max-w-4xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                {t('demoTitle')}
+              </h2>
+              <p className="mt-4 text-pretty text-muted-foreground leading-relaxed">
+                {t('demoSubtitle')}
+              </p>
+            </div>
+            <div className="mt-10">
+              <ChatbotDemo />
+            </div>
           </div>
         </section>
 
