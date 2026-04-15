@@ -54,6 +54,12 @@ const nextConfig = {
   async headers() {
     return [
       {
+        source: '/_next/static/:path*',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex' },
+        ],
+      },
+      {
         source: '/(.*)',
         headers: [
           { key: 'X-Content-Type-Options', value: 'nosniff' },
