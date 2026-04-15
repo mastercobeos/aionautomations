@@ -13,7 +13,7 @@ export function Hero() {
   ]
 
   return (
-    <section className="relative flex h-screen items-center justify-center overflow-hidden">
+    <section className="relative flex min-h-screen md:h-screen items-center justify-center overflow-hidden">
       {/* Background layers */}
       <div className="absolute inset-0">
         <div className="hero-bg-slide" aria-hidden="true" />
@@ -98,8 +98,8 @@ export function Hero() {
             </ul>
           </div>
 
-          {/* Right side - Animated product mockup (hidden on mobile to fit viewport) */}
-          <div className="animate-fade-up-delay-1 hidden md:flex justify-center lg:justify-center">
+          {/* Right side - Animated product mockup */}
+          <div className="animate-fade-up-delay-1 mt-8 flex justify-center md:mt-0 lg:justify-center">
             <HeroProductMockup />
           </div>
         </div>

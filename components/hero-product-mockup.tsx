@@ -35,7 +35,7 @@ export function HeroProductMockup() {
   ]
 
   return (
-    <div className="relative w-full max-w-[480px]" aria-label={t("ariaLabel")}>
+    <div className="relative w-full max-w-[360px] sm:max-w-[420px] md:max-w-[480px]" aria-label={t("ariaLabel")}>
       {/* Device frame */}
       <div className="relative rounded-[28px] border border-cyan-500/30 bg-gradient-to-br from-background via-background to-cyan-500/[0.04] p-3 shadow-[0_0_80px_rgba(34,212,254,0.15)]">
         {/* Ambient glow */}
@@ -55,7 +55,7 @@ export function HeroProductMockup() {
         </div>
 
         {/* Scene viewport */}
-        <div className="relative h-[360px] overflow-hidden rounded-b-2xl bg-[radial-gradient(circle_at_top,rgba(34,212,254,0.06),transparent_60%)]">
+        <div className="relative h-[320px] sm:h-[360px] overflow-hidden rounded-b-2xl bg-[radial-gradient(circle_at_top,rgba(34,212,254,0.06),transparent_60%)]">
           <SceneWhatsApp active={scene === 0} />
           <SceneDashboard active={scene === 1} />
           <SceneWorkflow active={scene === 2} />
