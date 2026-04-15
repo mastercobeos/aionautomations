@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Blog posts with their real publish dates
+  const today = new Date().toISOString().slice(0, 10);
   const blogPosts = [
     { slug: "ai-automation-2026", date: "2026-02-28" },
     { slug: "website-cost-guide", date: "2026-02-20" },
@@ -46,7 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { slug: "business-website-checklist", date: "2026-06-11" },
     { slug: "real-estate-ai-marketing", date: "2026-06-18" },
     { slug: "gym-fitness-automation", date: "2026-06-25" },
-  ];
+  ].filter((post) => post.date <= today);
 
   for (const post of blogPosts) {
     for (const locale of locales) {
