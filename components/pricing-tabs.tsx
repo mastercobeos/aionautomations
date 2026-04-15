@@ -83,6 +83,10 @@ export function PricingTabs() {
                 {t(`${prefix}price`)}
               </p>
 
+              <p className="mt-1 text-xs font-medium uppercase tracking-wider text-cyan-400/80">
+                {t(`${active}Billing`)}
+              </p>
+
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {t(`${prefix}desc`)}
               </p>
