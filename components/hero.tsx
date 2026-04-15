@@ -1,7 +1,7 @@
-import { Shield, Infinity, Zap, ArrowRight, CheckCircle2, TrendingUp, Bell } from "lucide-react"
+import { Shield, Infinity, Zap, ArrowRight } from "lucide-react"
 import { useTranslations } from 'next-intl';
 import { HeroParticles } from './hero-particles';
-import { GlobeWorld } from './globe-world';
+import { HeroProductMockup } from './hero-product-mockup';
 
 export function Hero() {
   const t = useTranslations('Hero');
@@ -98,34 +98,9 @@ export function Hero() {
             </ul>
           </div>
 
-          {/* Right side - Interactive Globe + Floating Cards (hidden on mobile to fit viewport) */}
-          <div className="animate-fade-up-delay-1 hidden md:flex justify-center lg:justify-center lg:-mt-40">
-            <div className="relative">
-              <GlobeWorld ariaLabel={t('globeAlt')} />
-
-              {/* Floating cards */}
-              <div className="hero-floating-card hero-floating-card-1 hidden md:flex" aria-hidden="true">
-                <span className="hero-floating-card-icon hero-floating-card-icon--green">
-                  <CheckCircle2 className="h-3.5 w-3.5" />
-                </span>
-                <span>{t('card1')}</span>
-                <span className="hero-floating-card-dot hero-floating-card-dot--green" />
-              </div>
-              <div className="hero-floating-card hero-floating-card-2 hidden md:flex" aria-hidden="true">
-                <span className="hero-floating-card-icon hero-floating-card-icon--cyan">
-                  <TrendingUp className="h-3.5 w-3.5" />
-                </span>
-                <span>{t('card2')}</span>
-                <span className="hero-floating-card-dot hero-floating-card-dot--cyan" />
-              </div>
-              <div className="hero-floating-card hero-floating-card-3 hidden md:flex" aria-hidden="true">
-                <span className="hero-floating-card-icon hero-floating-card-icon--purple">
-                  <Bell className="h-3.5 w-3.5" />
-                </span>
-                <span>{t('card3')}</span>
-                <span className="hero-floating-card-dot hero-floating-card-dot--purple" />
-              </div>
-            </div>
+          {/* Right side - Animated product mockup (hidden on mobile to fit viewport) */}
+          <div className="animate-fade-up-delay-1 hidden md:flex justify-center lg:justify-center">
+            <HeroProductMockup />
           </div>
         </div>
       </div>

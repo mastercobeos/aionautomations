@@ -1457,6 +1457,13 @@
   "BlogToc": {
     "title": "En esta página"
   },
+  "HeroMockup": {
+    "ariaLabel": "Vista previa en vivo de los agentes IA, dashboard y flujo de automatización de AION",
+    "liveBadge": "Vista en vivo",
+    "scene1Label": "Agente IA",
+    "scene2Label": "Dashboard",
+    "scene3Label": "Workflow"
+  },
   "ChatbotDemo": {
     "botName": "Asistente AION",
     "online": "En línea · Responde en segundos",
