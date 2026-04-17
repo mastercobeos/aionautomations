@@ -3,14 +3,22 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 import { useTranslations } from "next-intl"
 import {
+  BookOpen,
   Bot,
+  Building,
+  Calendar,
+  Camera,
   Check,
   CheckCircle2,
+  Dumbbell,
   Globe,
+  Heart,
   Image,
   Layout,
   MessageSquare,
+  Shield,
   Sparkles,
+  Star,
   TrendingUp,
   Type,
   Users,
@@ -20,10 +28,10 @@ import {
 
 const SCENE_DURATION_MS = 6000
 const SCENE_COUNT = 4
-const CHAT_VARIANTS = 5
-const DASH_VARIANTS = 5
-const WEB_VARIANTS = 5
-const WF_VARIANTS = 5
+const CHAT_VARIANTS = 15
+const DASH_VARIANTS = 100
+const WEB_VARIANTS = 15
+const WF_VARIANTS = 15
 
 function randExclude(max: number, exclude: number) {
   if (max <= 1) return 0
@@ -217,6 +225,166 @@ const SITE_VARIANTS = [
       { bg: "bg-amber-500/20", border: "border-amber-500/30", icon: Globe, iconColor: "text-amber-400" },
       { bg: "bg-orange-500/20", border: "border-orange-500/30", icon: Image, iconColor: "text-orange-400" },
       { bg: "bg-green-500/20", border: "border-green-500/30", icon: TrendingUp, iconColor: "text-green-400" },
+    ],
+  },
+  {
+    titleKey: "v6_siteTitle",
+    subtitleKey: "v6_siteSub",
+    cards: ["v6_siteCard1", "v6_siteCard2", "v6_siteCard3"],
+    ctaKey: "v6_siteCta",
+    scorePerf: 98,
+    scoreSeo: 100,
+    heroGradient: "from-red-500/15 via-orange-500/5 to-transparent",
+    heroBorder: "border-red-500/20",
+    ctaGradient: "from-red-500 to-orange-600",
+    cardColors: [
+      { bg: "bg-red-500/20", border: "border-red-500/30", icon: Dumbbell, iconColor: "text-red-400" },
+      { bg: "bg-orange-500/20", border: "border-orange-500/30", icon: Calendar, iconColor: "text-orange-400" },
+      { bg: "bg-green-500/20", border: "border-green-500/30", icon: TrendingUp, iconColor: "text-green-400" },
+    ],
+  },
+  {
+    titleKey: "v7_siteTitle",
+    subtitleKey: "v7_siteSub",
+    cards: ["v7_siteCard1", "v7_siteCard2", "v7_siteCard3"],
+    ctaKey: "v7_siteCta",
+    scorePerf: 97,
+    scoreSeo: 100,
+    heroGradient: "from-teal-500/15 via-cyan-500/5 to-transparent",
+    heroBorder: "border-teal-500/20",
+    ctaGradient: "from-teal-500 to-cyan-600",
+    cardColors: [
+      { bg: "bg-teal-500/20", border: "border-teal-500/30", icon: Building, iconColor: "text-teal-400" },
+      { bg: "bg-cyan-500/20", border: "border-cyan-500/30", icon: Star, iconColor: "text-cyan-400" },
+      { bg: "bg-amber-500/20", border: "border-amber-500/30", icon: Calendar, iconColor: "text-amber-400" },
+    ],
+  },
+  {
+    titleKey: "v8_siteTitle",
+    subtitleKey: "v8_siteSub",
+    cards: ["v8_siteCard1", "v8_siteCard2", "v8_siteCard3"],
+    ctaKey: "v8_siteCta",
+    scorePerf: 99,
+    scoreSeo: 100,
+    heroGradient: "from-pink-500/15 via-rose-500/5 to-transparent",
+    heroBorder: "border-pink-500/20",
+    ctaGradient: "from-pink-500 to-rose-600",
+    cardColors: [
+      { bg: "bg-pink-500/20", border: "border-pink-500/30", icon: Heart, iconColor: "text-pink-400" },
+      { bg: "bg-rose-500/20", border: "border-rose-500/30", icon: Calendar, iconColor: "text-rose-400" },
+      { bg: "bg-purple-500/20", border: "border-purple-500/30", icon: Star, iconColor: "text-purple-400" },
+    ],
+  },
+  {
+    titleKey: "v9_siteTitle",
+    subtitleKey: "v9_siteSub",
+    cards: ["v9_siteCard1", "v9_siteCard2", "v9_siteCard3"],
+    ctaKey: "v9_siteCta",
+    scorePerf: 97,
+    scoreSeo: 100,
+    heroGradient: "from-slate-500/15 via-indigo-500/5 to-transparent",
+    heroBorder: "border-slate-500/20",
+    ctaGradient: "from-slate-600 to-indigo-600",
+    cardColors: [
+      { bg: "bg-slate-500/20", border: "border-slate-500/30", icon: Shield, iconColor: "text-slate-400" },
+      { bg: "bg-indigo-500/20", border: "border-indigo-500/30", icon: BookOpen, iconColor: "text-indigo-400" },
+      { bg: "bg-cyan-500/20", border: "border-cyan-500/30", icon: Users, iconColor: "text-cyan-400" },
+    ],
+  },
+  {
+    titleKey: "v10_siteTitle",
+    subtitleKey: "v10_siteSub",
+    cards: ["v10_siteCard1", "v10_siteCard2", "v10_siteCard3"],
+    ctaKey: "v10_siteCta",
+    scorePerf: 98,
+    scoreSeo: 100,
+    heroGradient: "from-indigo-500/15 via-violet-500/5 to-transparent",
+    heroBorder: "border-indigo-500/20",
+    ctaGradient: "from-indigo-500 to-violet-600",
+    cardColors: [
+      { bg: "bg-indigo-500/20", border: "border-indigo-500/30", icon: BookOpen, iconColor: "text-indigo-400" },
+      { bg: "bg-violet-500/20", border: "border-violet-500/30", icon: Users, iconColor: "text-violet-400" },
+      { bg: "bg-green-500/20", border: "border-green-500/30", icon: Calendar, iconColor: "text-green-400" },
+    ],
+  },
+  {
+    titleKey: "v11_siteTitle",
+    subtitleKey: "v11_siteSub",
+    cards: ["v11_siteCard1", "v11_siteCard2", "v11_siteCard3"],
+    ctaKey: "v11_siteCta",
+    scorePerf: 99,
+    scoreSeo: 100,
+    heroGradient: "from-lime-500/15 via-green-500/5 to-transparent",
+    heroBorder: "border-lime-500/20",
+    ctaGradient: "from-lime-500 to-green-600",
+    cardColors: [
+      { bg: "bg-lime-500/20", border: "border-lime-500/30", icon: Heart, iconColor: "text-lime-400" },
+      { bg: "bg-green-500/20", border: "border-green-500/30", icon: Calendar, iconColor: "text-green-400" },
+      { bg: "bg-cyan-500/20", border: "border-cyan-500/30", icon: MessageSquare, iconColor: "text-cyan-400" },
+    ],
+  },
+  {
+    titleKey: "v12_siteTitle",
+    subtitleKey: "v12_siteSub",
+    cards: ["v12_siteCard1", "v12_siteCard2", "v12_siteCard3"],
+    ctaKey: "v12_siteCta",
+    scorePerf: 97,
+    scoreSeo: 100,
+    heroGradient: "from-violet-500/15 via-purple-500/5 to-transparent",
+    heroBorder: "border-violet-500/20",
+    ctaGradient: "from-violet-500 to-purple-600",
+    cardColors: [
+      { bg: "bg-violet-500/20", border: "border-violet-500/30", icon: TrendingUp, iconColor: "text-violet-400" },
+      { bg: "bg-purple-500/20", border: "border-purple-500/30", icon: Globe, iconColor: "text-purple-400" },
+      { bg: "bg-cyan-500/20", border: "border-cyan-500/30", icon: Zap, iconColor: "text-cyan-400" },
+    ],
+  },
+  {
+    titleKey: "v13_siteTitle",
+    subtitleKey: "v13_siteSub",
+    cards: ["v13_siteCard1", "v13_siteCard2", "v13_siteCard3"],
+    ctaKey: "v13_siteCta",
+    scorePerf: 99,
+    scoreSeo: 100,
+    heroGradient: "from-neutral-500/15 via-zinc-500/5 to-transparent",
+    heroBorder: "border-neutral-500/20",
+    ctaGradient: "from-neutral-600 to-zinc-700",
+    cardColors: [
+      { bg: "bg-neutral-500/20", border: "border-neutral-500/30", icon: Camera, iconColor: "text-neutral-400" },
+      { bg: "bg-zinc-500/20", border: "border-zinc-500/30", icon: Image, iconColor: "text-zinc-400" },
+      { bg: "bg-amber-500/20", border: "border-amber-500/30", icon: Star, iconColor: "text-amber-400" },
+    ],
+  },
+  {
+    titleKey: "v14_siteTitle",
+    subtitleKey: "v14_siteSub",
+    cards: ["v14_siteCard1", "v14_siteCard2", "v14_siteCard3"],
+    ctaKey: "v14_siteCta",
+    scorePerf: 98,
+    scoreSeo: 100,
+    heroGradient: "from-sky-500/15 via-blue-500/5 to-transparent",
+    heroBorder: "border-sky-500/20",
+    ctaGradient: "from-sky-500 to-blue-600",
+    cardColors: [
+      { bg: "bg-sky-500/20", border: "border-sky-500/30", icon: Zap, iconColor: "text-sky-400" },
+      { bg: "bg-blue-500/20", border: "border-blue-500/30", icon: Layout, iconColor: "text-blue-400" },
+      { bg: "bg-green-500/20", border: "border-green-500/30", icon: TrendingUp, iconColor: "text-green-400" },
+    ],
+  },
+  {
+    titleKey: "v15_siteTitle",
+    subtitleKey: "v15_siteSub",
+    cards: ["v15_siteCard1", "v15_siteCard2", "v15_siteCard3"],
+    ctaKey: "v15_siteCta",
+    scorePerf: 98,
+    scoreSeo: 100,
+    heroGradient: "from-emerald-500/15 via-teal-500/5 to-transparent",
+    heroBorder: "border-emerald-500/20",
+    ctaGradient: "from-emerald-500 to-teal-600",
+    cardColors: [
+      { bg: "bg-emerald-500/20", border: "border-emerald-500/30", icon: Heart, iconColor: "text-emerald-400" },
+      { bg: "bg-teal-500/20", border: "border-teal-500/30", icon: Globe, iconColor: "text-teal-400" },
+      { bg: "bg-green-500/20", border: "border-green-500/30", icon: Users, iconColor: "text-green-400" },
     ],
   },
 ] as const
@@ -506,17 +674,20 @@ function ChatTyping({ role, delay }: { role: "user" | "bot"; delay: number }) {
 
 /* ──────────── Scene 2: Dashboard ──────────── */
 
-const DASHBOARD_DATA = [
-  { leads: 127, closeRate: 36, revenue: 18450, timeSaved: 14, growth: "+142%", bars: [32, 48, 40, 65, 55, 80, 95] },
-  { leads: 89, closeRate: 28, revenue: 12300, timeSaved: 10, growth: "+96%", bars: [20, 35, 30, 50, 45, 62, 78] },
-  { leads: 203, closeRate: 44, revenue: 31200, timeSaved: 18, growth: "+215%", bars: [40, 55, 50, 72, 68, 88, 98] },
-  { leads: 156, closeRate: 52, revenue: 27800, timeSaved: 22, growth: "+184%", bars: [38, 42, 55, 60, 70, 85, 92] },
-  { leads: 64, closeRate: 19, revenue: 8900, timeSaved: 8, growth: "+67%", bars: [15, 22, 28, 35, 40, 52, 65] },
-]
+function generateDashboard(): { leads: number; closeRate: number; revenue: number; timeSaved: number; growth: string; bars: number[] } {
+  const leads = 40 + Math.floor(Math.random() * 210)
+  const closeRate = 15 + Math.floor(Math.random() * 40)
+  const revenue = Math.round(leads * (closeRate / 100) * (100 + Math.floor(Math.random() * 200)))
+  const timeSaved = 6 + Math.floor(Math.random() * 18)
+  const growth = `+${50 + Math.floor(Math.random() * 200)}%`
+  const bars = Array.from({ length: 7 }, (_, i) => 15 + Math.floor(Math.random() * 40) + i * 8).map(v => Math.min(v, 98))
+  return { leads, closeRate, revenue, timeSaved, growth, bars }
+}
 
 function SceneDashboard({ active, variant }: { active: boolean; variant: number }) {
   const t = useTranslations("HeroMockup")
-  const data = DASHBOARD_DATA[variant]
+  const [data, setData] = useState(generateDashboard)
+  useEffect(() => { setData(generateDashboard()) }, [variant])
   return (
     <div
       key={`dash-${variant}`}
