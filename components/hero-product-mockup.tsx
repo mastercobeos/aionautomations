@@ -24,7 +24,7 @@ const VARIANTS_COUNT = 3
 
 export function HeroProductMockup() {
   const t = useTranslations("HeroMockup")
-  const [tick, setTick] = useState(0)
+  const [tick, setTick] = useState(() => Math.floor(Math.random() * SCENE_COUNT * VARIANTS_COUNT))
   const paused = useRef(false)
 
   const scene = (tick % SCENE_COUNT) as 0 | 1 | 2 | 3
