@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import { useTranslations } from "next-intl"
 import {
   Bot,
@@ -20,13 +20,19 @@ const SCENE_COUNT = 3
 export function HeroProductMockup() {
   const t = useTranslations("HeroMockup")
   const [scene, setScene] = useState<0 | 1 | 2>(0)
+  const paused = useRef(false)
 
   useEffect(() => {
     const id = setInterval(() => {
-      setScene((s) => ((s + 1) % SCENE_COUNT) as 0 | 1 | 2)
+      if (!paused.current) {
+        setScene((s) => ((s + 1) % SCENE_COUNT) as 0 | 1 | 2)
+      }
     }, SCENE_DURATION_MS)
     return () => clearInterval(id)
   }, [])
+
+  const handleEnter = useCallback(() => { paused.current = true }, [])
+  const handleLeave = useCallback(() => { paused.current = false }, [])
 
   const sceneLabels = [
     { icon: MessageSquare, label: t("scene1Label") },
@@ -35,7 +41,12 @@ export function HeroProductMockup() {
   ]
 
   return (
-    <div className="relative w-full max-w-[360px] sm:max-w-[420px] md:max-w-[480px]" aria-label={t("ariaLabel")}>
+    <div
+      className="relative w-full max-w-[360px] sm:max-w-[420px] md:max-w-[480px]"
+      aria-label={t("ariaLabel")}
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
+    >
       {/* Device frame */}
       <div className="relative rounded-[28px] border border-cyan-500/30 bg-gradient-to-br from-background via-background to-cyan-500/[0.04] p-3 shadow-[0_0_80px_rgba(34,212,254,0.15)]">
         {/* Ambient glow */}
