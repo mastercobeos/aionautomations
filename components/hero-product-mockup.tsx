@@ -20,15 +20,39 @@ import {
 
 const SCENE_DURATION_MS = 6000
 const SCENE_COUNT = 4
-const VARIANTS_COUNT = 3
+const CHAT_VARIANTS = 5
+const DASH_VARIANTS = 5
+const WEB_VARIANTS = 5
+const WF_VARIANTS = 5
+
+function randExclude(max: number, exclude: number) {
+  if (max <= 1) return 0
+  let v: number
+  do { v = Math.floor(Math.random() * max) } while (v === exclude)
+  return v
+}
 
 export function HeroProductMockup() {
   const t = useTranslations("HeroMockup")
-  const [tick, setTick] = useState(() => Math.floor(Math.random() * SCENE_COUNT * VARIANTS_COUNT))
+  const [tick, setTick] = useState(() => Math.floor(Math.random() * SCENE_COUNT))
   const paused = useRef(false)
 
   const scene = (tick % SCENE_COUNT) as 0 | 1 | 2 | 3
-  const variant = Math.floor(tick / SCENE_COUNT) % VARIANTS_COUNT
+  const [variants, setVariants] = useState<[number, number, number, number]>(() => [
+    Math.floor(Math.random() * WEB_VARIANTS),
+    Math.floor(Math.random() * CHAT_VARIANTS),
+    Math.floor(Math.random() * DASH_VARIANTS),
+    Math.floor(Math.random() * WF_VARIANTS),
+  ])
+
+  useEffect(() => {
+    const maxes = [WEB_VARIANTS, CHAT_VARIANTS, DASH_VARIANTS, WF_VARIANTS]
+    setVariants((prev) => {
+      const next = [...prev] as [number, number, number, number]
+      next[scene] = randExclude(maxes[scene], prev[scene])
+      return next
+    })
+  }, [tick, scene])
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -76,10 +100,10 @@ export function HeroProductMockup() {
 
         {/* Scene viewport */}
         <div className="relative h-[320px] sm:h-[360px] overflow-hidden rounded-b-2xl bg-[radial-gradient(circle_at_top,rgba(34,212,254,0.06),transparent_60%)]">
-          <SceneWebsite active={scene === 0} variant={variant} />
-          <SceneWhatsApp active={scene === 1} variant={variant} />
-          <SceneDashboard active={scene === 2} variant={variant} />
-          <SceneWorkflow active={scene === 3} variant={variant} />
+          <SceneWebsite active={scene === 0} variant={variants[0]} />
+          <SceneWhatsApp active={scene === 1} variant={variants[1]} />
+          <SceneDashboard active={scene === 2} variant={variants[2]} />
+          <SceneWorkflow active={scene === 3} variant={variants[3]} />
         </div>
       </div>
 
@@ -161,6 +185,38 @@ const SITE_VARIANTS = [
       { bg: "bg-green-500/20", border: "border-green-500/30", icon: Users, iconColor: "text-green-400" },
       { bg: "bg-amber-500/20", border: "border-amber-500/30", icon: Layout, iconColor: "text-amber-400" },
       { bg: "bg-cyan-500/20", border: "border-cyan-500/30", icon: MessageSquare, iconColor: "text-cyan-400" },
+    ],
+  },
+  {
+    titleKey: "v4_siteTitle",
+    subtitleKey: "v4_siteSub",
+    cards: ["v4_siteCard1", "v4_siteCard2", "v4_siteCard3"],
+    ctaKey: "v4_siteCta",
+    scorePerf: 97,
+    scoreSeo: 100,
+    heroGradient: "from-blue-500/15 via-cyan-500/5 to-transparent",
+    heroBorder: "border-blue-500/20",
+    ctaGradient: "from-blue-500 to-cyan-600",
+    cardColors: [
+      { bg: "bg-blue-500/20", border: "border-blue-500/30", icon: Users, iconColor: "text-blue-400" },
+      { bg: "bg-cyan-500/20", border: "border-cyan-500/30", icon: MessageSquare, iconColor: "text-cyan-400" },
+      { bg: "bg-green-500/20", border: "border-green-500/30", icon: Check, iconColor: "text-green-400" },
+    ],
+  },
+  {
+    titleKey: "v5_siteTitle",
+    subtitleKey: "v5_siteSub",
+    cards: ["v5_siteCard1", "v5_siteCard2", "v5_siteCard3"],
+    ctaKey: "v5_siteCta",
+    scorePerf: 99,
+    scoreSeo: 100,
+    heroGradient: "from-amber-500/15 via-orange-500/5 to-transparent",
+    heroBorder: "border-amber-500/20",
+    ctaGradient: "from-amber-500 to-orange-600",
+    cardColors: [
+      { bg: "bg-amber-500/20", border: "border-amber-500/30", icon: Globe, iconColor: "text-amber-400" },
+      { bg: "bg-orange-500/20", border: "border-orange-500/30", icon: Image, iconColor: "text-orange-400" },
+      { bg: "bg-green-500/20", border: "border-green-500/30", icon: TrendingUp, iconColor: "text-green-400" },
     ],
   },
 ] as const
@@ -454,6 +510,8 @@ const DASHBOARD_DATA = [
   { leads: 127, closeRate: 36, revenue: 18450, timeSaved: 14, growth: "+142%", bars: [32, 48, 40, 65, 55, 80, 95] },
   { leads: 89, closeRate: 28, revenue: 12300, timeSaved: 10, growth: "+96%", bars: [20, 35, 30, 50, 45, 62, 78] },
   { leads: 203, closeRate: 44, revenue: 31200, timeSaved: 18, growth: "+215%", bars: [40, 55, 50, 72, 68, 88, 98] },
+  { leads: 156, closeRate: 52, revenue: 27800, timeSaved: 22, growth: "+184%", bars: [38, 42, 55, 60, 70, 85, 92] },
+  { leads: 64, closeRate: 19, revenue: 8900, timeSaved: 8, growth: "+67%", bars: [15, 22, 28, 35, 40, 52, 65] },
 ]
 
 function SceneDashboard({ active, variant }: { active: boolean; variant: number }) {

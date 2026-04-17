@@ -1486,6 +1486,20 @@
     "v3_siteCard3": "Reseñas",
     "v3_siteCta": "Reservar Mesa →",
 
+    "v4_siteTitle": "Sonríe Con Confianza",
+    "v4_siteSub": "Sitio para clínica dental con agenda + recordatorios WhatsApp.",
+    "v4_siteCard1": "Citas",
+    "v4_siteCard2": "Agente Chat",
+    "v4_siteCard3": "Recordatorios",
+    "v4_siteCta": "Agendar Revisión →",
+
+    "v5_siteTitle": "Encuentra Tu Hogar Ideal",
+    "v5_siteSub": "Sitio inmobiliario con filtros inteligentes + tours virtuales.",
+    "v5_siteCard1": "Listados",
+    "v5_siteCard2": "Tours 360°",
+    "v5_siteCard3": "Captura Leads",
+    "v5_siteCta": "Ver Propiedades →",
+
     "online": "en línea",
 
     "v1_msg1User": "¿Tienen cita el sábado?",
@@ -1505,6 +1519,18 @@
     "v3_msg2User": "Clínica dental con 3 sucursales",
     "v3_msg2Bot": "Match perfecto ✅ Tenemos un plan específico para clínicas. Agendando llamada ahora.",
     "v3_toast": "Reunión agendada automáticamente",
+
+    "v4_msg1User": "¿Hacen envíos a todo México?",
+    "v4_msg1Bot": "¡Sí! Envío gratis en compras arriba de $500. ¿Quieres que revise stock de algo?",
+    "v4_msg2User": "Sí, los audífonos inalámbricos",
+    "v4_msg2Bot": "En stock ✅ Agregado al carrito. Link de pago enviado a tu email!",
+    "v4_toast": "Carrito creado + email enviado",
+
+    "v5_msg1User": "Necesito ayuda, no ha llegado mi pedido",
+    "v5_msg1Bot": "¡Disculpa! Déjame revisar. ¿Cuál es tu número de orden?",
+    "v5_msg2User": "Orden #4821",
+    "v5_msg2Bot": "Encontrada — retraso en envío, llega mañana. Te agregué 10% de descuento en tu próxima compra 🎁",
+    "v5_toast": "Ticket resuelto + descuento aplicado",
 
     "leadsLabel": "Leads / mes",
     "closeRateLabel": "Tasa de cierre",
@@ -1530,7 +1556,17 @@
     "v3_wfNode1": "WhatsApp",
     "v3_wfNode2": "Bot IA",
     "v3_wfNode3": "Calendario",
-    "v3_wfNode4": "Confirmar"
+    "v3_wfNode4": "Confirmar",
+
+    "v4_wfNode1": "Sitio Web",
+    "v4_wfNode2": "Capturar",
+    "v4_wfNode3": "Nutrir",
+    "v4_wfNode4": "Convertir",
+
+    "v5_wfNode1": "Redes",
+    "v5_wfNode2": "Analizar",
+    "v5_wfNode3": "Segmentar",
+    "v5_wfNode4": "Campaña"
   },
   "ChatbotDemo": {
     "botName": "Asistente AION",

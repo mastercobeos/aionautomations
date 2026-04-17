@@ -1486,6 +1486,20 @@
     "v3_siteCard3": "Reviews",
     "v3_siteCta": "Book a Table →",
 
+    "v4_siteTitle": "Smile With Confidence",
+    "v4_siteSub": "Dental clinic website with booking + WhatsApp reminders.",
+    "v4_siteCard1": "Appointments",
+    "v4_siteCard2": "Chat Agent",
+    "v4_siteCard3": "Reminders",
+    "v4_siteCta": "Book Checkup →",
+
+    "v5_siteTitle": "Find Your Dream Home",
+    "v5_siteSub": "Real estate site with smart filters + virtual tours.",
+    "v5_siteCard1": "Listings",
+    "v5_siteCard2": "Tours 360°",
+    "v5_siteCard3": "Lead Capture",
+    "v5_siteCta": "Browse Properties →",
+
     "online": "online",
 
     "v1_msg1User": "Do you have appointments on Saturday?",
@@ -1505,6 +1519,18 @@
     "v3_msg2User": "Dental clinic with 3 locations",
     "v3_msg2Bot": "Perfect match ✅ We have a specific plan for clinics. Scheduling a call now.",
     "v3_toast": "Meeting scheduled automatically",
+
+    "v4_msg1User": "Do you ship to the US?",
+    "v4_msg1Bot": "Yes! Free shipping on orders over $50. Want me to check stock for something specific?",
+    "v4_msg2User": "Yes, the wireless earbuds",
+    "v4_msg2Bot": "In stock ✅ Added to your cart. Checkout link sent to your email!",
+    "v4_toast": "Cart created + email sent",
+
+    "v5_msg1User": "I need help, my order hasn't arrived",
+    "v5_msg1Bot": "Sorry about that! Let me check. What's your order number?",
+    "v5_msg2User": "Order #4821",
+    "v5_msg2Bot": "Found it — shipping delay, arrives tomorrow. I've added a 10% discount for your next order 🎁",
+    "v5_toast": "Ticket resolved + discount applied",
 
     "leadsLabel": "Leads / month",
     "closeRateLabel": "Close rate",
@@ -1530,7 +1556,17 @@
     "v3_wfNode1": "WhatsApp",
     "v3_wfNode2": "AI Bot",
     "v3_wfNode3": "Calendar",
-    "v3_wfNode4": "Confirm"
+    "v3_wfNode4": "Confirm",
+
+    "v4_wfNode1": "Website",
+    "v4_wfNode2": "Capture",
+    "v4_wfNode3": "Nurture",
+    "v4_wfNode4": "Convert",
+
+    "v5_wfNode1": "Social",
+    "v5_wfNode2": "Analyze",
+    "v5_wfNode3": "Segment",
+    "v5_wfNode4": "Campaign"
   },
   "ChatbotDemo": {
     "botName": "AION Assistant",
