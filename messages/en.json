@@ -1463,6 +1463,29 @@
     "scene1Label": "AI Agent",
     "scene2Label": "Dashboard",
     "scene3Label": "Workflow",
+    "scene4Label": "Websites",
+
+    "v1_siteTitle": "Your Business, Online in Days",
+    "v1_siteSub": "Professional website that converts visitors into clients.",
+    "v1_siteCard1": "Responsive Design",
+    "v1_siteCard2": "Fast Loading",
+    "v1_siteCard3": "SEO Ready",
+    "v1_siteCta": "Get a Free Quote →",
+
+    "v2_siteTitle": "Your Store, Open 24/7",
+    "v2_siteSub": "E-commerce that sells while you sleep.",
+    "v2_siteCard1": "Product Catalog",
+    "v2_siteCard2": "Payments",
+    "v2_siteCard3": "Inventory",
+    "v2_siteCta": "Launch Your Store →",
+
+    "v3_siteTitle": "Reserve Your Table Now",
+    "v3_siteSub": "Online booking + digital menu for restaurants.",
+    "v3_siteCard1": "Reservations",
+    "v3_siteCard2": "Digital Menu",
+    "v3_siteCard3": "Reviews",
+    "v3_siteCta": "Book a Table →",
+
     "online": "online",
 
     "v1_msg1User": "Do you have appointments on Saturday?",

@@ -1463,6 +1463,29 @@
     "scene1Label": "Agente IA",
     "scene2Label": "Dashboard",
     "scene3Label": "Workflow",
+    "scene4Label": "Websites",
+
+    "v1_siteTitle": "Tu Negocio, Online en Días",
+    "v1_siteSub": "Sitio web profesional que convierte visitantes en clientes.",
+    "v1_siteCard1": "Diseño Responsivo",
+    "v1_siteCard2": "Carga Rápida",
+    "v1_siteCard3": "SEO Listo",
+    "v1_siteCta": "Cotizar Gratis →",
+
+    "v2_siteTitle": "Tu Tienda, Abierta 24/7",
+    "v2_siteSub": "E-commerce que vende mientras duermes.",
+    "v2_siteCard1": "Catálogo",
+    "v2_siteCard2": "Pagos",
+    "v2_siteCard3": "Inventario",
+    "v2_siteCta": "Lanzar Tu Tienda →",
+
+    "v3_siteTitle": "Reserva Tu Mesa Ahora",
+    "v3_siteSub": "Reservas en línea + menú digital para restaurantes.",
+    "v3_siteCard1": "Reservas",
+    "v3_siteCard2": "Menú Digital",
+    "v3_siteCard3": "Reseñas",
+    "v3_siteCta": "Reservar Mesa →",
+
     "online": "en línea",
 
     "v1_msg1User": "¿Tienen cita el sábado?",

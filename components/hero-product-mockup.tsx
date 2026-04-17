@@ -6,16 +6,20 @@ import {
   Bot,
   Check,
   CheckCircle2,
+  Globe,
+  Image,
+  Layout,
   MessageSquare,
   Sparkles,
   TrendingUp,
+  Type,
   Users,
   Workflow,
   Zap,
 } from "lucide-react"
 
 const SCENE_DURATION_MS = 6000
-const SCENE_COUNT = 3
+const SCENE_COUNT = 4
 const VARIANTS_COUNT = 3
 
 export function HeroProductMockup() {
@@ -23,7 +27,7 @@ export function HeroProductMockup() {
   const [tick, setTick] = useState(0)
   const paused = useRef(false)
 
-  const scene = (tick % SCENE_COUNT) as 0 | 1 | 2
+  const scene = (tick % SCENE_COUNT) as 0 | 1 | 2 | 3
   const variant = Math.floor(tick / SCENE_COUNT) % VARIANTS_COUNT
 
   useEffect(() => {
@@ -39,6 +43,7 @@ export function HeroProductMockup() {
   const handleLeave = useCallback(() => { paused.current = false }, [])
 
   const sceneLabels = [
+    { icon: Globe, label: t("scene4Label") },
     { icon: MessageSquare, label: t("scene1Label") },
     { icon: TrendingUp, label: t("scene2Label") },
     { icon: Workflow, label: t("scene3Label") },
@@ -71,9 +76,10 @@ export function HeroProductMockup() {
 
         {/* Scene viewport */}
         <div className="relative h-[320px] sm:h-[360px] overflow-hidden rounded-b-2xl bg-[radial-gradient(circle_at_top,rgba(34,212,254,0.06),transparent_60%)]">
-          <SceneWhatsApp active={scene === 0} variant={variant} />
-          <SceneDashboard active={scene === 1} variant={variant} />
-          <SceneWorkflow active={scene === 2} variant={variant} />
+          <SceneWebsite active={scene === 0} variant={variant} />
+          <SceneWhatsApp active={scene === 1} variant={variant} />
+          <SceneDashboard active={scene === 2} variant={variant} />
+          <SceneWorkflow active={scene === 3} variant={variant} />
         </div>
       </div>
 
@@ -102,6 +108,212 @@ export function HeroProductMockup() {
           )
         })}
       </div>
+    </div>
+  )
+}
+
+/* ──────────── Scene 0: Websites ──────────── */
+
+const SITE_VARIANTS = [
+  {
+    titleKey: "v1_siteTitle",
+    subtitleKey: "v1_siteSub",
+    cards: ["v1_siteCard1", "v1_siteCard2", "v1_siteCard3"],
+    ctaKey: "v1_siteCta",
+    scorePerf: 98,
+    scoreSeo: 100,
+  },
+  {
+    titleKey: "v2_siteTitle",
+    subtitleKey: "v2_siteSub",
+    cards: ["v2_siteCard1", "v2_siteCard2", "v2_siteCard3"],
+    ctaKey: "v2_siteCta",
+    scorePerf: 96,
+    scoreSeo: 100,
+  },
+  {
+    titleKey: "v3_siteTitle",
+    subtitleKey: "v3_siteSub",
+    cards: ["v3_siteCard1", "v3_siteCard2", "v3_siteCard3"],
+    ctaKey: "v3_siteCta",
+    scorePerf: 99,
+    scoreSeo: 100,
+  },
+]
+
+function SceneWebsite({ active, variant }: { active: boolean; variant: number }) {
+  const t = useTranslations("HeroMockup")
+  const data = SITE_VARIANTS[variant]
+
+  return (
+    <div
+      key={`site-${variant}`}
+      className={`absolute inset-0 flex flex-col transition-opacity duration-500 ${
+        active ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}
+    >
+      {/* Mini browser building itself */}
+      <div className="flex-1 overflow-hidden p-3">
+        {/* Mini navbar */}
+        {active && (
+          <div
+            className="flex items-center justify-between rounded-lg border border-border/40 bg-white/[0.04] px-3 py-1.5 opacity-0 animate-[fade-in-up_0.4s_ease-out_forwards]"
+            style={{ animationDelay: "200ms" }}
+          >
+            <div className="flex items-center gap-1.5">
+              <div className="h-3 w-3 rounded bg-gradient-to-br from-cyan-400 to-purple-500" />
+              <div className="h-1.5 w-10 rounded-full bg-foreground/20" />
+            </div>
+            <div className="flex gap-2">
+              <div className="h-1.5 w-6 rounded-full bg-foreground/15" />
+              <div className="h-1.5 w-6 rounded-full bg-foreground/15" />
+              <div className="h-1.5 w-6 rounded-full bg-foreground/15" />
+            </div>
+          </div>
+        )}
+
+        {/* Mini hero section */}
+        {active && (
+          <div
+            className="mt-2 rounded-lg border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 via-purple-500/5 to-transparent p-3 opacity-0 animate-[fade-in-up_0.4s_ease-out_forwards]"
+            style={{ animationDelay: "600ms" }}
+          >
+            <div className="flex items-center gap-2">
+              <Type className="h-3.5 w-3.5 text-cyan-400" />
+              <p className="text-[11px] font-bold text-foreground leading-tight">
+                {t(data.titleKey)}
+              </p>
+            </div>
+            <p className="mt-1 text-[9px] text-muted-foreground leading-snug">
+              {t(data.subtitleKey)}
+            </p>
+          </div>
+        )}
+
+        {/* Mini feature cards */}
+        {active && (
+          <div className="mt-2 grid grid-cols-3 gap-1.5">
+            {data.cards.map((key, i) => (
+              <div
+                key={key}
+                className="rounded-md border border-border/40 bg-white/[0.03] p-2 opacity-0 animate-[fade-in-up_0.4s_ease-out_forwards]"
+                style={{ animationDelay: `${1100 + i * 200}ms` }}
+              >
+                <div className="flex items-center justify-center">
+                  <div className={`h-5 w-5 rounded-md ${
+                    i === 0 ? "bg-cyan-500/20 border border-cyan-500/30" :
+                    i === 1 ? "bg-purple-500/20 border border-purple-500/30" :
+                    "bg-green-500/20 border border-green-500/30"
+                  } flex items-center justify-center`}>
+                    {i === 0 && <Layout className="h-2.5 w-2.5 text-cyan-400" />}
+                    {i === 1 && <Zap className="h-2.5 w-2.5 text-purple-400" />}
+                    {i === 2 && <TrendingUp className="h-2.5 w-2.5 text-green-400" />}
+                  </div>
+                </div>
+                <p className="mt-1 text-center text-[8px] font-medium text-foreground leading-tight">
+                  {t(key)}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Mini CTA */}
+        {active && (
+          <div
+            className="mt-2 flex justify-center opacity-0 animate-[fade-in-up_0.4s_ease-out_forwards]"
+            style={{ animationDelay: "1900ms" }}
+          >
+            <div className="rounded-md bg-gradient-to-r from-cyan-500 to-purple-600 px-6 py-1 text-[9px] font-semibold text-white">
+              {t(data.ctaKey)}
+            </div>
+          </div>
+        )}
+
+        {/* Lighthouse scores */}
+        {active && (
+          <div
+            className="mt-3 flex items-center justify-center gap-3 opacity-0 animate-[fade-in-up_0.5s_ease-out_forwards]"
+            style={{ animationDelay: "2500ms" }}
+          >
+            <ScoreCircle label="Perf" value={data.scorePerf} color="green" active={active} delay={2600} />
+            <ScoreCircle label="SEO" value={data.scoreSeo} color="green" active={active} delay={2800} />
+            <ScoreCircle label="A11y" value={95} color="green" active={active} delay={3000} />
+            <div className="flex items-center gap-1 rounded-full bg-green-500/10 border border-green-500/30 px-2 py-0.5 opacity-0 animate-[fade-in_0.4s_ease-out_forwards]" style={{ animationDelay: "3400ms" }}>
+              <Image className="h-2.5 w-2.5 text-green-400" />
+              <span className="text-[9px] font-semibold text-green-400">Mobile Ready</span>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+function ScoreCircle({
+  label,
+  value,
+  color,
+  active,
+  delay,
+}: {
+  label: string
+  value: number
+  color: string
+  active: boolean
+  delay: number
+}) {
+  const [displayed, setDisplayed] = useState(0)
+
+  useEffect(() => {
+    if (!active) {
+      setDisplayed(0)
+      return
+    }
+    const start = performance.now()
+    const startDelay = delay - 2500
+    let raf = 0
+    const tick = (now: number) => {
+      const elapsed = now - start - startDelay
+      if (elapsed < 0) {
+        raf = requestAnimationFrame(tick)
+        return
+      }
+      const t = Math.min(1, elapsed / 800)
+      const eased = 1 - Math.pow(1 - t, 3)
+      setDisplayed(Math.round(value * eased))
+      if (t < 1) raf = requestAnimationFrame(tick)
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+  }, [active, value, delay])
+
+  return (
+    <div className="flex flex-col items-center gap-0.5">
+      <div className="relative flex h-10 w-10 items-center justify-center">
+        <svg className="absolute inset-0 -rotate-90" viewBox="0 0 36 36">
+          <circle
+            cx="18" cy="18" r="15"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            className="text-white/5"
+          />
+          <circle
+            cx="18" cy="18" r="15"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeDasharray={`${(displayed / 100) * 94.2} 94.2`}
+            strokeLinecap="round"
+            className="text-green-400 transition-all duration-300"
+          />
+        </svg>
+        <span className="text-[10px] font-bold tabular-nums text-foreground">
+          {displayed}
+        </span>
+      </div>
+      <span className="text-[8px] font-medium text-muted-foreground">{label}</span>
     </div>
   )
 }
