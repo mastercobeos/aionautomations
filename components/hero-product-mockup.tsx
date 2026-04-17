@@ -122,6 +122,14 @@ const SITE_VARIANTS = [
     ctaKey: "v1_siteCta",
     scorePerf: 98,
     scoreSeo: 100,
+    heroGradient: "from-cyan-500/15 via-purple-500/5 to-transparent",
+    heroBorder: "border-cyan-500/20",
+    ctaGradient: "from-cyan-500 to-purple-600",
+    cardColors: [
+      { bg: "bg-cyan-500/20", border: "border-cyan-500/30", icon: Layout, iconColor: "text-cyan-400" },
+      { bg: "bg-purple-500/20", border: "border-purple-500/30", icon: Zap, iconColor: "text-purple-400" },
+      { bg: "bg-green-500/20", border: "border-green-500/30", icon: TrendingUp, iconColor: "text-green-400" },
+    ],
   },
   {
     titleKey: "v2_siteTitle",
@@ -130,6 +138,14 @@ const SITE_VARIANTS = [
     ctaKey: "v2_siteCta",
     scorePerf: 96,
     scoreSeo: 100,
+    heroGradient: "from-purple-500/15 via-pink-500/5 to-transparent",
+    heroBorder: "border-purple-500/20",
+    ctaGradient: "from-purple-500 to-pink-600",
+    cardColors: [
+      { bg: "bg-purple-500/20", border: "border-purple-500/30", icon: Globe, iconColor: "text-purple-400" },
+      { bg: "bg-pink-500/20", border: "border-pink-500/30", icon: Check, iconColor: "text-pink-400" },
+      { bg: "bg-cyan-500/20", border: "border-cyan-500/30", icon: Workflow, iconColor: "text-cyan-400" },
+    ],
   },
   {
     titleKey: "v3_siteTitle",
@@ -138,8 +154,16 @@ const SITE_VARIANTS = [
     ctaKey: "v3_siteCta",
     scorePerf: 99,
     scoreSeo: 100,
+    heroGradient: "from-green-500/15 via-emerald-500/5 to-transparent",
+    heroBorder: "border-green-500/20",
+    ctaGradient: "from-green-500 to-emerald-600",
+    cardColors: [
+      { bg: "bg-green-500/20", border: "border-green-500/30", icon: Users, iconColor: "text-green-400" },
+      { bg: "bg-amber-500/20", border: "border-amber-500/30", icon: Layout, iconColor: "text-amber-400" },
+      { bg: "bg-cyan-500/20", border: "border-cyan-500/30", icon: MessageSquare, iconColor: "text-cyan-400" },
+    ],
   },
-]
+] as const
 
 function SceneWebsite({ active, variant }: { active: boolean; variant: number }) {
   const t = useTranslations("HeroMockup")
@@ -147,7 +171,7 @@ function SceneWebsite({ active, variant }: { active: boolean; variant: number })
 
   return (
     <div
-      key={`site-${variant}`}
+      key={active ? `site-on-${variant}` : "site-off"}
       className={`absolute inset-0 flex flex-col transition-opacity duration-500 ${
         active ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
@@ -175,7 +199,7 @@ function SceneWebsite({ active, variant }: { active: boolean; variant: number })
         {/* Mini hero section */}
         {active && (
           <div
-            className="mt-2 rounded-lg border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 via-purple-500/5 to-transparent p-3 opacity-0 animate-[fade-in-up_0.4s_ease-out_forwards]"
+            className={`mt-2 rounded-lg border ${data.heroBorder} bg-gradient-to-br ${data.heroGradient} p-3 opacity-0 animate-[fade-in-up_0.4s_ease-out_forwards]`}
             style={{ animationDelay: "600ms" }}
           >
             <div className="flex items-center gap-2">
@@ -193,28 +217,26 @@ function SceneWebsite({ active, variant }: { active: boolean; variant: number })
         {/* Mini feature cards */}
         {active && (
           <div className="mt-2 grid grid-cols-3 gap-1.5">
-            {data.cards.map((key, i) => (
-              <div
-                key={key}
-                className="rounded-md border border-border/40 bg-white/[0.03] p-2 opacity-0 animate-[fade-in-up_0.4s_ease-out_forwards]"
-                style={{ animationDelay: `${1100 + i * 200}ms` }}
-              >
-                <div className="flex items-center justify-center">
-                  <div className={`h-5 w-5 rounded-md ${
-                    i === 0 ? "bg-cyan-500/20 border border-cyan-500/30" :
-                    i === 1 ? "bg-purple-500/20 border border-purple-500/30" :
-                    "bg-green-500/20 border border-green-500/30"
-                  } flex items-center justify-center`}>
-                    {i === 0 && <Layout className="h-2.5 w-2.5 text-cyan-400" />}
-                    {i === 1 && <Zap className="h-2.5 w-2.5 text-purple-400" />}
-                    {i === 2 && <TrendingUp className="h-2.5 w-2.5 text-green-400" />}
+            {data.cards.map((key, i) => {
+              const cc = data.cardColors[i]
+              const CardIcon = cc.icon
+              return (
+                <div
+                  key={key}
+                  className="rounded-md border border-border/40 bg-white/[0.03] p-2 opacity-0 animate-[fade-in-up_0.4s_ease-out_forwards]"
+                  style={{ animationDelay: `${1100 + i * 200}ms` }}
+                >
+                  <div className="flex items-center justify-center">
+                    <div className={`h-5 w-5 rounded-md ${cc.bg} border ${cc.border} flex items-center justify-center`}>
+                      <CardIcon className={`h-2.5 w-2.5 ${cc.iconColor}`} />
+                    </div>
                   </div>
+                  <p className="mt-1 text-center text-[8px] font-medium text-foreground leading-tight">
+                    {t(key)}
+                  </p>
                 </div>
-                <p className="mt-1 text-center text-[8px] font-medium text-foreground leading-tight">
-                  {t(key)}
-                </p>
-              </div>
-            ))}
+              )
+            })}
           </div>
         )}
 
@@ -224,7 +246,7 @@ function SceneWebsite({ active, variant }: { active: boolean; variant: number })
             className="mt-2 flex justify-center opacity-0 animate-[fade-in-up_0.4s_ease-out_forwards]"
             style={{ animationDelay: "1900ms" }}
           >
-            <div className="rounded-md bg-gradient-to-r from-cyan-500 to-purple-600 px-6 py-1 text-[9px] font-semibold text-white">
+            <div className={`rounded-md bg-gradient-to-r ${data.ctaGradient} px-6 py-1 text-[9px] font-semibold text-white`}>
               {t(data.ctaKey)}
             </div>
           </div>
