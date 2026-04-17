@@ -133,6 +133,9 @@ import { JsonLd } from '@/components/json-ld';
 import { PageLoader } from '@/components/page-loader';
 import { LazyStarfield } from '@/components/lazy-starfield';
 import { CookieConsent } from '@/components/cookie-consent';
+import { AiChatbotLazy } from '@/components/ai-chatbot-lazy';
+import { ExitIntentPopupLazy } from '@/components/exit-intent-popup-lazy';
+import { SocialProofToastLazy } from '@/components/social-proof-toast-lazy';
 
 export default async function RootLayout({
   children,
@@ -176,6 +179,9 @@ export default async function RootLayout({
           {children}
           <Analytics />
           <CookieConsent />
+          <AiChatbotLazy />
+          <ExitIntentPopupLazy />
+          <SocialProofToastLazy />
         </NextIntlClientProvider>
       </body>
     </html>

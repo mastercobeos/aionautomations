@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/routing';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
@@ -8,131 +7,32 @@ import { PageSchema } from '@/components/page-schema';
 import { FloatingSocialButtons } from '@/components/floating-social-buttons';
 import { webPageSchema, breadcrumbSchema, collectionPageSchema, siteUrl, ogMeta } from '@/lib/seo';
 import { ArrowRight } from 'lucide-react';
+import { BlogListFiltered, type BlogPostItem } from '@/components/blog-list-filtered';
 
 /* ─── Static blog post data ─── */
 
-const BLOG_POSTS = [
-  {
-    slug: 'ai-automation-2026',
-    titleKey: 'post1Title',
-    descKey: 'post1Desc',
-    dateKey: 'post1Date',
-  },
-  {
-    slug: 'website-cost-guide',
-    titleKey: 'post2Title',
-    descKey: 'post2Desc',
-    dateKey: 'post2Date',
-  },
-  {
-    slug: 'whatsapp-ai-automation',
-    titleKey: 'post3Title',
-    descKey: 'post3Desc',
-    dateKey: 'post3Date',
-  },
-  {
-    slug: 'local-seo-guide',
-    titleKey: 'post4Title',
-    descKey: 'post4Desc',
-    dateKey: 'post4Date',
-  },
-  {
-    slug: 'ai-crm-small-business',
-    titleKey: 'post5Title',
-    descKey: 'post5Desc',
-    dateKey: 'post5Date',
-  },
-  {
-    slug: 'ai-marketing-small-business',
-    titleKey: 'post6Title',
-    descKey: 'post6Desc',
-    dateKey: 'post6Date',
-  },
-  {
-    slug: 'small-business-automation-ideas',
-    titleKey: 'post7Title',
-    descKey: 'post7Desc',
-    dateKey: 'post7Date',
-  },
-  {
-    slug: 'choose-web-design-agency',
-    titleKey: 'post8Title',
-    descKey: 'post8Desc',
-    dateKey: 'post8Date',
-  },
-  {
-    slug: 'ai-chatbot-for-business',
-    titleKey: 'post9Title',
-    descKey: 'post9Desc',
-    dateKey: 'post9Date',
-  },
-  {
-    slug: 'n8n-automation-tutorial',
-    titleKey: 'post10Title',
-    descKey: 'post10Desc',
-    dateKey: 'post10Date',
-  },
-  {
-    slug: 'lead-generation-service-business',
-    titleKey: 'post11Title',
-    descKey: 'post11Desc',
-    dateKey: 'post11Date',
-  },
-  {
-    slug: 'ecommerce-website-guide',
-    titleKey: 'post12Title',
-    descKey: 'post12Desc',
-    dateKey: 'post12Date',
-  },
-  {
-    slug: 'restaurant-ai-automation',
-    titleKey: 'post13Title',
-    descKey: 'post13Desc',
-    dateKey: 'post13Date',
-  },
-  {
-    slug: 'dental-clinic-marketing',
-    titleKey: 'post14Title',
-    descKey: 'post14Desc',
-    dateKey: 'post14Date',
-  },
-  {
-    slug: 'conversion-rate-optimization',
-    titleKey: 'post15Title',
-    descKey: 'post15Desc',
-    dateKey: 'post15Date',
-  },
-  {
-    slug: 'social-media-automation',
-    titleKey: 'post16Title',
-    descKey: 'post16Desc',
-    dateKey: 'post16Date',
-  },
-  {
-    slug: 'ai-email-marketing',
-    titleKey: 'post17Title',
-    descKey: 'post17Desc',
-    dateKey: 'post17Date',
-  },
-  {
-    slug: 'business-website-checklist',
-    titleKey: 'post18Title',
-    descKey: 'post18Desc',
-    dateKey: 'post18Date',
-  },
-  {
-    slug: 'real-estate-ai-marketing',
-    titleKey: 'post19Title',
-    descKey: 'post19Desc',
-    dateKey: 'post19Date',
-  },
-  {
-    slug: 'gym-fitness-automation',
-    titleKey: 'post20Title',
-    descKey: 'post20Desc',
-    dateKey: 'post20Date',
-  },
-] as const;
+const BLOG_POSTS: BlogPostItem[] = [
+  { slug: 'ai-automation-2026', titleKey: 'post1Title', descKey: 'post1Desc', dateKey: 'post1Date', section: 'AI Automation' },
+  { slug: 'website-cost-guide', titleKey: 'post2Title', descKey: 'post2Desc', dateKey: 'post2Date', section: 'Web Design' },
+  { slug: 'whatsapp-ai-automation', titleKey: 'post3Title', descKey: 'post3Desc', dateKey: 'post3Date', section: 'AI Automation' },
+  { slug: 'local-seo-guide', titleKey: 'post4Title', descKey: 'post4Desc', dateKey: 'post4Date', section: 'Marketing' },
+  { slug: 'ai-crm-small-business', titleKey: 'post5Title', descKey: 'post5Desc', dateKey: 'post5Date', section: 'AI Automation' },
+  { slug: 'ai-marketing-small-business', titleKey: 'post6Title', descKey: 'post6Desc', dateKey: 'post6Date', section: 'Marketing' },
+  { slug: 'small-business-automation-ideas', titleKey: 'post7Title', descKey: 'post7Desc', dateKey: 'post7Date', section: 'AI Automation' },
+  { slug: 'choose-web-design-agency', titleKey: 'post8Title', descKey: 'post8Desc', dateKey: 'post8Date', section: 'Web Design' },
+  { slug: 'ai-chatbot-for-business', titleKey: 'post9Title', descKey: 'post9Desc', dateKey: 'post9Date', section: 'AI Automation' },
+  { slug: 'n8n-automation-tutorial', titleKey: 'post10Title', descKey: 'post10Desc', dateKey: 'post10Date', section: 'AI Automation' },
+  { slug: 'lead-generation-service-business', titleKey: 'post11Title', descKey: 'post11Desc', dateKey: 'post11Date', section: 'Marketing' },
+  { slug: 'ecommerce-website-guide', titleKey: 'post12Title', descKey: 'post12Desc', dateKey: 'post12Date', section: 'Web Design' },
+  { slug: 'restaurant-ai-automation', titleKey: 'post13Title', descKey: 'post13Desc', dateKey: 'post13Date', section: 'Industries' },
+  { slug: 'dental-clinic-marketing', titleKey: 'post14Title', descKey: 'post14Desc', dateKey: 'post14Date', section: 'Industries' },
+  { slug: 'conversion-rate-optimization', titleKey: 'post15Title', descKey: 'post15Desc', dateKey: 'post15Date', section: 'Web Design' },
+  { slug: 'social-media-automation', titleKey: 'post16Title', descKey: 'post16Desc', dateKey: 'post16Date', section: 'Marketing' },
+  { slug: 'ai-email-marketing', titleKey: 'post17Title', descKey: 'post17Desc', dateKey: 'post17Date', section: 'Marketing' },
+  { slug: 'business-website-checklist', titleKey: 'post18Title', descKey: 'post18Desc', dateKey: 'post18Date', section: 'Web Design' },
+  { slug: 'real-estate-ai-marketing', titleKey: 'post19Title', descKey: 'post19Desc', dateKey: 'post19Date', section: 'Industries' },
+  { slug: 'gym-fitness-automation', titleKey: 'post20Title', descKey: 'post20Desc', dateKey: 'post20Date', section: 'Industries' },
+];
 
 /* ─── Metadata ─── */
 
@@ -240,35 +140,7 @@ export default async function BlogPage({
         {/* Blog Posts Grid */}
         <section className="py-20 md:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="grid gap-6 sm:grid-cols-2">
-              {BLOG_POSTS.map((post) => (
-                <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="gradient-border-static shimmer-card group rounded-2xl p-6 md:p-8 transition-all duration-300 block"
-                >
-                  {/* Date */}
-                  <time className="text-xs font-medium uppercase tracking-widest text-cyan-400">
-                    {t(post.dateKey)}
-                  </time>
-
-                  {/* Title */}
-                  <h2 className="mt-3 text-xl font-semibold text-foreground group-hover:text-cyan-400 transition-colors duration-300">
-                    {t(post.titleKey)}
-                  </h2>
-
-                  {/* Description */}
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {t(post.descKey)}
-                  </p>
-
-                  {/* Read article link hint */}
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-cyan-400 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1">
-                    {t('readMore')} <ArrowRight className="h-4 w-4" />
-                  </span>
-                </Link>
-              ))}
-            </div>
+            <BlogListFiltered posts={BLOG_POSTS} />
           </div>
         </section>
 

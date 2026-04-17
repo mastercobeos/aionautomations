@@ -707,6 +707,11 @@
     "title": "Recursos para hacer crecer tu negocio",
     "subtitle": "Artículos prácticos sobre diseño web, automatización e inteligencia artificial para negocios de servicios.",
     "readMore": "Leer artículo",
+    "filterAll": "Todos",
+    "filterAutomation": "Automatización IA",
+    "filterWeb": "Diseño Web",
+    "filterMarketing": "Marketing",
+    "filterIndustries": "Industrias",
     "post1Title": "5 Razones para Automatizar tu Negocio con IA",
     "post1Desc": "Descubre cómo la automatización con IA puede transformar tu negocio de servicios, desde la captación de clientes hasta el seguimiento post-venta.",
     "post1Date": "28 Feb 2026",
@@ -922,7 +927,8 @@
     "linkRestaurants": "Soluciones Restaurantes →",
     "linkDental": "Soluciones Dentistas →",
     "linkRealEstate": "Soluciones Inmobiliarias →",
-    "linkGyms": "Soluciones Gimnasios →"
+    "linkGyms": "Soluciones Gimnasios →",
+    "readingTime": "{minutes} min de lectura"
   },
   "ServicePillars": {
     "subtitle": "Nuestros Servicios",
@@ -1788,5 +1794,41 @@
     "step4Desc": "Costo del plan Growth recuperado completamente con los ingresos extra. La clínica expandió a una segunda ubicación sin carga operativa adicional.",
     "step4Metric": "3x",
     "step4MetricLabel": "tasa de cierre vs. inicio"
+  },
+  "AiChatbot": {
+    "chatGreeting": "¡Hola! 👋 Soy el asistente IA de AION. Pregúntame lo que quieras sobre diseño web, automatización IA o marketing.",
+    "inputPlaceholder": "Escribe tu mensaje...",
+    "sendLabel": "Enviar",
+    "headerTitle": "Asistente AION",
+    "headerOnline": "En línea · Con IA",
+    "openChat": "Chatea con nosotros",
+    "closeChat": "Cerrar chat",
+    "errorMessage": "Lo siento, algo salió mal. Intenta de nuevo.",
+    "rateLimited": "Has enviado demasiados mensajes. Espera unos minutos.",
+    "poweredBy": "Con IA"
+  },
+  "ExitIntent": {
+    "exitTitle": "¡Espera — antes de irte!",
+    "exitSubtitle": "Agenda una llamada de estrategia gratis de 20 minutos. Sin compromiso, sin presión. Solo asesoría honesta para tu negocio.",
+    "exitCta": "Agendar Llamada Gratis",
+    "exitDismiss": "No, gracias"
+  },
+  "SocialProof": {
+    "proof1": "Alguien de Houston solicitó una cotización",
+    "proof2": "Una clínica dental en CDMX inició su proyecto",
+    "proof3": "Nuevo agente IA en WhatsApp para un restaurante",
+    "proof4": "Una inmobiliaria se actualizó al plan Growth",
+    "proof5": "Alguien de Dallas agendó una llamada de estrategia",
+    "proof6": "Una tienda en línea se lanzó con AION",
+    "proof7": "Un gimnasio en Guadalajara automatizó sus seguimientos",
+    "proof8": "Alguien de Austin solicitó precios",
+    "proof9": "Un hotel activó su agente IA de reservas",
+    "proof10": "Un salón en Monterrey inició su página web",
+    "proof11": "Alguien de San Antonio agendó una demo",
+    "proof12": "Un despacho legal automatizó la captación de clientes",
+    "proof13": "Una escuela lanzó su página de inscripciones",
+    "proof14": "Alguien de Playa del Carmen solicitó una cotización",
+    "proof15": "Una empresa de tours activó su agente IA",
+    "timeAgo": "hace un momento"
   }
 }

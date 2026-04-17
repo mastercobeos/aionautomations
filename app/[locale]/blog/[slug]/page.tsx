@@ -7,6 +7,9 @@ import { Breadcrumbs } from '@/components/breadcrumbs';
 import { PageSchema } from '@/components/page-schema';
 import { FloatingSocialButtons } from '@/components/floating-social-buttons';
 import { BlogToc } from '@/components/blog-toc';
+import { ReadingProgress } from '@/components/reading-progress';
+import { BlogShare } from '@/components/blog-share';
+import { BlogTocMobile } from '@/components/blog-toc-mobile';
 import { blogPostSchema, breadcrumbSchema, howToSchema, siteUrl, ogMeta } from '@/lib/seo';
 import { ArrowLeft } from 'lucide-react';
 
@@ -184,6 +187,8 @@ export default async function BlogPostPage({
 
   return (
     <main id="main-content" className="relative min-h-screen animate-page-in">
+      <ReadingProgress />
+
       {/* Cosmic space background */}
       <div className="cosmic-bg" aria-hidden="true">
         <div className="cosmic-bg-base" />
@@ -213,12 +218,18 @@ export default async function BlogPostPage({
 
               {/* Post header */}
               <header className="mt-4">
-                <time
-                  dateTime={post.date}
-                  className="text-xs font-medium uppercase tracking-widest text-cyan-400"
-                >
-                  {t(post.titleKey.replace('Title', 'Date'))}
-                </time>
+                <div className="flex items-center gap-3">
+                  <time
+                    dateTime={post.date}
+                    className="text-xs font-medium uppercase tracking-widest text-cyan-400"
+                  >
+                    {t(post.titleKey.replace('Title', 'Date'))}
+                  </time>
+                  <span className="text-border">·</span>
+                  <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
+                    {tPost('readingTime', { minutes: Math.max(1, Math.ceil(post.sections * 1.5)) })}
+                  </span>
+                </div>
 
                 <h1 className="mt-4 text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
                   {postTitle}
@@ -264,6 +275,9 @@ export default async function BlogPostPage({
                     ))}
                   </div>
                 </div>
+
+                {/* Share buttons */}
+                <BlogShare title={postTitle} slug={slug} />
               </div>
             </div>
 
@@ -276,6 +290,14 @@ export default async function BlogPostPage({
             />
           </div>
         </article>
+
+        {/* Mobile TOC (below xl) */}
+        <BlogTocMobile
+          sections={Array.from({ length: post.sections }, (_, i) => ({
+            id: `${post.prefix}-s${i + 1}`,
+            title: t(`${post.prefix}_s${i + 1}Title`),
+          }))}
+        />
 
         {/* Related Posts */}
         {relatedSlugs.length > 0 && (

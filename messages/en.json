@@ -707,6 +707,11 @@
     "title": "Resources to grow your business",
     "subtitle": "Practical articles about web design, automation, and AI for service businesses.",
     "readMore": "Read article",
+    "filterAll": "All",
+    "filterAutomation": "AI Automation",
+    "filterWeb": "Web Design",
+    "filterMarketing": "Marketing",
+    "filterIndustries": "Industries",
     "post1Title": "5 Reasons Your Business Needs AI Automation",
     "post1Desc": "Discover how AI automation can transform your service business, from client acquisition to post-sale follow-up.",
     "post1Date": "Feb 28, 2026",
@@ -922,7 +927,8 @@
     "linkRestaurants": "Restaurant Solutions →",
     "linkDental": "Dental Solutions →",
     "linkRealEstate": "Real Estate Solutions →",
-    "linkGyms": "Gym Solutions →"
+    "linkGyms": "Gym Solutions →",
+    "readingTime": "{minutes} min read"
   },
   "ServicePillars": {
     "subtitle": "Our Services",
@@ -1788,5 +1794,41 @@
     "step4Desc": "Cost of the Growth plan fully recovered in extra revenue. Clinic expanded to a second location with zero extra operational overhead.",
     "step4Metric": "3x",
     "step4MetricLabel": "close rate vs. start"
+  },
+  "AiChatbot": {
+    "chatGreeting": "Hi! 👋 I'm AION's AI assistant. Ask me anything about our web design, AI automation, or marketing services.",
+    "inputPlaceholder": "Type your message...",
+    "sendLabel": "Send",
+    "headerTitle": "AION Assistant",
+    "headerOnline": "Online · AI-powered",
+    "openChat": "Chat with us",
+    "closeChat": "Close chat",
+    "errorMessage": "Sorry, something went wrong. Please try again.",
+    "rateLimited": "You've sent too many messages. Please wait a few minutes.",
+    "poweredBy": "AI Powered"
+  },
+  "ExitIntent": {
+    "exitTitle": "Wait — before you go!",
+    "exitSubtitle": "Book a free 20-minute strategy call. No commitment, no pressure. Just honest advice for your business.",
+    "exitCta": "Book Free Call",
+    "exitDismiss": "No thanks"
+  },
+  "SocialProof": {
+    "proof1": "Someone from Houston requested a quote",
+    "proof2": "A dental clinic in Mexico City started their project",
+    "proof3": "New WhatsApp AI agent deployed for a restaurant",
+    "proof4": "A real estate agency upgraded to Growth plan",
+    "proof5": "Someone from Dallas booked a strategy call",
+    "proof6": "An e-commerce store launched with AION",
+    "proof7": "A gym in Guadalajara automated their follow-ups",
+    "proof8": "Someone from Austin requested pricing",
+    "proof9": "A hotel activated their AI booking agent",
+    "proof10": "A salon in Monterrey started their website",
+    "proof11": "Someone from San Antonio booked a demo",
+    "proof12": "A law firm automated client intake",
+    "proof13": "A school launched their enrollment page",
+    "proof14": "Someone from Playa del Carmen requested a quote",
+    "proof15": "A tour company deployed their AI agent",
+    "timeAgo": "just now"
   }
 }
