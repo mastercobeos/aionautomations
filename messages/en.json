@@ -1464,25 +1464,50 @@
     "scene2Label": "Dashboard",
     "scene3Label": "Workflow",
     "online": "online",
-    "msg1User": "Do you have appointments on Saturday?",
-    "msg1Bot": "Hi! Yes, 9am–2pm. Want me to book one?",
-    "msg2User": "Yes, Saturday 11am",
-    "msg2Bot": "Done ✅ Booking confirmed. I'll send a reminder.",
-    "leadCaptured": "Lead captured automatically",
+
+    "v1_msg1User": "Do you have appointments on Saturday?",
+    "v1_msg1Bot": "Hi! Yes, 9am–2pm. Want me to book one?",
+    "v1_msg2User": "Yes, Saturday 11am",
+    "v1_msg2Bot": "Done ✅ Booking confirmed. I'll send a reminder.",
+    "v1_toast": "Lead captured automatically",
+
+    "v2_msg1User": "How much does a professional website cost?",
+    "v2_msg1Bot": "Our Starter plan is $497 USD. Growth with SEO + blog is $997. Want details?",
+    "v2_msg2User": "Yes, I need SEO and a blog",
+    "v2_msg2Bot": "Growth is perfect for you! I'll connect you with an advisor 🚀",
+    "v2_toast": "Qualified lead → team notified",
+
+    "v3_msg1User": "I want to automate my follow-ups",
+    "v3_msg1Bot": "Great idea! We set up AI agents that reply 24/7 on WhatsApp. What's your industry?",
+    "v3_msg2User": "Dental clinic with 3 locations",
+    "v3_msg2Bot": "Perfect match ✅ We have a specific plan for clinics. Scheduling a call now.",
+    "v3_toast": "Meeting scheduled automatically",
+
     "leadsLabel": "Leads / month",
     "closeRateLabel": "Close rate",
     "revenueLabel": "Revenue this month",
     "timeSavedLabel": "Time saved",
-    "timeSavedValue": "14",
     "timeSavedSuffix": " hrs/wk",
     "avgResponseLabel": "Avg. response",
     "avgResponseValue": "< 30 sec",
+
     "workflowHeader": "Automated flow · 24/7",
     "workflowFooter": "Zero human intervention",
-    "nodeLead": "Lead",
-    "nodeAi": "AI Agent",
-    "nodeCrm": "CRM",
-    "nodeAction": "Action"
+
+    "v1_wfNode1": "Lead",
+    "v1_wfNode2": "AI Agent",
+    "v1_wfNode3": "CRM",
+    "v1_wfNode4": "Action",
+
+    "v2_wfNode1": "Form",
+    "v2_wfNode2": "Qualify",
+    "v2_wfNode3": "Email",
+    "v2_wfNode4": "Close",
+
+    "v3_wfNode1": "WhatsApp",
+    "v3_wfNode2": "AI Bot",
+    "v3_wfNode3": "Calendar",
+    "v3_wfNode4": "Confirm"
   },
   "ChatbotDemo": {
     "botName": "AION Assistant",

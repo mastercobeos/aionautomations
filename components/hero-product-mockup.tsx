@@ -16,16 +16,20 @@ import {
 
 const SCENE_DURATION_MS = 6000
 const SCENE_COUNT = 3
+const VARIANTS_COUNT = 3
 
 export function HeroProductMockup() {
   const t = useTranslations("HeroMockup")
-  const [scene, setScene] = useState<0 | 1 | 2>(0)
+  const [tick, setTick] = useState(0)
   const paused = useRef(false)
+
+  const scene = (tick % SCENE_COUNT) as 0 | 1 | 2
+  const variant = Math.floor(tick / SCENE_COUNT) % VARIANTS_COUNT
 
   useEffect(() => {
     const id = setInterval(() => {
       if (!paused.current) {
-        setScene((s) => ((s + 1) % SCENE_COUNT) as 0 | 1 | 2)
+        setTick((t) => t + 1)
       }
     }, SCENE_DURATION_MS)
     return () => clearInterval(id)
@@ -67,9 +71,9 @@ export function HeroProductMockup() {
 
         {/* Scene viewport */}
         <div className="relative h-[320px] sm:h-[360px] overflow-hidden rounded-b-2xl bg-[radial-gradient(circle_at_top,rgba(34,212,254,0.06),transparent_60%)]">
-          <SceneWhatsApp active={scene === 0} />
-          <SceneDashboard active={scene === 1} />
-          <SceneWorkflow active={scene === 2} />
+          <SceneWhatsApp active={scene === 0} variant={variant} />
+          <SceneDashboard active={scene === 1} variant={variant} />
+          <SceneWorkflow active={scene === 2} variant={variant} />
         </div>
       </div>
 
@@ -82,7 +86,7 @@ export function HeroProductMockup() {
             <button
               key={i}
               type="button"
-              onClick={() => setScene(i as 0 | 1 | 2)}
+              onClick={() => setTick((prev) => prev - (prev % SCENE_COUNT) + i)}
               role="tab"
               aria-selected={active}
               aria-label={s.label}
@@ -104,11 +108,12 @@ export function HeroProductMockup() {
 
 /* ──────────── Scene 1: WhatsApp ──────────── */
 
-function SceneWhatsApp({ active }: { active: boolean }) {
+function SceneWhatsApp({ active, variant }: { active: boolean; variant: number }) {
   const t = useTranslations("HeroMockup")
+  const v = `v${variant + 1}_` as const
   return (
     <div
-      key={active ? "w-on" : "w-off"}
+      key={active ? `w-on-${variant}` : "w-off"}
       className={`absolute inset-0 flex flex-col p-4 transition-opacity duration-500 ${
         active ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
@@ -132,18 +137,18 @@ function SceneWhatsApp({ active }: { active: boolean }) {
       {active && (
         <div className="mt-3 flex-1 space-y-2 overflow-hidden">
           <ChatBubble role="user" delay={300}>
-            {t("msg1User")}
+            {t(`${v}msg1User`)}
           </ChatBubble>
           <ChatTyping role="bot" delay={1200} />
           <ChatBubble role="bot" delay={2400}>
-            {t("msg1Bot")}
+            {t(`${v}msg1Bot`)}
           </ChatBubble>
           <ChatBubble role="user" delay={3500}>
-            {t("msg2User")}
+            {t(`${v}msg2User`)}
           </ChatBubble>
           <ChatTyping role="bot" delay={4100} />
           <ChatBubble role="bot" delay={5000}>
-            {t("msg2Bot")}
+            {t(`${v}msg2Bot`)}
           </ChatBubble>
         </div>
       )}
@@ -154,7 +159,7 @@ function SceneWhatsApp({ active }: { active: boolean }) {
           className="mt-2 flex items-center gap-2 rounded-lg border border-green-500/30 bg-green-500/10 px-3 py-1.5 text-[11px] font-medium text-green-400 opacity-0 animate-[fade-in-up_0.5s_ease-out_5.5s_forwards]"
         >
           <CheckCircle2 className="h-3.5 w-3.5" />
-          {t("leadCaptured")}
+          {t(`${v}toast`)}
         </div>
       )}
     </div>
@@ -211,10 +216,18 @@ function ChatTyping({ role, delay }: { role: "user" | "bot"; delay: number }) {
 
 /* ──────────── Scene 2: Dashboard ──────────── */
 
-function SceneDashboard({ active }: { active: boolean }) {
+const DASHBOARD_DATA = [
+  { leads: 127, closeRate: 36, revenue: 18450, timeSaved: 14, growth: "+142%", bars: [32, 48, 40, 65, 55, 80, 95] },
+  { leads: 89, closeRate: 28, revenue: 12300, timeSaved: 10, growth: "+96%", bars: [20, 35, 30, 50, 45, 62, 78] },
+  { leads: 203, closeRate: 44, revenue: 31200, timeSaved: 18, growth: "+215%", bars: [40, 55, 50, 72, 68, 88, 98] },
+]
+
+function SceneDashboard({ active, variant }: { active: boolean; variant: number }) {
   const t = useTranslations("HeroMockup")
+  const data = DASHBOARD_DATA[variant]
   return (
     <div
+      key={`dash-${variant}`}
       className={`absolute inset-0 p-4 transition-opacity duration-500 ${
         active ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
@@ -223,7 +236,7 @@ function SceneDashboard({ active }: { active: boolean }) {
         <MetricCard
           icon={<Users className="h-3.5 w-3.5 text-cyan-400" />}
           label={t("leadsLabel")}
-          value={127}
+          value={data.leads}
           prefix=""
           active={active}
           delay={100}
@@ -231,7 +244,7 @@ function SceneDashboard({ active }: { active: boolean }) {
         <MetricCard
           icon={<TrendingUp className="h-3.5 w-3.5 text-green-400" />}
           label={t("closeRateLabel")}
-          value={36}
+          value={data.closeRate}
           suffix="%"
           active={active}
           delay={400}
@@ -246,17 +259,17 @@ function SceneDashboard({ active }: { active: boolean }) {
               {t("revenueLabel")}
             </p>
             <p className="text-xl font-bold tabular-nums text-cyan-300">
-              {active && <AnimatedNumber to={18450} prefix="$" />}
+              {active && <AnimatedNumber to={data.revenue} prefix="$" />}
             </p>
           </div>
           <div className="rounded-full bg-green-500/10 border border-green-500/30 px-2 py-0.5 text-[10px] font-semibold text-green-400">
-            +142%
+            {data.growth}
           </div>
         </div>
 
         {/* Mini chart */}
         <div className="mt-3 flex h-16 items-end gap-1.5">
-          {[32, 48, 40, 65, 55, 80, 95].map((h, i) => (
+          {data.bars.map((h, i) => (
             <div
               key={i}
               className="flex-1 rounded-t bg-gradient-to-t from-cyan-500 to-purple-500 opacity-0 animate-[grow-up_0.7s_ease-out_forwards]"
@@ -275,7 +288,7 @@ function SceneDashboard({ active }: { active: boolean }) {
             {t("timeSavedLabel")}
           </p>
           <p className="mt-1 text-base font-bold text-foreground tabular-nums">
-            {active && <AnimatedNumber to={14} suffix={t("timeSavedSuffix")} />}
+            {active && <AnimatedNumber to={data.timeSaved} suffix={t("timeSavedSuffix")} />}
           </p>
         </div>
         <div className="rounded-xl border border-border/40 bg-white/[0.03] p-3">
@@ -363,13 +376,14 @@ function AnimatedNumber({
 
 /* ──────────── Scene 3: Workflow ──────────── */
 
-function SceneWorkflow({ active }: { active: boolean }) {
+function SceneWorkflow({ active, variant }: { active: boolean; variant: number }) {
   const t = useTranslations("HeroMockup")
+  const v = `v${variant + 1}_` as const
   const nodes = [
-    { label: t("nodeLead"), icon: Users, color: "cyan" as const, delay: 200 },
-    { label: t("nodeAi"), icon: Bot, color: "purple" as const, delay: 900 },
-    { label: t("nodeCrm"), icon: Workflow, color: "cyan" as const, delay: 1600 },
-    { label: t("nodeAction"), icon: Zap, color: "green" as const, delay: 2300 },
+    { label: t(`${v}wfNode1`), icon: Users, color: "cyan" as const, delay: 200 },
+    { label: t(`${v}wfNode2`), icon: Bot, color: "purple" as const, delay: 900 },
+    { label: t(`${v}wfNode3`), icon: Workflow, color: "cyan" as const, delay: 1600 },
+    { label: t(`${v}wfNode4`), icon: Zap, color: "green" as const, delay: 2300 },
   ]
 
   return (
