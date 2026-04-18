@@ -11,11 +11,12 @@
 export const siteConfig = {
   whatsapp: {
     number: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "523411687566",
+    defaultMessage: "Hola, me interesa conocer más sobre sus servicios. ¿Me pueden dar más información?",
     /** Official wa.me deep link: opens WhatsApp app on mobile, WhatsApp Web on desktop. */
     get link() {
       if (!this.number) return "https://wa.me/";
       const num = this.number.replace(/\D/g, "");
-      return `https://wa.me/${num}`;
+      return `https://wa.me/${num}?text=${encodeURIComponent(this.defaultMessage)}`;
     },
   },
   instagram: {
