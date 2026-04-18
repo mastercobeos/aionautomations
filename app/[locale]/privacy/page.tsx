@@ -65,6 +65,8 @@ export default async function PrivacyPage({
     { title: t('section4Title'), text: t('section4Text') },
     { title: t('section5Title'), text: t('section5Text') },
     { title: t('section6Title'), text: t('section6Text') },
+    { title: t('section7Title'), text: t('section7Text') },
+    { title: t('section8Title'), text: t('section8Text') },
   ]
 
   return (
