@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
   // Last real deployment / content update date
-  const siteLastModified = new Date("2026-03-13");
+  const siteLastModified = new Date();
 
   for (const route of pageRoutes) {
     for (const locale of locales) {
@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${siteUrl}/${locale}${path}`,
         lastModified: siteLastModified,
         changeFrequency: route === "/blog" ? "daily" : route === "/privacy" || route === "/terms" ? "yearly" : "weekly",
-        priority: route === "/" ? 1.0 : route === "/pricing" ? 0.9 : route.startsWith("/services") ? 0.9 : route === "/privacy" || route === "/terms" ? 0.3 : 0.8,
+        priority: route === "/" ? 1.0 : route === "/pricing" ? 0.9 : route.startsWith("/services") ? 0.9 : route === "/quiz" || route === "/roi-calculator" ? 0.8 : route === "/privacy" || route === "/terms" ? 0.3 : 0.8,
         alternates: {
           languages: Object.fromEntries(
             locales.map((loc) => [loc, `${siteUrl}/${loc}${path}`])

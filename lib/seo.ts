@@ -536,6 +536,8 @@ export const pageRoutes = [
   "/about",
   "/contact",
   "/blog",
+  "/quiz",
+  "/roi-calculator",
   "/privacy",
   "/terms",
 ] as const;
