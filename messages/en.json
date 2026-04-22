@@ -618,8 +618,8 @@
     "ctaButton": "Message Us on WhatsApp"
   },
   "WorkPage": {
-    "metaTitle": "Portfolio — Real Projects",
-    "metaDesc": "See the projects we've built: websites, social media, and digital platforms for businesses in Mexico and the United States.",
+    "metaTitle": "AION Portfolio | Real Projects in Mexico & USA",
+    "metaDesc": "Websites, AI automations and digital platforms we've built. Clients in Mexico, Texas and Latin America. See real results.",
     "breadcrumbHome": "Home",
     "breadcrumbWork": "Portfolio",
     "badge": "Our Work",
@@ -652,8 +652,8 @@
     "ctaButton": "Book a Free Call"
   },
   "AboutPage": {
-    "metaTitle": "About Us — AI Agency",
-    "metaDesc": "We are AION Automations: an agency specializing in websites that sell and AI automation for service businesses.",
+    "metaTitle": "About AION | AI + Web Agency for Small Business",
+    "metaDesc": "We're a boutique agency specialized in websites that convert and AI automation for service businesses across LATAM and the US.",
     "breadcrumbHome": "Home",
     "breadcrumbAbout": "About",
     "badge": "About AION",
@@ -678,8 +678,8 @@
     "ctaButton": "Contact Now"
   },
   "ContactPage": {
-    "metaTitle": "Free Quote — Web & AI",
-    "metaDesc": "Request a free consultation for custom web design, AI automation, or WhatsApp chatbots. Response in less than 24 hours.",
+    "metaTitle": "Contact AION | Free 20-min Strategy Call (No Pressure)",
+    "metaDesc": "Book a free 20-min call. We'll tell you honestly what your business needs: website, AI automation or marketing. Reply within 24 hours.",
     "breadcrumbHome": "Home",
     "breadcrumbContact": "Contact",
     "badge": "Contact",
@@ -699,8 +699,8 @@
     "scheduleValue": "Monday to Friday, 9:00 AM - 6:00 PM (CST)"
   },
   "BlogPage": {
-    "metaTitle": "Blog — Web Design & AI Tips",
-    "metaDesc": "Articles, guides, and resources about web design, AI automation, and digital marketing for service businesses.",
+    "metaTitle": "AION Blog | Practical Guides on Web, AI & Marketing",
+    "metaDesc": "Actionable articles on web design, AI automation, WhatsApp Business, local SEO and digital marketing for small businesses. No fluff.",
     "breadcrumbHome": "Home",
     "breadcrumbBlog": "Blog",
     "badge": "Blog",
@@ -1104,8 +1104,8 @@
     "retry": "Try again"
   },
   "WebServicePage": {
-    "metaTitle": "Custom Website Design",
-    "metaDesc": "Professional, mobile-responsive websites that generate leads. From $497 USD. SEO included, fast delivery. Hire a web designer today.",
+    "metaTitle": "Web Design from $497 USD | Live in 1 Week",
+    "metaDesc": "Websites that turn visitors into clients. Responsive design + SEO + WhatsApp integrated. Delivered in 1-2 weeks. Hosting and domain included.",
     "breadcrumbHome": "Home",
     "breadcrumbServices": "Services",
     "breadcrumbCurrent": "Websites",
@@ -1157,8 +1157,8 @@
     "ctaButton": "Book a Free Call"
   },
   "AutomationsServicePage": {
-    "metaTitle": "AI Automation & Chatbots",
-    "metaDesc": "Business process automation with AI. WhatsApp chatbots, CRM automation, lead follow-up, and workflow automation. From $997 USD.",
+    "metaTitle": "AI Automation from $897 | WhatsApp Chatbot 24/7",
+    "metaDesc": "AI agent on WhatsApp that replies in 30 seconds, CRM that qualifies leads and closes sales while you sleep. Save 14 hrs/week. From $897 USD.",
     "breadcrumbHome": "Home",
     "breadcrumbServices": "Services",
     "breadcrumbCurrent": "AI Automations",
