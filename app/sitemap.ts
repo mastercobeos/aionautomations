@@ -56,6 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date((post as { dateModified?: string }).dateModified || post.date),
         changeFrequency: "monthly",
         priority: 0.6,
+        images: [`${siteUrl}/og-image-${locale}.jpg`],
         alternates: {
           languages: Object.fromEntries(
             locales.map((loc) => [loc, `${siteUrl}/${loc}/blog/${post.slug}`])
