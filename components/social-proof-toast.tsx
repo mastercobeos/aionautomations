@@ -4,13 +4,15 @@ import { useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { CheckCircle2 } from "lucide-react";
 
-const PROOF_COUNT = 15;
+const PROOF_COUNT = 12;
+const MAX_DISPLAYS_PER_SESSION = 3;
 
 export function SocialProofToast() {
   const t = useTranslations("SocialProof");
   const [current, setCurrent] = useState<number | null>(null);
   const [fading, setFading] = useState(false);
   const usedRef = useRef<Set<number>>(new Set());
+  const shownCountRef = useRef<number>(0);
 
   useEffect(() => {
     let showTimeout: ReturnType<typeof setTimeout>;
@@ -28,10 +30,12 @@ export function SocialProofToast() {
     };
 
     const scheduleNext = () => {
-      const delay = 25000 + Math.random() * 10000; // 25-35s
+      if (shownCountRef.current >= MAX_DISPLAYS_PER_SESSION) return;
+      const delay = 90000 + Math.random() * 30000; // 90-120s
       nextTimeout = setTimeout(() => {
         setCurrent(pickRandom());
         setFading(false);
+        shownCountRef.current += 1;
 
         hideTimeout = setTimeout(() => {
           setFading(true);
@@ -43,10 +47,10 @@ export function SocialProofToast() {
       }, delay);
     };
 
-    // Start after 10 seconds on page
+    // Start after 20 seconds on page
     const initialDelay = setTimeout(() => {
       scheduleNext();
-    }, 10000);
+    }, 20000);
 
     return () => {
       clearTimeout(initialDelay);

@@ -1818,21 +1818,18 @@
     "exitDismiss": "No, gracias"
   },
   "SocialProof": {
-    "proof1": "Alguien de Houston solicitó una cotización",
-    "proof2": "Una clínica dental en CDMX inició su proyecto",
-    "proof3": "Nuevo agente IA en WhatsApp para un restaurante",
-    "proof4": "Una inmobiliaria se actualizó al plan Growth",
-    "proof5": "Alguien de Dallas agendó una llamada de estrategia",
-    "proof6": "Una tienda en línea se lanzó con AION",
-    "proof7": "Un gimnasio en Guadalajara automatizó sus seguimientos",
-    "proof8": "Alguien de Austin solicitó precios",
-    "proof9": "Un hotel activó su agente IA de reservas",
-    "proof10": "Un salón en Monterrey inició su página web",
-    "proof11": "Alguien de San Antonio agendó una demo",
-    "proof12": "Un despacho legal automatizó la captación de clientes",
-    "proof13": "Una escuela lanzó su página de inscripciones",
-    "proof14": "Alguien de Playa del Carmen solicitó una cotización",
-    "proof15": "Una empresa de tours activó su agente IA",
-    "timeAgo": "hace un momento"
+    "proof1": "Axel's Tours PDC lanzó su nueva web con AION",
+    "proof2": "Axel's Tours activó la gestión de redes sociales",
+    "proof3": "Axel's Tours empezó a recibir reservas directas desde móvil",
+    "proof4": "Star Event Rental (Texas) lanzó su sitio para sus eventos",
+    "proof5": "Star Event Rental integró su formulario de cotización",
+    "proof6": "Star Event Rental publicó su nueva galería de espacios",
+    "proof7": "Ahome QRoo lanzó su plataforma inmobiliaria",
+    "proof8": "Ahome añadió filtros de búsqueda avanzada de propiedades",
+    "proof9": "Ahome empezó a recibir consultas directas de compradores",
+    "proof10": "Las Delicias lanzó su web de restaurante",
+    "proof11": "Las Delicias activó su menú digital y reservas",
+    "proof12": "Las Delicias actualizó su galería y contenido",
+    "timeAgo": "recientemente"
   }
 }
