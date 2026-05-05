@@ -14,7 +14,7 @@ export function Hero() {
   ]
 
   return (
-    <section className="relative flex min-h-screen md:h-screen items-stretch md:items-center justify-center overflow-hidden">
+    <section className="relative flex min-h-[88vh] md:min-h-screen md:h-screen items-center justify-center overflow-hidden">
       {/* Background layers */}
       <div className="absolute inset-0">
         <div className="hero-bg-slide" aria-hidden="true" />
@@ -30,10 +30,10 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-6xl px-6 pt-24 pb-10 md:pt-10 md:pb-10 lg:px-8 w-full flex">
-        <div className="grid grid-cols-1 gap-6 items-center md:grid-cols-2 lg:gap-4 w-full">
+      <div className="relative z-10 mx-auto max-w-6xl px-6 pt-20 pb-8 md:pt-10 md:pb-10 lg:px-8 w-full">
+        <div className="grid grid-cols-1 gap-6 items-center md:grid-cols-2 lg:gap-4">
           {/* Left side - Text content */}
-          <div className="text-center lg:text-left flex flex-col justify-between min-h-[calc(100vh-9rem)] md:min-h-0">
+          <div className="text-center lg:text-left">
             {/* Badge — NO TOCAR */}
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-500/50 px-4 py-1.5 text-sm text-cyan-400 shadow-[0_0_15px_rgba(34,212,254,0.1)]">
               <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
