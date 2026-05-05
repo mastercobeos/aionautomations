@@ -14,7 +14,7 @@ export function Hero() {
   ]
 
   return (
-    <section className="relative flex md:min-h-screen md:h-screen items-start md:items-center justify-center overflow-hidden">
+    <section className="relative flex min-h-screen md:h-screen items-center justify-center overflow-hidden">
       {/* Background layers */}
       <div className="absolute inset-0">
         <div className="hero-bg-slide" aria-hidden="true" />
