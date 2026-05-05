@@ -200,7 +200,7 @@ export function AiChatbot() {
               onKeyDown={handleKeyDown}
               placeholder={t("inputPlaceholder")}
               maxLength={500}
-              className="flex-1 bg-transparent text-sm text-foreground placeholder:text-muted-foreground focus:outline-none"
+              className="flex-1 bg-transparent text-base sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none"
             />
             <button
               type="submit"
