@@ -14,7 +14,7 @@ export function Hero() {
   ]
 
   return (
-    <section className="relative flex min-h-screen md:h-screen items-center justify-center overflow-hidden">
+    <section className="relative flex min-h-screen md:h-screen items-start md:items-center justify-center overflow-hidden">
       {/* Background layers */}
       <div className="absolute inset-0">
         <div className="hero-bg-slide" aria-hidden="true" />
@@ -30,8 +30,8 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-6xl px-6 pt-20 pb-10 md:pt-10 lg:px-8">
-        <div className="grid grid-cols-1 gap-4 items-center md:grid-cols-2 lg:gap-4">
+      <div className="relative z-10 mx-auto max-w-6xl px-6 pt-28 pb-10 md:pt-10 lg:px-8">
+        <div className="grid grid-cols-1 gap-6 items-center md:grid-cols-2 lg:gap-4">
           {/* Left side - Text content */}
           <div className="text-center lg:text-left">
             {/* Badge — NO TOCAR */}
@@ -52,12 +52,12 @@ export function Hero() {
             </h1>
 
             {/* Subtexto */}
-            <p className="animate-fade-up-delay-1 mt-4 text-pretty text-lg leading-[1.5] text-foreground/85 md:text-xl" style={{ maxWidth: '550px' }}>
+            <p className="animate-fade-up-delay-1 mt-5 text-pretty text-base leading-[1.55] text-foreground/85 sm:text-lg md:text-xl mx-auto lg:mx-0" style={{ maxWidth: '550px' }}>
               {t('subtitle')}
             </p>
 
             {/* CTAs — NO TOCAR */}
-            <div className="animate-fade-up-delay-2 mt-6">
+            <div className="animate-fade-up-delay-2 mt-7">
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
                 <a
                   href="#contact"
@@ -84,7 +84,7 @@ export function Hero() {
             </div>
 
             {/* Trust Row — NO TOCAR texto */}
-            <ul className="animate-fade-up-delay-3 mt-6 flex items-center justify-center lg:justify-start gap-4 sm:gap-6 md:gap-8 list-none m-0 p-0">
+            <ul className="animate-fade-up-delay-3 mt-8 flex items-center justify-center lg:justify-start gap-4 sm:gap-6 md:gap-8 list-none m-0 p-0">
               {TRUST_ITEMS.map((item) => (
                 <li key={item.label} className="flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
                   <div className="flex h-4 w-4 sm:h-5 sm:w-5 shrink-0 items-center justify-center rounded-full border border-cyan-400/50 bg-cyan-500/15 shadow-[0_0_10px_rgba(34,212,254,0.2)]" aria-hidden="true">
