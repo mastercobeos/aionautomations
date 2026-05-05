@@ -1,4 +1,4 @@
-import { Shield, Infinity, Zap, ArrowRight, Phone } from "lucide-react"
+import { Search, Smartphone, Headphones, ArrowRight, Phone } from "lucide-react"
 import { useTranslations } from 'next-intl';
 import { HeroParticles } from './hero-particles';
 import { HeroProductMockup } from './hero-product-mockup';
@@ -8,9 +8,9 @@ export function Hero() {
   const t = useTranslations('Hero');
 
   const TRUST_ITEMS = [
-    { icon: Shield, label: t('trustSecure') },
-    { icon: Infinity, label: t('trustScale') },
-    { icon: Zap, label: t('trustAi') },
+    { icon: Search, label: t('trustSecure') },
+    { icon: Smartphone, label: t('trustScale') },
+    { icon: Headphones, label: t('trustAi') },
   ]
 
   return (
