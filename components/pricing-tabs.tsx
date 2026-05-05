@@ -1,9 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { Globe, Workflow, TrendingUp, Check, ArrowRight, MessageCircle } from "lucide-react"
+import { Globe, Workflow, TrendingUp, Check, MessageCircle } from "lucide-react"
 import { useTranslations } from "next-intl"
-import { Link } from "@/i18n/routing"
 import { siteConfig } from "@/lib/site-config"
 
 type ServiceTab = "web" | "auto" | "mkt"
@@ -80,20 +79,9 @@ export function PricingTabs() {
                 {t(`${prefix}name`)}
               </h3>
 
-              {active === "mkt" ? (
-                <p className="mt-2 text-2xl font-bold text-foreground">
-                  {t("mktQuoteLabel")}
-                </p>
-              ) : (
-                <>
-                  <p className="mt-2 text-3xl font-bold text-foreground">
-                    {t(`${prefix}price`)}
-                  </p>
-                  <p className="mt-1 text-xs font-medium uppercase tracking-wider text-cyan-400/80">
-                    {t(`${active}Billing`)}
-                  </p>
-                </>
-              )}
+              <p className="mt-2 text-2xl font-bold text-foreground">
+                {t("mktQuoteLabel")}
+              </p>
 
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {t(`${prefix}desc`)}
@@ -113,33 +101,19 @@ export function PricingTabs() {
               </ul>
 
               <div className="mt-auto pt-6">
-                {active === "mkt" ? (
-                  <a
-                    href={`https://wa.me/${siteConfig.whatsapp.number}?text=${encodeURIComponent(t("mktQuoteWhatsAppMsg", { tier: t(`${prefix}name`) }))}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold transition-all ${
-                      isHighlighted
-                        ? "btn-glow bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:scale-[1.01]"
-                        : "border border-border/50 text-foreground hover:bg-white/5 hover:border-cyan-500/30"
-                    }`}
-                  >
-                    <MessageCircle className="h-4 w-4" />
-                    {t("mktQuoteCta")}
-                  </a>
-                ) : (
-                  <Link
-                    href="/contact"
-                    className={`inline-flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold transition-all ${
-                      isHighlighted
-                        ? "btn-glow bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:scale-[1.01]"
-                        : "border border-border/50 text-foreground hover:bg-white/5 hover:border-cyan-500/30"
-                    }`}
-                  >
-                    {t("getStarted")}
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                )}
+                <a
+                  href={`https://wa.me/${siteConfig.whatsapp.number}?text=${encodeURIComponent(t("quoteWhatsAppMsg", { tier: t(`${prefix}name`), service: t(`tab${active.charAt(0).toUpperCase()}${active.slice(1)}`) }))}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold transition-all ${
+                    isHighlighted
+                      ? "btn-glow bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:scale-[1.01]"
+                      : "border border-border/50 text-foreground hover:bg-white/5 hover:border-cyan-500/30"
+                  }`}
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  {t("mktQuoteCta")}
+                </a>
               </div>
             </div>
           )
