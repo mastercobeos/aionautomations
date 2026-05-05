@@ -27,7 +27,7 @@ export function FloatingSocialButtons() {
 
   return (
     <div
-      className="fixed top-20 right-4 z-40 flex flex-col gap-2 sm:right-6 lg:right-8"
+      className="fixed bottom-6 left-4 z-40 flex flex-row gap-2 sm:bottom-auto sm:left-auto sm:top-20 sm:right-6 sm:flex-col lg:right-8"
       aria-label={t("ariaLabel")}
     >
       {socials.map(({ key, href, icon: Icon }) => (
@@ -37,9 +37,9 @@ export function FloatingSocialButtons() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={t(key)}
-          className="floating-social-btn flex h-12 w-12 items-center justify-center rounded-full border border-cyan-500/50 text-cyan-400 shadow-[0_0_15px_rgba(34,212,254,0.1)] transition-all hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(34,212,254,0.25)] hover:text-cyan-300"
+          className="floating-social-btn flex h-10 w-10 items-center justify-center rounded-full border border-cyan-500/50 text-cyan-400 shadow-[0_0_15px_rgba(34,212,254,0.1)] transition-all hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(34,212,254,0.25)] hover:text-cyan-300 sm:h-12 sm:w-12"
         >
-          <Icon className="h-5 w-5" strokeWidth={2} />
+          <Icon className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={2} />
         </a>
       ))}
     </div>
