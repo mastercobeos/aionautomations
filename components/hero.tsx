@@ -1,7 +1,8 @@
-import { Shield, Infinity, Zap, ArrowRight } from "lucide-react"
+import { Shield, Infinity, Zap, ArrowRight, Phone } from "lucide-react"
 import { useTranslations } from 'next-intl';
 import { HeroParticles } from './hero-particles';
 import { HeroProductMockup } from './hero-product-mockup';
+import { siteConfig } from '@/lib/site-config';
 
 export function Hero() {
   const t = useTranslations('Hero');
@@ -70,6 +71,14 @@ export function Hero() {
                   className="inline-flex items-center gap-2 rounded-xl border border-foreground/20 px-6 py-3 text-base font-semibold text-foreground/90 transition-all hover:border-cyan-500/50 hover:text-cyan-400 hover:bg-cyan-500/5"
                 >
                   {t('casesCta')}
+                </a>
+                <a
+                  href={`tel:+${siteConfig.whatsapp.number}`}
+                  className="inline-flex items-center gap-2 rounded-xl border border-cyan-500/40 bg-cyan-500/10 px-5 py-3 text-base font-semibold text-cyan-300 transition-all hover:border-cyan-400 hover:bg-cyan-500/20 hover:text-white shadow-[0_0_15px_rgba(34,212,254,0.15)]"
+                  aria-label={t('callCta')}
+                >
+                  <Phone className="h-4 w-4" />
+                  {t('callCta')}
                 </a>
               </div>
               {/* Microcopy — NO TOCAR texto */}
