@@ -10,7 +10,7 @@
 
 export const siteConfig = {
   whatsapp: {
-    number: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "523411687566",
+    number: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "529841376309",
     defaultMessage: "Hola, me interesa conocer más sobre sus servicios. ¿Me pueden dar más información?",
     /** Official wa.me deep link: opens WhatsApp app on mobile, WhatsApp Web on desktop. */
     get link() {

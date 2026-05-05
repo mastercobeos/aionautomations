@@ -29,13 +29,13 @@ export const organizationSchema = {
     height: 512,
   },
   image: `${siteUrl}/og-image-en.jpg`,
-  telephone: process.env.NEXT_PUBLIC_PHONE || "+52 341 168 7566",
+  telephone: process.env.NEXT_PUBLIC_PHONE || "+52 984 137 6309",
   email: "info@aionautomations.io",
   priceRange: "$$",
   contactPoint: [
     {
       "@type": "ContactPoint",
-      telephone: process.env.NEXT_PUBLIC_PHONE || "+52 341 168 7566",
+      telephone: process.env.NEXT_PUBLIC_PHONE || "+52 984 137 6309",
       contactType: "customer service",
       availableLanguage: ["Spanish", "English"],
     },
