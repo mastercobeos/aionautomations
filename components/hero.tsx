@@ -14,7 +14,7 @@ export function Hero() {
   ]
 
   return (
-    <section className="relative flex min-h-screen md:h-screen items-start md:items-center justify-center overflow-hidden">
+    <section className="relative flex min-h-[78vh] md:min-h-screen md:h-screen items-start md:items-center justify-center overflow-hidden">
       {/* Background layers */}
       <div className="absolute inset-0">
         <div className="hero-bg-slide" aria-hidden="true" />
@@ -30,7 +30,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-6xl px-6 pt-28 pb-10 md:pt-10 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-6xl px-6 pt-28 pb-6 md:pt-10 md:pb-10 lg:px-8">
         <div className="grid grid-cols-1 gap-6 items-center md:grid-cols-2 lg:gap-4">
           {/* Left side - Text content */}
           <div className="text-center lg:text-left">
