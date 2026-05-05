@@ -423,15 +423,21 @@ html {
    GLOW ORBS
    ═══════════════════════════════════════════════════ */
 @keyframes glow-drift-1 {
-  0%, 100% { transform: translate(0, 0); }
-  33% { transform: translate(50px, -30px); }
-  66% { transform: translate(-30px, 20px); }
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(30px, -20px); }
+  40%  { transform: translate(50px, -10px); }
+  60%  { transform: translate(20px, 25px); }
+  80%  { transform: translate(-25px, 10px); }
+  100% { transform: translate(0, 0); }
 }
 
 @keyframes glow-drift-2 {
-  0%, 100% { transform: translate(0, 0); }
-  33% { transform: translate(-40px, 20px); }
-  66% { transform: translate(30px, -40px); }
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(-25px, 15px); }
+  40%  { transform: translate(-40px, -10px); }
+  60%  { transform: translate(15px, -30px); }
+  80%  { transform: translate(30px, 5px); }
+  100% { transform: translate(0, 0); }
 }
 
 .hero-glow-orb {
@@ -446,7 +452,7 @@ html {
   width: 600px;
   height: 600px;
   background: radial-gradient(circle, rgba(34, 212, 254, 0.35), transparent 70%);
-  animation: glow-drift-1 12s ease-in-out infinite;
+  animation: glow-drift-1 28s linear infinite;
   will-change: transform;
 }
 
@@ -454,7 +460,7 @@ html {
   width: 500px;
   height: 500px;
   background: radial-gradient(circle, rgba(115, 120, 255, 0.3), transparent 70%);
-  animation: glow-drift-2 15s ease-in-out infinite;
+  animation: glow-drift-2 32s linear infinite;
   will-change: transform;
 }
 
