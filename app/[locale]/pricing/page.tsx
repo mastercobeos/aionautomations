@@ -132,11 +132,7 @@ export default async function PricingPage({
                     <h2 className="text-2xl font-bold text-foreground">{t('bundleName')}</h2>
                   </div>
                   <div className="flex flex-wrap items-baseline gap-3 mb-3">
-                    <span className="text-lg text-muted-foreground line-through">{t('bundleOriginal')}</span>
-                    <span className="text-3xl font-bold text-cyan-400">{t('bundlePrice')}</span>
-                    <span className="rounded-full bg-green-500/15 border border-green-400/30 px-2.5 py-1 text-xs font-semibold text-green-400">
-                      {t('bundleSavings')}
-                    </span>
+                    <span className="text-2xl font-bold text-cyan-400">{t('bundlePrice')}</span>
                   </div>
                   <p className="text-sm leading-relaxed text-muted-foreground">{t('bundleDesc')}</p>
                   <div className="mt-5">
