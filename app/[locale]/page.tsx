@@ -3,6 +3,7 @@ import dynamic from "next/dynamic"
 import { getTranslations } from "next-intl/server"
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
+import { HeroProductMockup } from "@/components/hero-product-mockup"
 import { Footer } from "@/components/footer"
 import { FloatingSocialButtons } from "@/components/floating-social-buttons"
 import { ScrollRevealInit } from "@/components/scroll-reveal-init"
@@ -116,6 +117,12 @@ export default async function Home({
       <div className="relative z-10">
         <Navbar />
         <Hero />
+        {/* Mobile-only "Vista en vivo" section — desktop already shows the mockup inside the Hero */}
+        <section className="md:hidden relative px-6 pt-8 pb-12">
+          <div className="flex justify-center">
+            <HeroProductMockup />
+          </div>
+        </section>
         <div className="section-divider-gradient" />
         <ServicePillars />
         <div className="section-divider-gradient" />
