@@ -81,17 +81,6 @@ export function Hero() {
                   {t('callCta')}
                 </a>
               </div>
-              {/* Microcopy — NO TOCAR texto */}
-              <p className="mt-3 text-xs text-foreground/85">{t('ctaMini')}</p>
-              {/* [NOTA: Ajustar "2 semanas" al tiempo real de entrega antes de publicar] */}
-              <p className="mt-1 text-xs text-foreground/85">{t('ctaDelivery')}</p>
-            </div>
-
-            {/* Social proof - stat based, no fake testimonials */}
-            <div className="animate-fade-up-delay-3 mt-5">
-              <p className="text-xs text-foreground/60 max-w-[500px] mx-auto lg:mx-0">
-                {t('socialProofStat')}
-              </p>
             </div>
 
             {/* Trust Row — NO TOCAR texto */}
